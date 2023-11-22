@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- portfolio -->
+<section class="portfolio container" id="portfolio">
+    <!-- heading -->
+    <h2 class="heading">Portfolio</h2>
+    <!-- portfolio content -->
+    <div class="portfolio-content">
+        {% for project in projects %}
+        <div class="portfolio-box">
+            <img class="portfolio-img" src="{{ project.photo.url }}" title="{{ project.title }}" />
+            <!-- overlay -->
+            <div class="portfolio-overlay">
+                <h2>{{ project.title }}</h2>
+                <a href="{{ project.link }}" target="_blank">
+                    <i class="bx bx-link-alt"></i>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- projects -->
+<section class="projects container" id="projects">
+    <!-- heading -->
+    <h2 class="heading">Projects</h2>
+    <!-- projects content -->
+    <div class="projects-content">
+        <div class="project-box">
+            <h2>15+</h2>
+            <span>Project Webistes Completed</span>
+        </div>
+        <div class="project-box">
+            <h2>20+</h2>
+            <span>Telegram Bots Developed</span>
+        </div>
+        <div class="project-box">
+            <h2>100%</h2>
+            <span>Happy Clients</span>
+        </div>
+        <div class="project-box">
+            <h2>30+</h2>
+            <span>Graduated Students</span>
+        </div>
+    </div>
+</section>
+{% endblock content %}

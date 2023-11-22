@@ -1,0 +1,98 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block content %}
+<section class="home container" id="home">
+    <div class="home-content">
+        <div class="home-img">
+            <img
+                src="{% static 'img/main-photo.jpg' %}"
+                alt="Ulugbek Umaraliyev"
+                title="Ulugbek Umaraliyev"
+            />
+        </div>
+        <div class="home-text">
+            <h3>Hello</h3>
+            <h2>I'm <span class="color">Ulugbek</span></h2>
+            <p>
+                I'm a <span class="color">Full Stack</span>
+                web developer with 2+ years of experience and strong passion for
+                building
+                <span class="color">Web Applications</span>
+                and
+                <span class="color">multifunctional Telegram Bots.</span>
+                <br />
+                Here's a bit more
+                <span class="color">about me</span>
+            </p>
+            <!-- social -->
+            <div class="social">
+                <a
+                    href="https://t.me/thedevu101"
+                    target="_blank"
+                    title="Telegram"
+                    ><i class="bx bxl-telegram"></i
+                ></a>
+                <a
+                    href="https://www.instagram.com/the.dev.u/"
+                    target="_blank"
+                    title="Instagram"
+                    ><i class="bx bxl-instagram"></i
+                ></a>
+                <a
+                    href="https://www.facebook.com/ulugbek.umaraliyev.10"
+                    target="_blank"
+                    title="Facebook"
+                    ><i class="bx bxl-facebook"></i
+                ></a>
+                <a
+                    href="https://github.com/ulugbek101"
+                    target="_blank"
+                    title="GitHub"
+                    ><i class="bx bxl-github"></i
+                ></a>
+                <a
+                    href="tel:+998996937308"
+                    title="GitHub"
+                    ><i class="bx bxs-phone"></i
+                ></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- about -->
+<section class="about container" id="about">
+    <!-- heading -->
+    <h2 class="heading">About</h2>
+    <!-- about content -->
+    <div class="about-content">
+        <div class="about-data">
+            <span>About Me</span>
+            <h2>Full Stack Web developer</h2>
+            <a
+                class="btn"
+                href="CV ( Ulugbek Umaraliyev ).pdf"
+                download=""
+                target="_blank"
+            >
+                Download CV
+                <i class="bx bx-download"></i>
+            </a>
+        </div>
+        <div class="about-text">
+            <p>Hello! I am Ulugbek Umaraliyev. Full Stack Web Developer.</p>
+            <p>
+                I have been working in this area for 2+ years. I have excellent
+                practical experience in building web sites (news sites, blog
+                sites, ...) and web applications (online stores, social media,
+                messangers, ...).
+            </p>
+            <p>
+                Also, I have a lot of experience in developing multifunctional
+                Telegram Bots (online stores, restaurant telegram bots, ...)
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock content %}
