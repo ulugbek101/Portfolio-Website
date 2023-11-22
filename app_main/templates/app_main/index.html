@@ -2,6 +2,7 @@
 {% load static %} 
 
 {% block content %}
+{% include 'components/_navbar.html' %}
 <section class="home container" id="home">
     <div class="home-content">
         <div class="home-img">
@@ -95,4 +96,5 @@
         </div>
     </div>
 </section>
+{% include 'components/_footer.html' %}
 {% endblock content %}
