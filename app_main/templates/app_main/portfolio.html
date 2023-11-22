@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block content %} 
+{% include 'components/_navbar.html' %}
 <!-- portfolio -->
 <section class="portfolio container" id="portfolio">
     <!-- heading -->
@@ -7,7 +11,11 @@
     <div class="portfolio-content">
         {% for project in projects %}
         <div class="portfolio-box">
-            <img class="portfolio-img" src="{{ project.photo.url }}" title="{{ project.title }}" />
+            <img
+                class="portfolio-img"
+                src="{{ project.photo.url }}"
+                title="{{ project.title }}"
+            />
             <!-- overlay -->
             <div class="portfolio-overlay">
                 <h2>{{ project.title }}</h2>
@@ -44,4 +52,4 @@
         </div>
     </div>
 </section>
-{% endblock content %}
+{% include 'components/_footer.html' %} {% endblock content %}
