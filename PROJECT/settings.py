@@ -168,12 +168,16 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Social auth settings
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env.str('SOCIAL_KEY')
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env.str('SOCIAL_SECRET')
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env.str('GOOGLE_SOCIAL_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env.str('GOOGLE_SOCIAL_SECRET')
 SITE_ID = 1
+
+SOCIAL_AUTH_GITHUB_KEY = env.str('GITHUB_SOCIAL_KEY')
+SOCIAL_AUTH_GITHUB_SECRET = env.str('GITHUB_SOCIAL_SECRET')
