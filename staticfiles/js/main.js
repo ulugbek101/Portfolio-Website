@@ -17,6 +17,7 @@ function validate() {
     let message = document.querySelector('.message');
     let sendBtn = document.querySelector('.send-btn');
     sendBtn.addEventListener('click', (e)=>{
+        if (e.target.classList.contains('login-btn')) return;
         e.preventDefault();
         if ( name.value == "" || email.value == "" || message.value == "" ) {
             emptyError();
