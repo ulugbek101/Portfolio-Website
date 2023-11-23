@@ -14,15 +14,16 @@
             transform: translate(-50%, -50%);
         "
     >
-        <form class="contact-form" action="">
+        <form class="contact-form" action="{% url 'login' %}" method="post">
+            {% csrf_token %}
             <h1 class="home-text">Login</h1>
-            <input type="text" name="username" placeholder="Username" />
-            <input type="text" name="password" placeholder="Password" />
+            <input type="text" name="username" placeholder="Username" required autofocus value="{% if invalid_credentials %}{{ username }}{% endif %}" />
+            <input type="text" name="password" placeholder="Password" required />
+            {% if invalid_credentials %}<small style="color: red; text-align: center;">Email or Password is incorrect</small>{% endif %}
             <input
                 type="submit"
-                class="send-btn"
-                style="width: 100% !important"
-                value="Login"
+                style="width: 100% !important;"
+                class="send-btn login-btn"
             />
         </form>
 
