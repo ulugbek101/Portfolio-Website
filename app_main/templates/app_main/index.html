@@ -7,7 +7,7 @@
     <div class="home-content">
         <div class="home-img">
             <img
-                src="{% static 'img/main-photo.jpg' %}"
+                src="https://avatars.githubusercontent.com/u/94630185?v=4"
                 alt="Ulugbek Umaraliyev"
                 title="Ulugbek Umaraliyev"
             />
@@ -96,5 +96,44 @@
         </div>
     </div>
 </section>
+
+<section class="reviews container" id="reviews">
+    <!-- heading -->
+    <h2 class="reviews">Reviews</h2>
+    <!-- reviews content -->
+    <div class="reviews-content">
+        
+        {% for review in reviews %}
+            <div class="review">
+                <div class="review-header">
+                    <img class="review-profile-photo" src="{{ review.profile_photo.url }}"">
+                    <h4 class="review-title">
+                        John Doe 
+                        <p class="reviewer-address">
+                            Brooklyn, NY, USA 
+                            {% if review.country_flag %}
+                            <img class="reviewer-country" src="{{ review.country_flag.url }}">
+                            {% endif %}
+                        </p>
+                    </h4>
+                </div>
+                <div class="review-details">
+                    <div>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+                <p class="review-body">
+                    {{ review.body|linebreaksbr }}
+                </p>
+                <p class="review-date">{{ review.created|date:"Y.m.d H:m"}}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
 {% include 'components/_footer.html' %}
 {% endblock content %}

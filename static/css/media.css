@@ -12,6 +12,10 @@
         margin: 0 auto;
         width: 90%;
     }
+
+    .review {
+        width: 600px;
+    }
 }
 
 @media (max-width: 892px) {
@@ -122,6 +126,10 @@
     .projects-content {
         grid-template-columns: repeat(2, 200px);
     }
+
+    .review {
+        width: 400px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -168,6 +176,10 @@
     .footer-links {
         flex-direction: column;
         row-gap: 1rem;
+    }
+
+    .review {
+        width: 250px;
     }
 
 }

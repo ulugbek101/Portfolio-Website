@@ -1,9 +1,12 @@
 from django.shortcuts import render
 
 from . import models
+from app_users.models import Review
 
 def index(request):
-    context = {}
+    context = {
+        "reviews": Review.objects.all(),
+    }
     return render(request, 'app_main/index.html', context)
 
 def portfolio(request):
