@@ -97,9 +97,29 @@
     </div>
 </section>
 
+<section class="leave-review container" id="leave-review">
+    <h2 class="heading">Leave a review</h2>
+    {% if request.user.is_authenticated %}
+    <form action="{% url 'create_review' %}" method="post" enctype="multipart/form-data" class="contact-form">
+        {% csrf_token %}
+        <label for="id_{{ form.address.name }}">*Your Address: </label>
+        {{ form.address }}
+        <label for="id_{{ form.profile_photo.name }}">Profile photo(This photo will be displayed on your review): </label>
+        {{ form.profile_photo }}
+        <label for="id_{{ form.rate.name }}">*Rate me: 1-5 (I know you want select 5 😉): </label>
+        {{ form.rate }}
+        <label for="id_{{ form.rate.name }}">Your review: </label>
+        {{ form.body }}
+        <button type="submit" class="login-btn send-btn btn" style="width: 100% !important;">Post</button>
+    </form>
+    {% else %}
+    <h3 style="text-align: center;">Please, <a class="btn" href="{% url 'login' %}">log in</a> to leave a comment</h3>
+    {% endif %}
+</section>
+
 <section class="reviews container" id="reviews">
     <!-- heading -->
-    <h2 class="reviews">Reviews</h2>
+    <h2 class="heading">Reviews</h2>
     <!-- reviews content -->
     <div class="reviews-content">
         
@@ -108,9 +128,9 @@
                 <div class="review-header">
                     <img class="review-profile-photo" src="{{ review.profile_photo.url }}"">
                     <h4 class="review-title">
-                        John Doe 
+                         {{ review.user.first_name }} {{ review.user.last_name }}
                         <p class="reviewer-address">
-                            Brooklyn, NY, USA 
+                            {{ review.address }}
                             {% if review.country_flag %}
                             <img class="reviewer-country" src="{{ review.country_flag.url }}">
                             {% endif %}
@@ -119,18 +139,22 @@
                 </div>
                 <div class="review-details">
                     <div>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
+                        {% for star in rate %}
+                            {% if star <= review.rate %}
+                                <span class="fa fa-star checked"></span>
+                            {% else %}
+                                <span class="fa fa-star"></span>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
                 <p class="review-body">
                     {{ review.body|linebreaksbr }}
                 </p>
-                <p class="review-date">{{ review.created|date:"Y.m.d H:m"}}</p>
+                <p class="review-date">{{ review.created|date:"Y.m.d H:m"}} <small>({{ review.created|timesince }} ago)</small></p>
             </div>
+            {% empty %}
+            <p style="font-size: initial;">No reviews yet 🧐</p>
         {% endfor %}
     </div>
 </section>

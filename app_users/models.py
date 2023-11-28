@@ -7,16 +7,16 @@ User = get_user_model()
 class Review(models.Model):
     RATE_CHOICES = (
         (1, 1),
-        (1, 2),
-        (1, 3),
-        (1, 4),
-        (1, 5),
+        (2, 2),
+        (3, 3),
+        (4, 4),
+        (5, 5),
     )
     user = models.ForeignKey(User, on_delete=models.PROTECT)
     address = models.CharField(max_length=255)
     profile_photo = models.ImageField(null=True, default='thedevu101-media/profile-photos/user-default.png', upload_to='thedevu101-media/profile-photo/user-default.png')
     country_flag = models.ImageField(null=True, blank=True, upload_to='thedevu101-media/country-photos')
-    rate = models.IntegerField(choices=RATE_CHOICES, max_length=1)
+    rate = models.IntegerField(choices=RATE_CHOICES, default=5)
     body = models.TextField()
     verified = models.BooleanField(default=False)
     id = models.UUIDField(default=uuid.uuid4, editable=False,
