@@ -108,7 +108,7 @@
         {{ form.profile_photo }}
         <label for="id_{{ form.rate.name }}">*Rate me: 1-5 (I know you want select 5 😉): </label>
         {{ form.rate }}
-        <label for="id_{{ form.rate.name }}">Your review: </label>
+        <label for="id_{{ form.rate.name }}">*Your review: </label>
         {{ form.body }}
         <button type="submit" class="login-btn send-btn btn" style="width: 100% !important;">Post</button>
     </form>
@@ -151,7 +151,7 @@
                 <p class="review-body">
                     {{ review.body|linebreaksbr }}
                 </p>
-                <p class="review-date">{{ review.created|date:"Y.m.d H:m"}} <small>({{ review.created|timesince }} ago)</small></p>
+                <p class="review-date">{{ review.created|date:"Y.m.d"}} <small>({{ review.created|timesince }} ago)</small></p>
             </div>
             {% empty %}
             <p style="font-size: initial;">No reviews yet 🧐</p>

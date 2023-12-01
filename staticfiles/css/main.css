@@ -65,6 +65,35 @@ header {
     z-index: 100;
 }
 
+.informational-message {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 50px;
+    border-radius: 15px;
+    background-color: var(--container-color);
+    opacity: 0;
+    animation: informational-message-animation 5s ease-in-out;
+}
+
+@keyframes informational-message-animation {
+    0% {
+        display: block;
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+
 .header-active {
     background: var(--box-color);
     transition: 0.4s;
