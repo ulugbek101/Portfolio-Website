@@ -128,7 +128,20 @@
     }
 
     .review {
-        width: 400px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .review-title {
+        font-size: 14px;
+    }
+
+    .review-body {
+        font-size: 12px;
+    }
+
+    .review-date {
+        font-size: 12px;
     }
 }
 
@@ -176,10 +189,6 @@
     .footer-links {
         flex-direction: column;
         row-gap: 1rem;
-    }
-
-    .review {
-        width: 250px;
     }
 
 }

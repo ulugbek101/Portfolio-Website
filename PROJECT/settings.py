@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.3', 'localhost', 'thedevu101.uz', 'www.thedevu101.uz']
 CSRF_TRUSTED_ORIGINS = [
@@ -89,24 +89,24 @@ WSGI_APPLICATION = 'PROJECT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-# }
-
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.str('PGDATABASE'),
-        'HOST': env.str('PGHOST'),
-        'PORT': env.str('PGPORT'),
-        'USER': env.str('PGUSER'),
-        'PASSWORD': env.str('PGPASSWORD'),
-     }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+   }
+}
 
- }
+# DATABASES = {
+#      'default': {
+#          'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env.str('PGDATABASE'),
+#         'HOST': env.str('PGHOST'),
+#         'PORT': env.str('PGPORT'),
+#         'USER': env.str('PGUSER'),
+#         'PASSWORD': env.str('PGPASSWORD'),
+#      }
+
+#  }
 
 
 # Password validation
@@ -149,9 +149,9 @@ MEDIA_URL = 'thedevu101-media/'
 STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'thedevu101-media'
 
-#STATICFILES_DIRS = [
-#    BASE_DIR / 'staticfiles'
-#]
+STATICFILES_DIRS = [
+   BASE_DIR / 'staticfiles'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
