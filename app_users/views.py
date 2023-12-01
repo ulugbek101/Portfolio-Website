@@ -1,7 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 from . import forms
 
+
+def download_cv(request):
+    pdf = open(file='cv/CV ( Ulugbek Umaraliyev ).pdf', mode='rb')
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="CV ( Ulugbek Umaraliyev ).pdf"'
+    return response 
+    
 
 def login_view(request):
 
