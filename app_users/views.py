@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
+from django.contrib import messages
 from . import forms
 
 
@@ -47,7 +48,7 @@ def create_review(request):
         review = form.save(commit=False)
         review.user = user
         review.save()
-        # success message
+        messages.success(request, "Thank you ! Your review was sent for verification, it will be posted soon 😉")
         return redirect('index')
     else:
         # error message

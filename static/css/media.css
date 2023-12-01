@@ -143,6 +143,13 @@
     .review-date {
         font-size: 12px;
     }
+
+    .informational-message {
+        width: 300px;
+        font-size: 12px;
+        padding: 10px 25px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 450px) {

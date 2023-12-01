@@ -24,6 +24,13 @@ class Review(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    @property
+    def to_representation(self):
+        return self.__str__()
+
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.body[:30]}"
+    
+    class Meta:
+        ordering = ['-created', 'verified']
 
