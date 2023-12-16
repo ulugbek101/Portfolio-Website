@@ -23,3 +23,10 @@ def services(request):
     context = {}
     return render(request, 'app_main/services.html', context)
 
+def posts(request):
+    context = {}
+    return render(request, 'app_main/posts.html', context)
+
+def post(request, slug):
+    context = {} 
+    return render(request, 'app_main/post.html', context)

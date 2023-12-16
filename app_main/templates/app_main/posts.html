@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+{% include 'components/_navbar.html' %}
+<section class="container" id="posts">
+    <!-- heading -->
+    <h2 class="heading">All posts</h2>
+
+    <input class="post-search-input" type="text" placeholder="Type whatever you want to search and press Enter" maxlength="255" minlength="6" autofocus>
+
+    <section class="posts-content">
+        <a href="{% url 'post' slug=123 %}">- How to center a div</a>
+        <a href="{% url 'post' slug=123 %}">- How to connect postgresql to Django</a>
+        <a href="{% url 'post' slug=123 %}">- How to configure staticfiles in Django</a>
+        <a href="{% url 'post' slug=123 %}">- How to set up Nginx/Gunicorn for Django. And set up Nginx/Gunicorn for Django. And set up Nginx/Gunicorn for Django. And set up Nginx/Gunicorn for Django</a>
+    </section>
+</section>
+{% endblock content %}

@@ -281,6 +281,15 @@ header {
     margin-bottom: 2rem;
 }
 
+#single-post .heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    text-align: start;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -458,6 +467,21 @@ header {
     font-size: 0.9rem;
 }
 
+.posts-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts-content a {
+    color: var(--bg-color);
+    padding: 10px 0;
+    transition: 0.2s ease-in-out;
+}
+
+.posts-content a:hover {
+    color: var(--main-color);
+}
+
 .portfolio-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -547,6 +571,17 @@ header {
     width: 100%;
     display: grid;
     row-gap: 1rem;
+}
+
+.post-search-input {
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    padding: 15px;
+    color: var(--bg-color);
+    border-radius: 0.4rem;
+    background: var(--box-color);
+    width: 100%;
 }
 
 .contact-form input,

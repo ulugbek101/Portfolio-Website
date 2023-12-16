@@ -13,6 +13,7 @@
             <li><a class="nav-link" href="{% url 'services' %}">Services</a></li>
             <li><a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a></li>
             <li><a class="nav-link" href="{% url 'index' %}#reviews">Reviews</a></li>
+            <li><a class="nav-link" href="{% url 'posts' %}">Posts</a></li>
             {% if not request.user.is_authenticated %}
             <li><a class="btn" style="margin: 0;" href="{% url 'login' %}">Login</a></li>
             {% else %}
