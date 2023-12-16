@@ -18,9 +18,23 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+
+class Tag(models.Model):
+    name = models.CharField(max_length=255)
+
+    id = models.UUIDField(default=uuid.uuid4, editable=False,
+                          primary_key=True, unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, null=True)
+    tags = models.ManyToManyField(Tag)
     body = RichTextField()
     requests = models.IntegerField(default=0)
 
@@ -34,4 +48,3 @@ class Post(models.Model):
 
     class Meta:
         ordering = ("requests", "created")
-
