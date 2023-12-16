@@ -9,10 +9,9 @@
     <input class="post-search-input" type="text" placeholder="Type whatever you want to search and press Enter" maxlength="255" minlength="6" autofocus>
 
     <section class="posts-content">
-        <a href="{% url 'post' slug=123 %}">- How to center a div</a>
-        <a href="{% url 'post' slug=123 %}">- How to connect postgresql to Django</a>
-        <a href="{% url 'post' slug=123 %}">- How to configure staticfiles in Django</a>
-        <a href="{% url 'post' slug=123 %}">- How to set up Nginx/Gunicorn for Django. And set up Nginx/Gunicorn for Django. And set up Nginx/Gunicorn for Django. And set up Nginx/Gunicorn for Django</a>
+        {% for post in posts %}
+        <a href="{% url 'post' slug=post.slug %}">- {{ post.title|truncatechars:"80" }}</a>
+        {% endfor %}
     </section>
 </section>
 {% endblock content %}

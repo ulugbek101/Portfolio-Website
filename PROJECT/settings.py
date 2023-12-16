@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'social_django',
 
+    'ckeditor',
+    'ckeditor_uploader',
+
     'app_users.apps.AppUsersConfig',
     'app_main.apps.AppMainConfig',
 ]
@@ -182,3 +185,33 @@ SITE_ID = 1
 
 SOCIAL_AUTH_GITHUB_KEY = env.str('GITHUB_SOCIAL_KEY')
 SOCIAL_AUTH_GITHUB_SECRET = env.str('GITHUB_SOCIAL_SECRET')
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = 'ckeditor-uploads/'
+
+# Optional: Configure CKEditor toolbar
+CKEDITOR_CONFIGS = {
+    'default': {
+        'extraPlugins': 'codesnippet',
+        'codeSnippet_theme': 'monokai_sublime',
+        'language': 'python',
+        
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            {'name': 'styles', 'items': ['Code']},
+            {'name': 'code', 'items': ['Code']},
+            {'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+            {'name': 'styles', 'items': ['Styles', 'Format']},
+            {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']},
+            {'name': 'paragraph', 'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']},
+            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+            {'name': 'insert', 'items': ['Image', 'Table', 'SpecialChar']},
+            {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
+            {'name': 'editing', 'items': ['Scayt']},
+            {'name': 'document', 'items': ['Source']},
+        ],
+        'width': 800,
+        # 'extraPlugins': 'codesnippet',  # Enable the CodeSnippet plugin
+        # 'codeSnippet_theme': 'monokai_sublime',  # Set the code snippet theme (optional)
+    },
+}
