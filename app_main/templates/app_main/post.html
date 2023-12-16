@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+{% include 'components/_navbar.html' %}
+<section class="container" id="single-post">
+    
+    <a href="{% url 'posts' %}" class="btn send-btn login-btn" style="margin-top: 3rem;">
+        <i class="fa fa-arrow-circle-left"></i>
+        All posts
+    </a>
+    
+    <!-- heading -->
+    <div>
+        <h1 class="heading">
+            How to 
+            <span>configure staticfiles in Django</span>
+        </h1>
+    </div>
+    
+
+
+</section>
+{% endblock content %}
