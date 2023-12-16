@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from . import models
 from app_users.models import Review
@@ -24,9 +24,17 @@ def services(request):
     return render(request, 'app_main/services.html', context)
 
 def posts(request):
-    context = {}
+    posts = models.Post.objects.all()
+
+    context = {
+        'posts': posts,
+    }
     return render(request, 'app_main/posts.html', context)
 
 def post(request, slug):
-    context = {} 
+    post = get_object_or_404(models.Post, slug=slug)
+
+    context = {
+        'post': post,
+    } 
     return render(request, 'app_main/post.html', context)

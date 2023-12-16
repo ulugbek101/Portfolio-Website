@@ -290,6 +290,13 @@ header {
     margin-top: 2rem;
 }
 
+pre, code {
+    font-family: monospace;
+    background: var(--heading-color);
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

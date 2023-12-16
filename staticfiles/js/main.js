@@ -73,6 +73,13 @@ window.addEventListener('scroll', ()=> {
     scrollTop.classList.toggle('scroll-active', window.scrollY >= 400)
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Remove all <br> tags
+    let preElements = document.querySelectorAll('pre');
+    preElements.forEach( pre => {
+        pre.removeChild( pre.firstElementChild );
+    } )
+});
 
 
 
