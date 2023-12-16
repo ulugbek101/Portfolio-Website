@@ -93,7 +93,6 @@ header {
     }
 }
 
-
 .header-active {
     background: var(--box-color);
     transition: 0.4s;
@@ -283,18 +282,21 @@ header {
 
 #single-post .heading {
     font-size: 3rem;
+    line-height: 100%;
     text-transform: uppercase;
     color: var(--heading-color);
     text-align: start;
     margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
-pre, code {
+pre,
+code {
     font-family: monospace;
     background: var(--heading-color);
     border-radius: 5px;
     padding: 10px 30px;
+    font-size: 18px;
 }
 
 .about-content {
@@ -357,7 +359,6 @@ pre, code {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-
 }
 
 .reviewer-address {
@@ -592,7 +593,8 @@ pre, code {
 }
 
 .contact-form input,
-textarea, select {
+textarea,
+select {
     border: none;
     outline: none;
     font-size: 0.9rem;
