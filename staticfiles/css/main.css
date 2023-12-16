@@ -290,13 +290,18 @@ header {
     margin-top: 4rem;
 }
 
-pre,
-code {
-    font-family: monospace;
+pre {
     background: var(--heading-color);
     border-radius: 5px;
     padding: 10px 30px;
     font-size: 18px;
+    display: flex;
+    overflow: auto;
+    white-space: pre !important;
+}
+
+code {
+    font-family: monospace;
 }
 
 .about-content {
