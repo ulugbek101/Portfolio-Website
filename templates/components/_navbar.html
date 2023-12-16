@@ -5,7 +5,13 @@
     <!-- nav -->
     <div class="nav container" id="nav">
         <!-- logo -->
-        <a class="logo" href="/">Ulugbek Umaraliyev</a>
+        <a class="logo" href="/">
+            {% if request.user.is_authenticated %}
+            Hi, {{ request.user.first_name }} {{ request.user.last_name }} !
+            {% else %}
+            Ulugbek Umaraliyev
+            {% endif %}
+        </a>
         <!-- navbar -->
         <ul class="navbar">
             <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>

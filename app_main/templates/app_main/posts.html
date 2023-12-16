@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 
-{% block content %} 
+{% block content %}
 {% include 'components/_navbar.html' %}
 <section class="container" id="posts">
     <!-- heading -->
     <h2 class="heading">All posts</h2>
 
-    <input class="post-search-input" type="text" placeholder="Type whatever you want to search and press Enter" maxlength="255" minlength="6" autofocus>
+    <input class="post-search-input" type="text" placeholder="Search by post title, tag and press Enter" maxlength="255"
+        minlength="6" autofocus>
 
     <section class="posts-content">
         {% for post in posts %}
-        <a href="{% url 'post' slug=post.slug %}">- {{ post.title|truncatechars:"80" }}</a>
+        <a href="{% url 'post' slug=post.slug %}" class="post-link">
+            <div class="post-item">
+                <h3 class="post-icon">📝</h3>
+                <div class="post-header">
+                    {{ post.title|truncatechars:"80" }}
+                    <div class="post-tags">
+                        {% for tag in post.tags.all %}
+                        <small>#{{ tag.name|lower }}</small>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
         {% endfor %}
     </section>
 </section>
