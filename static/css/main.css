@@ -93,7 +93,6 @@ header {
     }
 }
 
-
 .header-active {
     background: var(--box-color);
     transition: 0.4s;
@@ -281,6 +280,66 @@ header {
     margin-bottom: 2rem;
 }
 
+#single-post .heading {
+    font-size: 3rem;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    text-align: start;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+pre {
+    background: var(--heading-color);
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 18px;
+    display: flex;
+    overflow: auto;
+    white-space: pre !important;
+}
+
+code {
+    font-family: monospace;
+}
+
+.post-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+}
+
+.post-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.post i {
+    margin-left: auto;
+}
+
+.post-icon {
+    font-size: 28px;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -341,7 +400,6 @@ header {
     flex-direction: row;
     align-items: center;
     gap: 10px;
-
 }
 
 .reviewer-address {
@@ -458,6 +516,21 @@ header {
     font-size: 0.9rem;
 }
 
+.posts-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts-content a {
+    color: var(--bg-color);
+    padding: 10px 0;
+    transition: 0.2s ease-in-out;
+}
+
+.posts-content a:hover {
+    color: var(--main-color);
+}
+
 .portfolio-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -549,8 +622,20 @@ header {
     row-gap: 1rem;
 }
 
+.post-search-input {
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    padding: 15px;
+    color: var(--bg-color);
+    border-radius: 0.4rem;
+    background: var(--box-color);
+    width: 100%;
+}
+
 .contact-form input,
-textarea, select {
+textarea,
+select {
     border: none;
     outline: none;
     font-size: 0.9rem;
