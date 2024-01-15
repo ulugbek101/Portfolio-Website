@@ -5,7 +5,7 @@ menu.onclick = () => {
     menu.classList.toggle('move');
     navbar.classList.toggle('open-menu')
 }
-window.onscroll = () => {
+window.onscroll = ()=> {
     menu.classList.remove('move');
     navbar.classList.remove('open-menu')
 }
@@ -16,10 +16,10 @@ function validate() {
     let email = document.querySelector('.email');
     let message = document.querySelector('.message');
     let sendBtn = document.querySelector('.send-btn');
-    sendBtn.addEventListener('click', (e) => {
+    sendBtn.addEventListener('click', (e)=>{
         if (e.target.classList.contains('login-btn')) return;
         e.preventDefault();
-        if (name.value == "" || email.value == "" || message.value == "") {
+        if ( name.value == "" || email.value == "" || message.value == "" ) {
             emptyError();
         }
         else {
@@ -34,11 +34,11 @@ validate();
 
 
 function sendmail(name, email, message) {
-    emailjs.send("service_dizz52j", "template_o2fkul7", {
+    emailjs.send("service_dizz52j","template_o2fkul7",{
         from_name: email,
         to_name: name,
         message: message,
-    });
+        });
 }
 
 function emptyError() {
@@ -47,7 +47,7 @@ function emptyError() {
         text: "Fields connot be empty!",
         icon: "error",
         button: "Ok",
-    });
+      });
 }
 
 function success() {
@@ -56,23 +56,57 @@ function success() {
         text: "I will try to reply in 24 hours!",
         icon: "success",
         button: "Ok",
-    });
+      });
 }
 
 /* header bg change on scroll */
 let header = document.querySelector('header')
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', ()=> {
     header.classList.toggle('header-active', window.scrollY > 0)
 });
 
 // scroll top
 let scrollTop = document.querySelector('.scroll-top')
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', ()=> {
     scrollTop.classList.toggle('scroll-active', window.scrollY >= 400)
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Remove all <br> tags
+    let preElements = document.querySelectorAll('pre');
+    preElements.forEach( pre => {
+        pre.removeChild( pre.firstElementChild );
+    } )
+});
 
+
+// Open auth links in a new tabs
+// Google
+function openPopup(link, popupName) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      // Calculate the center position
+      const screenWidth = window.screen.width;
+      const screenHeight = window.screen.height;
+      const popupWidth = 600;
+      const popupHeight = 600;
+
+      const left = (screenWidth - popupWidth) / 2;
+      const top = (screenHeight - popupHeight) / 2;
+
+      // Open the popup window
+      window.open(link.href, popupName, `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
+    });
+}
+
+// Usage
+const googleLink = document.getElementById('googleAuthLink');
+const gitHubLink = document.getElementById('gitHubAuthLink');
+
+openPopup(googleLink, 'GoogleAuthPopup');
+openPopup(gitHubLink, 'GitHubAuthPopup');
 
 
