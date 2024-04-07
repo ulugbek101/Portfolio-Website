@@ -285,23 +285,21 @@ header {
     line-height: 100%;
     text-transform: uppercase;
     color: var(--heading-color);
-    text-align: start;
+    text-align: center;
     margin-bottom: 2rem;
     margin-top: 4rem;
 }
 
-pre {
+pre, code {
     background: var(--heading-color);
     border-radius: 5px;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 18px;
     display: flex;
     overflow: auto;
     white-space: pre !important;
-}
-
-code {
     font-family: monospace;
+    margin: 10px 0;
 }
 
 .post-link {
@@ -643,6 +641,7 @@ select {
     color: var(--bg-color);
     border-radius: 0.4rem;
     background: var(--box-color);
+    width: 100%;
 }
 
 .contact-form .send-btn {

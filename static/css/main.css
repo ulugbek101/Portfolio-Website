@@ -290,7 +290,7 @@ header {
     margin-top: 4rem;
 }
 
-pre {
+pre, code {
     background: var(--heading-color);
     border-radius: 5px;
     padding: 10px 30px;
@@ -298,9 +298,6 @@ pre {
     display: flex;
     overflow: auto;
     white-space: pre !important;
-}
-
-code {
     font-family: monospace;
 }
 

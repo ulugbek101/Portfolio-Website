@@ -3,17 +3,6 @@
 
 {% block content %}
 {% include 'components/_navbar.html' %}
-<style>
-    h1, h2, h3, h4, h5, h6, p {
-        margin: 1rem 0;
-    }
-
-    @media (max-width: 768px) {
-        img {
-            max-width: 100%;
-        }
-    }
-</style>
 <section class="container" id="single-post">
     <a href="{% url 'posts' %}" class="btn send-btn login-btn" style="margin-top: 3rem;">
         <i class="fa fa-arrow-circle-left"></i>
@@ -23,12 +12,13 @@
     <!-- heading -->
     <div>
         <h1 class="heading">
-            {{ post.title }}
+            New post
         </h1>
-        {{ post.body|safe }}
+
+        <div class="contact-form">
+            {{ form }}
+        </div>
+
     </div>
-
-
-
 </section>
 {% endblock content %}
