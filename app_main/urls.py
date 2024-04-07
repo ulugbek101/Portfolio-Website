@@ -8,4 +8,6 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('posts/', views.posts, name='posts'),
     path('post/<str:slug>/', views.post, name='post'),
+
+    # path('new-post/', views.CreatePost.as_view(), name='create-post'),
 ]
