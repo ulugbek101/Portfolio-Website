@@ -16,17 +16,20 @@ function validate() {
     let email = document.querySelector('.email');
     let message = document.querySelector('.message');
     let sendBtn = document.querySelector('.send-btn');
-    sendBtn.addEventListener('click', (e)=>{
-        if (e.target.classList.contains('login-btn')) return;
-        e.preventDefault();
-        if ( name.value == "" || email.value == "" || message.value == "" ) {
-            emptyError();
-        }
-        else {
-            success();
-            sendmail(name.value, email.value, message.value);
-        }
-    })
+
+    if (sendBtn) {
+        sendBtn.addEventListener('click', (e)=>{
+            if (e.target.classList.contains('login-btn')) return;
+            e.preventDefault();
+            if ( name.value == "" || email.value == "" || message.value == "" ) {
+                emptyError();
+            }
+            else {
+                success();
+                sendmail(name.value, email.value, message.value);
+            }
+        })
+    }
 
 }
 
@@ -81,5 +84,34 @@ document.addEventListener('DOMContentLoaded', function () {
     } )
 });
 
+
+// Open auth links in a new tabs
+// Google
+function openPopup(link, popupName) {
+    if (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Calculate the center position
+            const screenWidth = window.screen.width;
+            const screenHeight = window.screen.height;
+            const popupWidth = 600;
+            const popupHeight = 600;
+
+            const left = (screenWidth - popupWidth) / 2;
+            const top = (screenHeight - popupHeight) / 2;
+
+            // Open the popup window
+            window.open(link.href, popupName, `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
+        });
+    }
+}
+
+// Usage
+const googleLink = document.getElementById('googleAuthLink');
+const gitHubLink = document.getElementById('gitHubAuthLink');
+
+openPopup(googleLink, 'GoogleAuthPopup');
+openPopup(gitHubLink, 'GitHubAuthPopup');
 
 

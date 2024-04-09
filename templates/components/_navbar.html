@@ -1,29 +1,44 @@
 <!-- <a class="scroll-top" href="#nav">
     <i class="bx bx-up-arrow-alt"></i>
 </a> -->
+{% load i18n %}
 <header>
     <!-- nav -->
     <div class="nav container" id="nav">
         <!-- logo -->
         <a class="logo" href="/">
             {% if request.user.is_authenticated %}
-            Hi, {{ request.user.first_name }} {{ request.user.last_name }} !
+            {% trans "Hi" %}, {{ request.user.first_name }} !
             {% else %}
             Ulugbek Umaraliyev
             {% endif %}
         </a>
         <!-- navbar -->
         <ul class="navbar">
-            <li><a class="nav-link" href="{% url 'index' %}">Home</a></li>
-            <li><a class="nav-link" href="{% url 'index' %}#about">About</a></li>
-            <li><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-            <li><a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a></li>
-            <li><a class="nav-link" href="{% url 'index' %}#reviews">Reviews</a></li>
-            <li><a class="nav-link" href="{% url 'posts' %}">Posts</a></li>
+            <li><a class="nav-link" href="{% url 'index' %}">{% trans "Home" %}</a></li>
+            <li><a class="nav-link" href="{% url 'index' %}#about">{% trans "About" %}</a></li>
+            <li><a class="nav-link" href="{% url 'services' %}">{% trans "Services" %}</a></li>
+            <li><a class="nav-link" href="{% url 'portfolio' %}">{% trans "Portfolio" %}</a></li>
+            <li><a class="nav-link" href="{% url 'index' %}#reviews">{% trans "Reviews" %}</a></li>
+            <li><a class="nav-link" href="{% url 'posts' %}">{% trans "Posts" %}</a></li>
+        <form action="{% url 'set_language' %}" method="post" id="language-form">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}" />
+            <select name="language" id="language">
+                {% get_available_languages as LANGUAGES %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected style="background: dodgerblue" {% endif %}>
+                        {{ language.code|upper }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
             {% if not request.user.is_authenticated %}
-            <li><a class="btn" style="margin: 0;" href="{% url 'login' %}">Login</a></li>
+            <li><a class="btn" style="margin: 0;" href="{% url 'login' %}">{% trans "Login" %}</a></li>
             {% else %}
-            <li><a class="btn" style="margin: 0;" href="{% url 'logout' %}">Logout</a></li>
+            <li><a class="btn" style="margin: 0;" href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
             {% endif %}
         </ul>
         <!-- menu icon -->
@@ -34,3 +49,19 @@
         </div>
     </div>
 </header>
+
+
+<script type="text/javascript">
+    const language = document.getElementById('language')
+    const switchLanguageForm = document.getElementById('language-form')
+
+    language.addEventListener('change', (e) => {
+        // const languages = e.target.querySelectorAll('option')
+        // languages.forEach(language => {
+        //     if (language.selected) {
+
+        //    }
+        // })
+        switchLanguageForm.submit()
+    })
+</script>
