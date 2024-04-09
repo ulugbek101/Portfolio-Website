@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
 {% include 'components/_navbar.html' %}
 <section class="container" id="posts">
     <!-- heading -->
-    <h2 class="heading">All posts</h2>
+    <h2 class="heading">{% trans "All posts" %}</h2>
 
     <input class="post-search-input" type="text" placeholder="Search by post title, tag and press Enter" maxlength="255"
         minlength="6" autofocus>

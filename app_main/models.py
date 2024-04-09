@@ -35,7 +35,7 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, null=True)
-    tags = models.ManyToManyField(Tag, blank=True, null=True)
+    tags = models.ManyToManyField(Tag, blank=True)
     body = RichTextField()
     requests = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)

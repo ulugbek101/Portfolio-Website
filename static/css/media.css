@@ -150,6 +150,10 @@
         padding: 10px 25px;
         text-align: center;
     }
+
+    #single-post .heading {
+        text-align: center;
+    }
 }
 
 @media (max-width: 450px) {

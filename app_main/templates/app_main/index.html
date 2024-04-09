@@ -1,5 +1,6 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
 
 {% block content %}
 {% include 'components/_navbar.html' %}
@@ -13,19 +14,46 @@
             />
         </div>
         <div class="home-text">
-            <h3>Hello</h3>
-            <h2>I'm <span class="color">Ulugbek</span></h2>
-            <p>
-                I'm a <span class="color">Full Stack</span>
-                web developer with 3+ years of experience and strong passion for
-                building
-                <span class="color">Web Applications</span>
-                and
-                <span class="color">multifunctional Telegram Bots.</span>
-                <br />
-                Here's a bit more
-                <span class="color">about me</span>
-            </p>
+            <h3>{% trans "Hello" %}</h3>
+            <h2>{% trans "I'm " %}<span class="color">{% trans "Ulugbek" %}</span></h2>
+            {% get_current_language as CURRENT_LANGUAGE %}
+            {% if CURRENT_LANGUAGE == "uz" %}
+               <p>
+                   Men
+                   <span class="color">Web Dasturlar</span>
+                   va ko'pfunksional
+                   <span class="color">Telegram Botlarni</span>
+                   qurishda 3+ yillik tajribaga ega
+                   <span class="color">Full Stack</span>
+                    web dasturchiman
+                    <br />
+                    Bu yerda <span class="color">men haqimda</span> to'liq ma'lumot olishingiz mumkin
+                </p>
+            {% elif CURRENT_LANGUAGE == "ru" %}
+                 <p>
+                    I'm a <span class="color">Full Stack</span>
+                    web developer with 3+ years of experience and strong passion for
+                    building
+                    <span class="color">Web Applications</span>
+                    and
+                    <span class="color">multifunctional Telegram Bots.</span>
+                    <br />
+                    Here's a bit more
+                    <span class="color">about me</span>
+                </p>
+            {% else %}
+                <p>
+                    I'm a <span class="color">Full Stack</span>
+                    web developer with 3+ years of experience and strong passion for
+                    building
+                    <span class="color">Web Applications</span>
+                    and
+                    <span class="color">multifunctional Telegram Bots.</span>
+                    <br />
+                    Here's a bit more
+                    <span class="color">about me</span>
+                </p>
+            {% endif %}
             <!-- social -->
             <div class="social">
                 <a
@@ -65,68 +93,64 @@
 <!-- about -->
 <section class="about container" id="about">
     <!-- heading -->
-    <h2 class="heading">About</h2>
+    <h2 class="heading">{% trans "About" %}</h2>
     <!-- about content -->
     <div class="about-content">
         <div class="about-data">
-            <span>About Me</span>
-            <h2>Full Stack Web developer</h2>
+            <span>{% trans "About Me" %}</span>
+            <h2>{% trans "Full Stack Web developer" %}</h2>
             <a
                 class="btn"
                 href="{% url 'download_cv' %}"
                 download=""
                 target="_blank"
             >
-                Download CV
+                {% trans "Download CV" %}
                 <i class="bx bx-download"></i>
             </a>
         </div>
         <div class="about-text">
-            <p>Hello! I am Ulugbek Umaraliyev. Full Stack Web Developer.</p>
+            <p>{% trans "Hello! I am Ulugbek Umaraliyev. Full Stack Web Developer." %}</p>
             <p>
-                I have been working in this area for 2+ years. I have excellent
-                practical experience in building web sites (news sites, blog
-                sites, ...) and web applications (online stores, social media,
-                messangers, ...).
+                {% trans "I have been working in this area for 3+ years. I have excellent practical experience in building web sites (news sites, blog sites, ...) and web applications (online stores, social media, messangers, ...)." %}
             </p>
             <p>
-                Also, I have a lot of experience in developing multifunctional
-                Telegram Bots (online stores, restaurant telegram bots, ...)
+                {% trans "Also, I have a lot of experience in developing multifunctional Telegram Bots (online stores, restaurant telegram bots, ...)" %}
             </p>
         </div>
     </div>
 </section>
 
 <section class="leave-review container" id="leave-review">
-    <h2 class="heading">Leave a review</h2>
+    <h2 class="heading">{% trans "Leave a review" %}</h2>
     {% if request.user.is_authenticated %}
     <form action="{% url 'create_review' %}" method="post" enctype="multipart/form-data" class="contact-form">
         {% csrf_token %}
-        <label for="id_{{ form.address.name }}">*Your Address: </label>
+        <label for="id_{{ form.address.name }}">{% trans "*Your Address: " %}</label>
         {{ form.address }}
-        <label for="id_{{ form.profile_photo.name }}">Profile photo(This photo will be displayed on your review): </label>
+        <label for="id_{{ form.profile_photo.name }}">{% trans "Profile photo (This photo will be displayed on your review): " %}</label>
         {{ form.profile_photo }}
-        <label for="id_{{ form.rate.name }}">*Rate me: 1-5 (I know you want select 5 😉): </label>
+        <label for="id_{{ form.rate.name }}">{% trans "*Rate me: 1-5 (I know you want select 5 😉): " %}</label>
         {{ form.rate }}
-        <label for="id_{{ form.rate.name }}">*Your review: </label>
+        <label for="id_{{ form.rate.name }}">{% trans "*Your review: " %}</label>
         {{ form.body }}
-        <button type="submit" class="login-btn send-btn btn" style="width: 100% !important;">Post</button>
+        <button type="submit" class="login-btn send-btn btn" style="width: 100% !important;">{% trans "Post" %}</button>
     </form>
     {% else %}
-    <h3 style="text-align: center;"><a class="btn" href="{% url 'login' %}">Log in</a> to leave a review</h3>
+    <h3 style="text-align: center;"><a class="btn" href="{% url 'login' %}">{% trans "Log in" %}</a>{% trans " to leave a review" %}</h3>
     {% endif %}
 </section>
 
 <section class="reviews container" id="reviews">
     <!-- heading -->
-    <h2 class="heading">Reviews</h2>
+    <h2 class="heading">{% trans "Reviews" %}</h2>
     <!-- reviews content -->
     <div class="reviews-content">
-        
+
         {% for review in reviews %}
             <div class="review">
                 <div class="review-header">
-                    <img class="review-profile-photo" src="{{ review.profile_photo.url }}"">
+                    <img class="review-profile-photo" src="{{ review.profile_photo.url }}" >
                     <h4 class="review-title">
                          {{ review.user.first_name }} {{ review.user.last_name }}
                         <p class="reviewer-address">
@@ -154,7 +178,7 @@
                 <p class="review-date">{{ review.created|date:"Y.m.d"}} <small>({{ review.created|timesince }} ago)</small></p>
             </div>
             {% empty %}
-            <p style="font-size: initial;">No reviews yet 🧐</p>
+            <p style="font-size: initial;">{% trans "No reviews yet 🧐" %}</p>
         {% endfor %}
     </div>
 </section>
