@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib import messages
 from . import forms
@@ -39,6 +39,12 @@ def login_view(request):
 
     context = {}
     return render(request, 'app_users/login.html', context)
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
 
 def create_review(request):
     user = request.user
