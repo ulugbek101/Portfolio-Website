@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib import messages
+
 from . import forms
 
 
@@ -9,11 +10,10 @@ def download_cv(request):
     pdf = open(file='cv/CV ( Ulugbek Umaraliyev ).pdf', mode='rb')
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="CV ( Ulugbek Umaraliyev ).pdf"'
-    return response 
-    
+    return response
+
 
 def login_view(request):
-
     if request.user.is_authenticated:
         # error message: Logout first to log in again
         return redirect('index')
@@ -41,14 +41,17 @@ def login_view(request):
     return render(request, 'app_users/login.html', context)
 
 
+<<<<<<< HEAD
 def logout_view(request):
     logout(request)
     return redirect('login')
 
 
+=======
+>>>>>>> 6d1cd843a1ac22523c0dbe937ec5eaf39a8b9078
 def create_review(request):
     user = request.user
-    
+
     form = forms.ReviewForm(request.POST, request.FILES)
     if form.is_valid:
         review = form.save(commit=False)

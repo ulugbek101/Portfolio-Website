@@ -1,6 +1,7 @@
 from django import forms
 from . import models
 
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = models.Review
@@ -14,5 +15,3 @@ class ReviewForm(forms.ModelForm):
                 'placeholder': 'Some very cool review here ...'
             })
         }
-
-
