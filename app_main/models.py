@@ -1,7 +1,7 @@
 import uuid
 from django.db import models
 
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Project(models.Model):
@@ -35,7 +35,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, null=True)
     tags = models.ManyToManyField(Tag)
-    body = RichTextField()
+    body = CKEditor5Field(config_name="extends")
     requests = models.IntegerField(default=0)
 
     id = models.UUIDField(default=uuid.uuid4, editable=False,

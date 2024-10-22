@@ -84,29 +84,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Open auth links in a new tabs
 // Google
-function openPopup(link, popupName) {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
+// function openPopup(link, popupName) {
+//     link.addEventListener('click', function (event) {
+//       event.preventDefault();
 
-      // Calculate the center position
-      const screenWidth = window.screen.width;
-      const screenHeight = window.screen.height;
-      const popupWidth = 600;
-      const popupHeight = 600;
+//       // Calculate the center position
+//       const screenWidth = window.screen.width;
+//       const screenHeight = window.screen.height;
+//       const popupWidth = 600;
+//       const popupHeight = 600;
 
-      const left = (screenWidth - popupWidth) / 2;
-      const top = (screenHeight - popupHeight) / 2;
+//       const left = (screenWidth - popupWidth) / 2;
+//       const top = (screenHeight - popupHeight) / 2;
 
-      // Open the popup window
-      window.open(link.href, popupName, `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
-    });
-}
+//       // Open the popup window
+//       window.open(link.href, popupName, `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
+//     });
+// }
 
-// Usage
-const googleLink = document.getElementById('googleAuthLink');
-const gitHubLink = document.getElementById('gitHubAuthLink');
+// // Usage
+// const googleLink = document.getElementById('googleAuthLink');
+// const gitHubLink = document.getElementById('gitHubAuthLink');
 
-openPopup(googleLink, 'GoogleAuthPopup');
-openPopup(gitHubLink, 'GitHubAuthPopup');
+// openPopup(googleLink, 'GoogleAuthPopup');
+// openPopup(gitHubLink, 'GitHubAuthPopup');
 
 
