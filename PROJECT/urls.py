@@ -1,5 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
+=======
+from django.conf.urls.i18n import i18n_patterns
+
+>>>>>>> 6d1cd843a1ac22523c0dbe937ec5eaf39a8b9078
 from django.conf import settings
 from django.conf.urls.static import static
 

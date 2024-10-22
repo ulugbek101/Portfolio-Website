@@ -1,13 +1,15 @@
+{% load i18n %}
+
 <section class="contact container" id="contact">
     <!-- heading -->
-    <h2 class="heading">Contact</h2>
+    <h2 class="heading">{% trans 'Contact' %}</h2>
     <!-- contact content -->
     <form action="" class="contact-form" id="contact-form">
-        <input type="text" class="name" placeholder="Your Full Name" required />
+        <input type="text" class="name" placeholder="{% trans 'Your Full Name' %}" required />
         <input
             type="email"
             class="email"
-            placeholder="Email address"
+            placeholder="{% trans 'Email address' %}"
             required
         />
         <textarea
@@ -17,9 +19,9 @@
             rows="10"
             class="message"
             required
-            placeholder="Write message here ..."
+            placeholder="{% trans 'Write message here ...' %}"
         ></textarea>
-        <input type="submit" value="Send" class="send-btn" />
+        <input type="submit" value="{% trans 'Send' %}" class="send-btn" />
     </form>
 </section>
 <footer class="footer container" id="footer">
