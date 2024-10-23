@@ -8,115 +8,148 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-09 22:25+0500\n"
+"POT-Creation-Date: 2024-10-23 22:21+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: .\PROJECT\settings.py:135
+msgid "English"
+msgstr ""
+
+#: .\PROJECT\settings.py:136
+msgid "Русский"
+msgstr "Русский"
+
+#: .\PROJECT\settings.py:137
+msgid "O'zbek"
+msgstr "O'zbek"
+
 #: .\app_main\templates\app_main\index.html:17
-msgid "Hello"
-msgstr "Salom"
+msgid ""
+"\n"
+"            <h3>Hello</h3>\n"
+"            <h2>I'm <span class=\"color\">Ulugbek</span></h2>\n"
+"                <p>\n"
+"                    I'm a <span class=\"color\">Full Stack</span>\n"
+"                    web developer with 3+ years of experience and strong "
+"passion for\n"
+"                    building\n"
+"                    <span class=\"color\">Web Applications</span>\n"
+"                    and\n"
+"                    <span class=\"color\">multifunctional Telegram Bots.</"
+"span>\n"
+"                    <br />\n"
+"                    Here's a bit more\n"
+"                    <span class=\"color\">about me</span>\n"
+"                </p>\n"
+"            <!-- social -->\n"
+"            "
+msgstr ""
+"\n"
+"            <h3>Salom</h3>\n"
+"            <h2>Xush kelibsiz !</h2>\n"
+"            Mening ismim <h3><span class=\"color\">Ulug'bek</span></h3>"
+"                <p>\n"
+"                    <span class=\"color\">Web Dasturlar</span> va \n"
+"                    ko'p funksional <span class=\"color\">Telegram Botlar</"
+"span> qurishda\n"
+"                    3+ yillik tajribaga ega <span class=\"color\">Full "
+"Stack</span> dasturchiman\n"
+"                    <br />\n"
+"                    Bu yerda\n"
+"                    <span class=\"color\">men haqimda</span> ma'lumot "
+"olishingiz mumkin\n"
+"                </p>\n"
+"            <!-- social -->\n"
+"            "
 
-#: .\app_main\templates\app_main\index.html:18
-msgid "I'm "
-msgstr "Men "
-
-#: .\app_main\templates\app_main\index.html:18
-msgid "Ulugbek"
-msgstr "Ulug'bekman"
-
-#: .\app_main\templates\app_main\index.html:96
+#: .\app_main\templates\app_main\index.html:71
 #: .\templates\components\_navbar.html:19
 msgid "About"
 msgstr "Men haqimda"
 
-#: .\app_main\templates\app_main\index.html:100
-#, fuzzy
-#| msgid "About"
+#: .\app_main\templates\app_main\index.html:75
 msgid "About Me"
-msgstr "Men haqimda"
+msgstr "Ma'lumot"
 
-#: .\app_main\templates\app_main\index.html:101
+#: .\app_main\templates\app_main\index.html:76
 msgid "Full Stack Web developer"
-msgstr "Full Stack Web Dasturchi"
+msgstr "Full Stack Web dasturchi"
 
-#: .\app_main\templates\app_main\index.html:108
+#: .\app_main\templates\app_main\index.html:83
 msgid "Download CV"
-msgstr "CVni yuklash"
+msgstr "CV ni yuklash"
 
-#: .\app_main\templates\app_main\index.html:113
+#: .\app_main\templates\app_main\index.html:88
 msgid "Hello! I am Ulugbek Umaraliyev. Full Stack Web Developer."
-msgstr "Salom, men ismim - Ulug'bek va men Full Stack Web Dasturchiman"
+msgstr "Salom! Men Ulug'bek Umaraliyev. Full Stack Web Dasturchiman"
 
-#: .\app_main\templates\app_main\index.html:115
+#: .\app_main\templates\app_main\index.html:90
 msgid ""
 "I have been working in this area for 3+ years. I have excellent practical "
 "experience in building web sites (news sites, blog sites, ...) and web "
 "applications (online stores, social media, messangers, ...)."
 msgstr ""
-"Men bu sohada 3+ yildan beri ishlab kelaman va web saytlar (yangiliklar "
-"saytlar, blog saytlar, ...) va web dasturlar (onlayn magazinlar, ijtimoiy "
-"tarmoqlar, messenjerlar, ...) qurishda katta tajribaga egaman."
+"Bu sohada 3+ yildan beri faoliyat yuritib kelaman. "
+"Web sayt (yangiliklar sayti, biznes sahifalar va h.k) va web ilovalar "
+"(online do'kon, ijtimoiy tarmoqlar, messenjerlar va h.k) qurishda katta tajribam bor."
 
-#: .\app_main\templates\app_main\index.html:118
+#: .\app_main\templates\app_main\index.html:92
 msgid ""
 "Also, I have a lot of experience in developing multifunctional Telegram Bots "
 "(online stores, restaurant telegram bots, ...)"
 msgstr ""
-"Shuningdek, ko'pfunksional Telegram Botlar (onlayn magazinlar, restoran "
-"uchun botlar, ...) ni qurishda ham katta tajribaga egaman"
+"Shuningdek, ko'p funksional Telegram Botlar (online do'kon, restorant va fast-food botlar, ...) qurishda ham katta tajribaga egaman."
 
-#: .\app_main\templates\app_main\index.html:125
+#: .\app_main\templates\app_main\index.html:99
 msgid "Leave a review"
-msgstr "Fikr qoldirish"
+msgstr "Izoh qoldiring"
 
-#: .\app_main\templates\app_main\index.html:129
+#: .\app_main\templates\app_main\index.html:103
 msgid "*Your Address: "
-msgstr "*Manzilingiz: "
+msgstr "*Manzilingiz"
 
-#: .\app_main\templates\app_main\index.html:131
+#: .\app_main\templates\app_main\index.html:105
 msgid "Profile photo (This photo will be displayed on your review): "
-msgstr "Profil rasmi (Bu rasm qoldirilgan fikrda aks ettiriladi): "
+msgstr "Profil rasmi (Bu rasm sizni izohingizda ko'rinib turadi)"
 
-#: .\app_main\templates\app_main\index.html:133
+#: .\app_main\templates\app_main\index.html:107
 msgid "*Rate me: 1-5 (I know you want select 5 😉): "
-msgstr "*Baholang: 1-5 (Bilaman, 5 qoldirmoqchisiz 😉):"
+msgstr "*Meni baholang: 1-5 (Bilaman 5 ni tanlamiqchisiz 😉):"
 
-#: .\app_main\templates\app_main\index.html:135
+#: .\app_main\templates\app_main\index.html:109
 msgid "*Your review: "
-msgstr "*Sizning fikringiz: "
+msgstr "*Izoh"
 
-#: .\app_main\templates\app_main\index.html:137
-#, fuzzy
-#| msgid "Posts"
+#: .\app_main\templates\app_main\index.html:111
 msgid "Post"
-msgstr "Postlar"
+msgstr "Yuklash"
 
-#: .\app_main\templates\app_main\index.html:140
+#: .\app_main\templates\app_main\index.html:114
 msgid "Log in"
-msgstr "Fikr qoldirish"
+msgstr "Kirish"
 
-#: .\app_main\templates\app_main\index.html:140
+#: .\app_main\templates\app_main\index.html:114
 msgid " to leave a review"
-msgstr " uchun tizimga kirishingiz kerak"
+msgstr "<br>Izoh yuklash uchun tizimga kirish talab etiladi"
 
-#: .\app_main\templates\app_main\index.html:146
+#: .\app_main\templates\app_main\index.html:120
 #: .\templates\components\_navbar.html:22
 msgid "Reviews"
-msgstr "Fikrlar"
+msgstr "Izohlar"
 
-#: .\app_main\templates\app_main\index.html:181
+#: .\app_main\templates\app_main\index.html:155
 msgid "No reviews yet 🧐"
-msgstr "Hali fikr qoldirilmagan 🧐"
+msgstr "Izohlar mavjud emas 🧐"
 
 #: .\app_main\templates\app_main\posts.html:8
 msgid "All posts"
-msgstr "Barcha postlar"
+msgstr "Postlar"
 
 #: .\templates\components\_footer.html:5
 msgid "Contact"
@@ -124,19 +157,19 @@ msgstr "Bog'lanish"
 
 #: .\templates\components\_footer.html:8
 msgid "Your Full Name"
-msgstr "To'liq ism va familiyangiz"
+msgstr "To'liq ism familiyangiz"
 
 #: .\templates\components\_footer.html:12
 msgid "Email address"
 msgstr "E-mail manzilingiz"
 
 #: .\templates\components\_footer.html:22
-msgid "Write message here ..."
-msgstr "Murojaatingiz matni"
+msgid "Write your message ..."
+msgstr "Murojaatingiz ..."
 
 #: .\templates\components\_footer.html:24
 msgid "Send"
-msgstr "Jo'natish"
+msgstr "Yuborish"
 
 #: .\templates\components\_navbar.html:11
 msgid "Hi"
@@ -158,102 +191,10 @@ msgstr "Portfolio"
 msgid "Posts"
 msgstr "Postlar"
 
-#: .\templates\components\_navbar.html:39
+#: .\templates\components\_navbar.html:26
 msgid "Login"
 msgstr "Kirish"
 
-#: .\templates\components\_navbar.html:41
+#: .\templates\components\_navbar.html:28
 msgid "Logout"
 msgstr "Chiqish"
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
-msgid "Select an image to embed"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
-msgid "Browse for the image you want, then click 'Embed Image' to continue..."
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
-msgid ""
-"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
-"tab."
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
-msgid "Images in: "
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
-msgid "Embed Image"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
-msgid "Play Slideshow"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
-msgid "Pause Slideshow"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
-msgid "&lsaquo; Previous Photo"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
-msgid "Next Photo &rsaquo;"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
-msgid "Next &rsaquo;"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
-msgid "&lsaquo; Prev"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:220
-msgid "The install worked successfully! Congratulations!"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
-#, python-format
-msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:221
-#, python-format
-msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:229
-msgid "Django Documentation"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:230
-msgid "Topics, references, &amp; how-to’s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:238
-msgid "Tutorial: A Polling App"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:239
-msgid "Get started with Django"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:247
-msgid "Django Community"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:248
-msgid "Connect, get help, or contribute"
-msgstr ""

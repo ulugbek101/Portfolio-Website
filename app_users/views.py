@@ -41,14 +41,11 @@ def login_view(request):
     return render(request, 'app_users/login.html', context)
 
 
-<<<<<<< HEAD
 def logout_view(request):
     logout(request)
     return redirect('login')
 
 
-=======
->>>>>>> 6d1cd843a1ac22523c0dbe937ec5eaf39a8b9078
 def create_review(request):
     user = request.user
 

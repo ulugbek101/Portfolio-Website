@@ -14,34 +14,9 @@
             />
         </div>
         <div class="home-text">
-            <h3>{% trans "Hello" %}</h3>
-            <h2>{% trans "I'm " %}<span class="color">{% trans "Ulugbek" %}</span></h2>
-            {% get_current_language as CURRENT_LANGUAGE %}
-            {% if CURRENT_LANGUAGE == "uz" %}
-               <p>
-                   Men
-                   <span class="color">Web Dasturlar</span>
-                   va ko'pfunksional
-                   <span class="color">Telegram Botlarni</span>
-                   qurishda 3+ yillik tajribaga ega
-                   <span class="color">Full Stack</span>
-                    web dasturchiman
-                    <br />
-                    Bu yerda <span class="color">men haqimda</span> to'liq ma'lumot olishingiz mumkin
-                </p>
-            {% elif CURRENT_LANGUAGE == "ru" %}
-                 <p>
-                    I'm a <span class="color">Full Stack</span>
-                    web developer with 3+ years of experience and strong passion for
-                    building
-                    <span class="color">Web Applications</span>
-                    and
-                    <span class="color">multifunctional Telegram Bots.</span>
-                    <br />
-                    Here's a bit more
-                    <span class="color">about me</span>
-                </p>
-            {% else %}
+            {% blocktrans %}
+            <h3>Hello</h3>
+            <h2>I'm <span class="color">Ulugbek</span></h2>
                 <p>
                     I'm a <span class="color">Full Stack</span>
                     web developer with 3+ years of experience and strong passion for
@@ -53,8 +28,8 @@
                     Here's a bit more
                     <span class="color">about me</span>
                 </p>
-            {% endif %}
             <!-- social -->
+            {% endblocktrans %}
             <div class="social">
                 <a
                     href="https://t.me/thedevu101"

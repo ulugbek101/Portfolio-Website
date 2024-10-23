@@ -1,12 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-<<<<<<< HEAD
-=======
-from django.conf.urls.i18n import i18n_patterns
-
->>>>>>> 6d1cd843a1ac22523c0dbe937ec5eaf39a8b9078
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -30,11 +26,14 @@ def custom_upload_function(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app_main.urls')),
-    path('users/', include('app_users.urls')),
     path("ckeditor5/", include('django_ckeditor_5.urls')),  # CKEditor 5 URLs
     path("upload/", custom_upload_function, name="custom_upload_function"),
-] 
+]
+
+urlpatterns += i18n_patterns(
+    path('', include('app_main.urls')),
+    path('users/', include('app_users.urls')),
+)
 
 # Serve media and static files in development
 if settings.DEBUG:
