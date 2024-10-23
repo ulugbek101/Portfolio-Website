@@ -6,7 +6,7 @@
     <!-- nav -->
     <div class="nav container" id="nav">
         <!-- logo -->
-        <a class="logo" href="/">
+        <a class="logo" href="{% url 'index' %}">
             {% if request.user.is_authenticated %}
             {% trans "Hi" %}, {{ request.user.first_name }} !
             {% else %}

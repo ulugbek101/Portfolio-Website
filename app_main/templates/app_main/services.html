@@ -1,43 +1,51 @@
 {% extends 'base.html' %} 
 {% load static %} 
+{% load i18n %}
 
 {% block content %}
 {% include 'components/_navbar.html' %}
 <!-- services -->
 <section class="services container" id="services">
     <!-- heading -->
-    <h2 class="heading">Services</h2>
+    <h2 class="heading">{% trans "Services" %}</h2>
     <!-- services content -->
     <div class="services-content">
         <div class="services-box">
             <i class="bx bx-code-alt"></i>
-            <h2>Frontend Development</h2>
+            <h2>{% trans "Frontend Development" %}</h2>
             <p>
+                {% blocktrans %}
                 Development of the frontend part of the site, customization,
                 adding different animations of different complexity, a fully
                 working part of registration and authorization.<br />Layout of
                 multi-page sites with perfect adaptation and much more ...
+                {% endblocktrans %}
             </p>
         </div>
         <div class="services-box">
             <i class="bx bxl-python"></i>
-            <h2>Backend Development</h2>
+            <h2>{% trans "Backend Development" %}</h2>
             <p>
+                {% blocktrans %}
                 Development of the backend part of multi-page sites with
                 registration, authorization, subscription system, viewing stats,
                 CRM system, admin panel for managing a web application.
-                <br />Websites for
-                <strong
-                    >Hotels, Restaurants, Organizations, Training Centers,
-                    Personal Blogs, Online Private Messengers</strong
-                >
-                ...
+                {% endblocktrans %}
+                <br />
+                {% blocktrans %}
+                Websites for
+                <strong>
+                    Hotels, Restaurants, Organizations, Training Centers,
+                    Personal Blogs, Online Private Messengers
+                </strong>
+                {% endblocktrans %}
             </p>
         </div>
         <div class="services-box">
             <i class="bx bxs-bot"></i>
-            <h2>Telegram Bot</h2>
+            <h2>{% trans "Telegram Bot" %}</h2>
             <p>
+                {% blocktrans %}
                 Development of full-featured telegram bots with full
                 <strong>integration of payment</strong> through the bot, with
                 the ability to track and identify
@@ -47,6 +55,7 @@
                 channels, bot that collects data from the Internet on your
                 purposes, <strong>Bot-Scraper</strong> that collects data from
                 online stores, web sites in seconds and much more ...
+                {% endblocktrans %}
             </p>
         </div>
     </div>

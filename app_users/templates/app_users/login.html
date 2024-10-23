@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %} 
+{% load i18n %}
 
 {% block content %}
 {% include 'components/_navbar.html' %}
@@ -16,18 +17,19 @@
     >
         <form class="contact-form" action="{% url 'login' %}" method="post">
             {% csrf_token %}
-            <h1 class="home-text">Login</h1>
-            <input type="text" name="username" placeholder="Username" required autofocus value="{% if invalid_credentials %}{{ username }}{% endif %}" />
-            <input type="password" name="password" placeholder="Password" required />
-            {% if invalid_credentials %}<small style="color: red; text-align: center;">Email or Password is incorrect</small>{% endif %}
+            <h1 class="home-text">{% trans "Log in to the system" %}</h1>
+            <input type="text" name="username" placeholder='{% trans "Username" %}' required autofocus value="{% if invalid_credentials %}{{ username }}{% endif %}" />
+            <input type="password" name="password" placeholder='{% trans "Password" %}' required />
+            {% if invalid_credentials %}<small style="color: red; text-align: center;">{% trans "Email or Password is incorrect" %}</small>{% endif %}
             <input
                 type="submit"
                 style="width: 100% !important;"
                 class="send-btn login-btn"
+                value='{% trans "Log in" %}'
             />
         </form>
 
-        <p style="margin: 15px 0; text-align: center;">OR</p>
+        <p style="margin: 15px 0; text-align: center;">{% trans "OR" %}</p>
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
             <div class="gsi-material-button">
@@ -62,9 +64,9 @@
                             </svg>
                         </div>
                         <span class="gsi-material-button-contents"
-                            >Continue with Google</span
+                            >{% trans "Continue with Google" %}</span
                         >
-                        <span style="display: none">Continue with Google</span>
+                        <span style="display: none">{% trans "Continue with Google" %}</span>
                     </div>
                 </a>
             </div>
@@ -96,9 +98,9 @@
                             </svg>
                         </div>
                         <span class="gsi-material-button-contents"
-                            >Continue with GitHub</span
+                            >{% trans "Continue with GitHub" %}</span
                         >
-                        <span style="display: none">Continue with GitHub</span>
+                        <span style="display: none">{% trans "Continue with GitHub" %}</span>
                     </div>
                 </a>
             </div>
