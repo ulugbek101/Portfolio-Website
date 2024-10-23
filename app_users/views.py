@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 from . import forms
 
@@ -54,7 +55,7 @@ def create_review(request):
         review = form.save(commit=False)
         review.user = user
         review.save()
-        messages.success(request, "Thank you ! Your review was sent for verification, it will be posted soon 😉")
+        messages.success(request, _("Thank you ! Your review was sent for verification, it will be posted soon 😉"))
         return redirect('index')
     else:
         # error message

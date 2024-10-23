@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 00:49+0500\n"
+"POT-Creation-Date: 2024-10-24 03:59+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,10 +20,6 @@ msgstr ""
 #: .\PROJECT\settings.py:135
 msgid "English"
 msgstr "English"
-
-#: .\PROJECT\settings.py:136
-msgid "Русский"
-msgstr "Русский"
 
 #: .\PROJECT\settings.py:137
 msgid "O'zbek"
@@ -69,7 +65,7 @@ msgstr ""
 "            "
 
 #: .\app_main\templates\app_main\index.html:71
-#: .\templates\components\_navbar.html:19
+#: .\templates\components\_navbar.html:16
 msgid "About"
 msgstr "Men haqimda"
 
@@ -141,41 +137,47 @@ msgid " to leave a review"
 msgstr "<br>Izoh yuklash uchun tizimga kirish talab etiladi"
 
 #: .\app_main\templates\app_main\index.html:120
-#: .\templates\components\_navbar.html:22
+#: .\templates\components\_navbar.html:19
 msgid "Reviews"
 msgstr "Izohlar"
+
+#: .\app_main\templates\app_main\index.html:152
+#: .\app_main\templates\app_main\posts.html:26
+msgid "ago"
+msgstr "avval"
 
 #: .\app_main\templates\app_main\index.html:155
 msgid "No reviews yet 🧐"
 msgstr "Izohlar mavjud emas 🧐"
 
+#: .\app_main\templates\app_main\portfolio.html:11
+#: .\templates\components\_navbar.html:18
+msgid "Portfolio"
+msgstr "Portfolio"
+
 #: .\app_main\templates\app_main\post.html:21
-#: .\templates\components\_navbar.html:23
+#: .\templates\components\_navbar.html:20
 msgid "Posts"
 msgstr "Postlar"
 
-#: .\app_main\templates\app_main\posts.html:8
+#: .\app_main\templates\app_main\posts.html:9
 msgid "All posts"
 msgstr "Barcha postlar"
 
-#: .\app_main\templates\app_main\posts.html:10
+#: .\app_main\templates\app_main\posts.html:11
 msgid "Search by post title, tag and press Enter"
 msgstr "Post sarlavhasi yoki tag nomini kiritib Enter ni bosing"
 
-#: .\app_main\templates\app_main\posts.html:25
-msgid "ago"
-msgstr "avval"
-
-#: .\app_main\templates\app_main\services.html:10
-#: .\templates\components\_navbar.html:20
+#: .\app_main\templates\app_main\services.html:11
+#: .\templates\components\_navbar.html:17
 msgid "Services"
 msgstr "Xizmatlar"
 
-#: .\app_main\templates\app_main\services.html:15
+#: .\app_main\templates\app_main\services.html:16
 msgid "Frontend Development"
 msgstr "Frontent Dasturlash"
 
-#: .\app_main\templates\app_main\services.html:17
+#: .\app_main\templates\app_main\services.html:18
 msgid ""
 "\n"
 "                Development of the frontend part of the site, "
@@ -195,11 +197,11 @@ msgstr ""
 "ularni mobil qurilmalar uchun to'liq adaptatsiya qilish va h.k\n"
 "                "
 
-#: .\app_main\templates\app_main\services.html:27
+#: .\app_main\templates\app_main\services.html:28
 msgid "Backend Development"
 msgstr "Backend Dasturlash"
 
-#: .\app_main\templates\app_main\services.html:29
+#: .\app_main\templates\app_main\services.html:30
 msgid ""
 "\n"
 "                Development of the backend part of multi-page sites with\n"
@@ -216,7 +218,7 @@ msgstr ""
 "va admin panellar.\n"
 "                "
 
-#: .\app_main\templates\app_main\services.html:35
+#: .\app_main\templates\app_main\services.html:36
 msgid ""
 "\n"
 "                Websites for\n"
@@ -234,11 +236,11 @@ msgstr ""
 "                </strong>\n"
 "                platformalarini qurish"
 
-#: .\app_main\templates\app_main\services.html:46
+#: .\app_main\templates\app_main\services.html:47
 msgid "Telegram Bot"
 msgstr "Telegram Totlar"
 
-#: .\app_main\templates\app_main\services.html:48
+#: .\app_main\templates\app_main\services.html:49
 msgid ""
 "\n"
 "                Development of full-featured telegram bots with full\n"
@@ -296,6 +298,11 @@ msgstr "Google bilan davom etish"
 msgid "Continue with GitHub"
 msgstr "GitHub bilan davom etish"
 
+#: .\app_users\views.py:58
+msgid ""
+"Thank you ! Your review was sent for verification, it will be posted soon 😉"
+msgstr "Izoh qoldirganingiz uchun tashakkur ! Tez orada tasdiqdan o'tganidan so'ng post qilinadi 😉"
+
 #: .\templates\components\_footer.html:5
 msgid "Contact"
 msgstr "Bog'lanish"
@@ -316,22 +323,21 @@ msgstr "Murojaatingiz ..."
 msgid "Send"
 msgstr "Yuborish"
 
-#: .\templates\components\_navbar.html:11
+#: .\templates\components\_navbar.html:8
 msgid "Hi"
 msgstr "Salom"
 
-#: .\templates\components\_navbar.html:18
+#: .\templates\components\_navbar.html:15
 msgid "Home"
 msgstr "Bosh sahifa"
 
-#: .\templates\components\_navbar.html:21
-msgid "Portfolio"
-msgstr "Portfolio"
-
-#: .\templates\components\_navbar.html:26
+#: .\templates\components\_navbar.html:37
 msgid "Login"
 msgstr "Kirish"
 
-#: .\templates\components\_navbar.html:28
+#: .\templates\components\_navbar.html:39
 msgid "Logout"
 msgstr "Chiqish"
+
+#~ msgid "Русский"
+#~ msgstr "Русский"
