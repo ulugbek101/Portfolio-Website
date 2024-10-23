@@ -7,7 +7,7 @@
     <!-- heading -->
     <h2 class="heading">{% trans "All posts" %}</h2>
 
-    <input class="post-search-input" type="text" placeholder="Search by post title, tag and press Enter" maxlength="255"
+    <input class="post-search-input" type="text" placeholder='{% trans "Search by post title, tag and press Enter" %}' maxlength="255"
         minlength="6" autofocus>
 
     <section class="posts-content">
@@ -22,6 +22,7 @@
                         <small>#{{ tag.name|lower }}</small>
                         {% endfor %}
                     </div>
+                    <small style="font-size: 12px; color: gray;">{{ post.created }} ({{ post.created|timesince }} {% trans "ago" %})</small>
                 </div>
             </div>
             <i class="fa fa-arrow-right" aria-hidden="true"></i>

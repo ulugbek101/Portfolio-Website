@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 22:21+0500\n"
+"POT-Creation-Date: 2024-10-24 00:49+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: .\PROJECT\settings.py:135
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: .\PROJECT\settings.py:136
 msgid "Русский"
@@ -53,8 +53,8 @@ msgstr ""
 "\n"
 "            <h3>Salom</h3>\n"
 "            <h2>Xush kelibsiz !</h2>\n"
-"            Mening ismim <h3><span class=\"color\">Ulug'bek</span></h3>"
-"                <p>\n"
+"            Mening ismim <h3><span class=\"color\">Ulug'bek</span></"
+"h3>                <p>\n"
 "                    <span class=\"color\">Web Dasturlar</span> va \n"
 "                    ko'p funksional <span class=\"color\">Telegram Botlar</"
 "span> qurishda\n"
@@ -95,16 +95,17 @@ msgid ""
 "experience in building web sites (news sites, blog sites, ...) and web "
 "applications (online stores, social media, messangers, ...)."
 msgstr ""
-"Bu sohada 3+ yildan beri faoliyat yuritib kelaman. "
-"Web sayt (yangiliklar sayti, biznes sahifalar va h.k) va web ilovalar "
-"(online do'kon, ijtimoiy tarmoqlar, messenjerlar va h.k) qurishda katta tajribam bor."
+"Bu sohada 3+ yildan beri faoliyat yuritib kelaman. Web sayt (yangiliklar "
+"sayti, biznes sahifalar va h.k) va web ilovalar (online do'kon, ijtimoiy "
+"tarmoqlar, messenjerlar va h.k) qurishda katta tajribam bor."
 
 #: .\app_main\templates\app_main\index.html:92
 msgid ""
 "Also, I have a lot of experience in developing multifunctional Telegram Bots "
 "(online stores, restaurant telegram bots, ...)"
 msgstr ""
-"Shuningdek, ko'p funksional Telegram Botlar (online do'kon, restorant va fast-food botlar, ...) qurishda ham katta tajribaga egaman."
+"Shuningdek, ko'p funksional Telegram Botlar (online do'kon, restorant va "
+"fast-food botlar, ...) qurishda ham katta tajribaga egaman."
 
 #: .\app_main\templates\app_main\index.html:99
 msgid "Leave a review"
@@ -131,6 +132,7 @@ msgid "Post"
 msgstr "Yuklash"
 
 #: .\app_main\templates\app_main\index.html:114
+#: .\app_users\templates\app_users\login.html:28
 msgid "Log in"
 msgstr "Kirish"
 
@@ -147,9 +149,152 @@ msgstr "Izohlar"
 msgid "No reviews yet 🧐"
 msgstr "Izohlar mavjud emas 🧐"
 
+#: .\app_main\templates\app_main\post.html:21
+#: .\templates\components\_navbar.html:23
+msgid "Posts"
+msgstr "Postlar"
+
 #: .\app_main\templates\app_main\posts.html:8
 msgid "All posts"
-msgstr "Postlar"
+msgstr "Barcha postlar"
+
+#: .\app_main\templates\app_main\posts.html:10
+msgid "Search by post title, tag and press Enter"
+msgstr "Post sarlavhasi yoki tag nomini kiritib Enter ni bosing"
+
+#: .\app_main\templates\app_main\posts.html:25
+msgid "ago"
+msgstr "avval"
+
+#: .\app_main\templates\app_main\services.html:10
+#: .\templates\components\_navbar.html:20
+msgid "Services"
+msgstr "Xizmatlar"
+
+#: .\app_main\templates\app_main\services.html:15
+msgid "Frontend Development"
+msgstr "Frontent Dasturlash"
+
+#: .\app_main\templates\app_main\services.html:17
+msgid ""
+"\n"
+"                Development of the frontend part of the site, "
+"customization,\n"
+"                adding different animations of different complexity, a "
+"fully\n"
+"                working part of registration and authorization.<br />Layout "
+"of\n"
+"                multi-page sites with perfect adaptation and much more ...\n"
+"                "
+msgstr ""
+"\n"
+"                Web sahifalarnin frontend qismlarini yozish, bezatish,\n"
+"                har xil turdagi va qiyinlikdagi animatsiyalar "
+"qo'shish,                 to'liq funksional ko'rsatadigan avtorizatsiya va "
+"autentifikatsiya.<br />                Ko'p sahifali web saytlarni qurish va "
+"ularni mobil qurilmalar uchun to'liq adaptatsiya qilish va h.k\n"
+"                "
+
+#: .\app_main\templates\app_main\services.html:27
+msgid "Backend Development"
+msgstr "Backend Dasturlash"
+
+#: .\app_main\templates\app_main\services.html:29
+msgid ""
+"\n"
+"                Development of the backend part of multi-page sites with\n"
+"                registration, authorization, subscription system, viewing "
+"stats,\n"
+"                CRM system, admin panel for managing a web application.\n"
+"                "
+msgstr ""
+"\n"
+"                Ko'p sahifali web sayt va web ilovalarni backend qismini "
+"qurish va\n"
+"                registratsiya, avtorizatsiya, to'lov integratsiyasi, "
+"obunalar tizimi, statistika generatsiyalarini ulash va h.k.CRM, LMS tizimlar "
+"va admin panellar.\n"
+"                "
+
+#: .\app_main\templates\app_main\services.html:35
+msgid ""
+"\n"
+"                Websites for\n"
+"                <strong>\n"
+"                    Hotels, Restaurants, Organizations, Training Centers,\n"
+"                    Personal Blogs, Online Private Messengers\n"
+"                </strong>\n"
+"                "
+msgstr ""
+"\n"
+"                <strong>\n"
+"                    Mehmonxona, Restoran, Tashkilotlar, O'quv markaz, "
+"Xususiy maktablar,\n"
+"                    Personal blog sahifalari, Online do'kon, Messenjer\n"
+"                </strong>\n"
+"                platformalarini qurish"
+
+#: .\app_main\templates\app_main\services.html:46
+msgid "Telegram Bot"
+msgstr "Telegram Totlar"
+
+#: .\app_main\templates\app_main\services.html:48
+msgid ""
+"\n"
+"                Development of full-featured telegram bots with full\n"
+"                <strong>integration of payment</strong> through the bot, "
+"with\n"
+"                the ability to track and identify\n"
+"                <strong>statistics</strong> for\n"
+"                <strong>restaurants, Training Centers</strong>, a\n"
+"                <strong>Moderator Bot</strong> for managing and posting news "
+"to\n"
+"                channels, bot that collects data from the Internet on your\n"
+"                purposes, <strong>Bot-Scraper</strong> that collects data "
+"from\n"
+"                online stores, web sites in seconds and much more ...\n"
+"                "
+msgstr ""
+"\n"
+"                To'liq <strong>to'lov tizimi</strong>\n"
+"                integratsiya qilingan va <strong>statistika</strong> "
+"generatsiya qilib bera oladigan                <strong>Restoranlar, Fast-"
+"Food markazlari, O'quv markazlar</strong>\n"
+"                uchun <strong>ko'pfunksional Telegram Botlar</"
+"strong>.                Telegram guruxlarni boshqaruvi, avtomatlashgan "
+"postlar qo'yib boruvchi                <strong>moderator</strong> "
+"botlar.                 Online do'konlar, Web Saytlar dan soniyalar ichida "
+"ma'lumot yig'a oladigan                <strong>Bot-Scraper</strong> lar"
+
+#: .\app_users\templates\app_users\login.html:20
+msgid "Log in to the system"
+msgstr "Tizimga kirish"
+
+#: .\app_users\templates\app_users\login.html:21
+msgid "Username"
+msgstr "Username"
+
+#: .\app_users\templates\app_users\login.html:22
+msgid "Password"
+msgstr "Parol"
+
+#: .\app_users\templates\app_users\login.html:23
+msgid "Email or Password is incorrect"
+msgstr "E-mail manzil yoki Parol noto'g'ri"
+
+#: .\app_users\templates\app_users\login.html:32
+msgid "OR"
+msgstr "YOKI"
+
+#: .\app_users\templates\app_users\login.html:67
+#: .\app_users\templates\app_users\login.html:69
+msgid "Continue with Google"
+msgstr "Google bilan davom etish"
+
+#: .\app_users\templates\app_users\login.html:101
+#: .\app_users\templates\app_users\login.html:103
+msgid "Continue with GitHub"
+msgstr "GitHub bilan davom etish"
 
 #: .\templates\components\_footer.html:5
 msgid "Contact"
@@ -179,17 +324,9 @@ msgstr "Salom"
 msgid "Home"
 msgstr "Bosh sahifa"
 
-#: .\templates\components\_navbar.html:20
-msgid "Services"
-msgstr "Xizmatlar"
-
 #: .\templates\components\_navbar.html:21
 msgid "Portfolio"
 msgstr "Portfolio"
-
-#: .\templates\components\_navbar.html:23
-msgid "Posts"
-msgstr "Postlar"
 
 #: .\templates\components\_navbar.html:26
 msgid "Login"

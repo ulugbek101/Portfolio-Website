@@ -38,7 +38,7 @@ def services(request):
 
 
 def posts(request):
-    posts = models.Post.objects.filter(is_active=True)
+    posts = models.Post.objects.filter(is_active=True).order_by("-created")
 
     context = {
         'posts': posts,

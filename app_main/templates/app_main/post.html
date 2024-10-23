@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 {% include 'components/_navbar.html' %}
@@ -17,7 +18,7 @@
 <section class="container" id="single-post">
     <a href="{% url 'posts' %}" class="btn send-btn login-btn" style="margin-top: 3rem;">
         <i class="fa fa-arrow-circle-left"></i>
-        All posts
+        {% trans "Posts" %}
     </a>
 
     <!-- heading -->
