@@ -149,7 +149,7 @@
                 <p class="review-body">
                     {{ review.body|linebreaksbr }}
                 </p>
-                <p class="review-date">{{ review.created|date:"Y.m.d"}} <small>({{ review.created|timesince }} {% trans "ago" $})</small></p>
+                <p class="review-date">{{ review.created|date:"Y.m.d"}} <small>({{ review.created|timesince }} {% trans "ago" %})</small></p>
             </div>
             {% empty %}
             <p style="font-size: initial;">{% trans "No reviews yet 🧐" %}</p>
