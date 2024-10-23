@@ -35,13 +35,8 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, null=True)
-<<<<<<< HEAD
     tags = models.ManyToManyField(Tag)
     body = CKEditor5Field(config_name="extends")
-=======
-    tags = models.ManyToManyField(Tag, blank=True)
-    body = RichTextField()
->>>>>>> 6d1cd843a1ac22523c0dbe937ec5eaf39a8b9078
     requests = models.IntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
