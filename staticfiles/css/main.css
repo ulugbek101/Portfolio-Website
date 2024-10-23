@@ -46,10 +46,6 @@ a {
     text-decoration: none;
 }
 
-li {
-    list-style: none;
-}
-
 .container {
     max-width: 960px;
     margin: 0 auto;
@@ -63,6 +59,11 @@ header {
     left: 0;
     width: 100%;
     z-index: 100;
+    background-color: var(--body-color);
+}
+
+header li {
+    list-style: none;
 }
 
 .informational-message {
@@ -290,16 +291,29 @@ header {
     margin-top: 4rem;
 }
 
-pre, code {
-    background: var(--heading-color);
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 18px;
-    display: flex;
-    overflow: auto;
-    white-space: pre !important;
-    font-family: monospace;
-    margin: 10px 0;
+pre code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    line-height: 1.5em; 
+    word-spacing: normal; 
+    text-shadow: none !important;
+}
+
+pre {
+    border-radius: 0.4rem;
+    background: rgb(255, 255, 255) !important;
+    
+}
+
+blockquote {
+    border-left: 5px solid #ccc;
+    font-style: italic;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #777;
 }
 
 .post-link {
