@@ -92,6 +92,7 @@
     }
 
     .open-menu {
+        width: 100%;
         right: 0;
         transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
     }

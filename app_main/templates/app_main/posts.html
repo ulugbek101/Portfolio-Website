@@ -5,6 +5,7 @@
 {% include 'components/_navbar.html' %}
 <section class="container" id="posts">
     <!-- heading -->
+    <br>
     <h2 class="heading">{% trans "All posts" %}</h2>
 
     <input class="post-search-input" type="text" placeholder='{% trans "Search by post title, tag and press Enter" %}' maxlength="255"
@@ -30,4 +31,16 @@
         {% endfor %}
     </section>
 </section>
+
+<script type="text/javascript">
+    ClassicEditor
+        .create( document.querySelector( '#editor' ), {
+            plugins: [ /* other plugins */, CodeBlock ],
+            toolbar: [ /* other buttons */, 'codeBlock' ],
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
 {% endblock content %}

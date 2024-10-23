@@ -1,12 +1,14 @@
 {% extends 'base.html' %} 
 {% load static %} 
+{% load i18n %} 
 
 {% block content %} 
 {% include 'components/_navbar.html' %}
 <!-- portfolio -->
 <section class="portfolio container" id="portfolio">
     <!-- heading -->
-    <h2 class="heading">Portfolio</h2>
+    <br>
+    <h2 class="heading">{% trans "Portfolio" %}</h2>
     <!-- portfolio content -->
     <div class="portfolio-content">
         {% for project in projects %}

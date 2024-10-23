@@ -70,24 +70,23 @@ window.addEventListener('scroll', ()=> {
 });
 
 // scroll top
-let scrollTop = document.querySelector('.scroll-top')
+// let scrollTop = document.querySelector('.scroll-top')
 
-window.addEventListener('scroll', ()=> {
-    scrollTop.classList.toggle('scroll-active', window.scrollY >= 400)
-});
+// window.addEventListener('scroll', ()=> {
+//     scrollTop.classList.toggle('scroll-active', window.scrollY >= 400)
+// });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Remove all <br> tags
-    let preElements = document.querySelectorAll('pre');
-    preElements.forEach( pre => {
-        pre.removeChild( pre.firstElementChild );
-    } )
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Remove all <br> tags
+//     let preElements = document.querySelectorAll('pre');
+//     preElements.forEach( pre => {
+//         pre.removeChild( pre.firstElementChild );
+//     } )
+// });
 
 
 // Open auth links in a new tabs
 // Google
-<<<<<<< HEAD
 // function openPopup(link, popupName) {
 //     link.addEventListener('click', function (event) {
 //       event.preventDefault();
@@ -105,27 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
 //       window.open(link.href, popupName, `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
 //     });
 // }
-=======
-function openPopup(link, popupName) {
-    if (link) {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            // Calculate the center position
-            const screenWidth = window.screen.width;
-            const screenHeight = window.screen.height;
-            const popupWidth = 600;
-            const popupHeight = 600;
-
-            const left = (screenWidth - popupWidth) / 2;
-            const top = (screenHeight - popupHeight) / 2;
-
-            // Open the popup window
-            window.open(link.href, popupName, `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
-        });
-    }
-}
->>>>>>> 6d1cd843a1ac22523c0dbe937ec5eaf39a8b9078
 
 // // Usage
 // const googleLink = document.getElementById('googleAuthLink');
