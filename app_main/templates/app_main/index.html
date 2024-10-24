@@ -124,13 +124,13 @@
         {% for review in reviews %}
             <div class="review">
                 <div class="review-header">
-                    <img class="review-profile-photo" src="https://res.cloudinary.com/dhtrn05k4/image/upload/v1701011250/thedevu101-media/profile-photos/user-default.png" >
+                    <img class="review-profile-photo" src="{{ review.user.profile_photo.url }}">
                     <h4 class="review-title">
                          {{ review.user.first_name }} {{ review.user.last_name }}
                         <p class="reviewer-address">
                             {{ review.address }}
                             {% if review.country_flag %}
-                            <!-- <img class="reviewer-country" src="{{ review.country_flag.url }}"> -->
+                            <img class="reviewer-country" src="{{ review.country_flag.url }}">
                             {% endif %}
                         </p>
                     </h4>
