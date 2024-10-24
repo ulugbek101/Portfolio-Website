@@ -84,23 +84,23 @@ WSGI_APPLICATION = 'PROJECT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.str('PGDATABASE'),
-        'HOST': env.str('PGHOST'),
-        'PORT': env.str('PGPORT'),
-        'USER': env.str('PGUSER'),
-        'PASSWORD': env.str('PGPASSWORD'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env.str('PGDATABASE'),
+#         'HOST': env.str('PGHOST'),
+#         'PORT': env.str('PGPORT'),
+#         'USER': env.str('PGUSER'),
+#         'PASSWORD': env.str('PGPASSWORD'),
+#     }
+# }
 
 
 # Password validation
@@ -133,7 +133,6 @@ gettext = lambda lang: lang
 
 LANGUAGES = (
     ("en", gettext("English")),
-    # ("ru", gettext("Русский")),
     ("uz", gettext("O'zbek"))
 )
 
@@ -145,10 +144,10 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = 'thedevu101-media/'
+MEDIA_URL = 'media/'
 
 STATIC_ROOT = BASE_DIR / 'static'
-MEDIA_ROOT = BASE_DIR / 'thedevu101-media'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'staticfiles'
@@ -159,13 +158,13 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env.str('CLOUD_NAME'),
-    'API_KEY': env.str('API_KEY'),
-    'API_SECRET': env.str('API_SECRET'),
-}
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': env.str('CLOUD_NAME'),
+#     'API_KEY': env.str('API_KEY'),
+#     'API_SECRET': env.str('API_SECRET'),
+# }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Social auth settings
 AUTHENTICATION_BACKENDS = [
