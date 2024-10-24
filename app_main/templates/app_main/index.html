@@ -124,7 +124,7 @@
         {% for review in reviews %}
             <div class="review">
                 <div class="review-header">
-                    <img class="review-profile-photo" src="{{ review.user.profile_photo.url }}">
+                    <img class="review-profile-photo" src="{{ review.profile_photo.url }}">
                     <h4 class="review-title">
                          {{ review.user.first_name }} {{ review.user.last_name }}
                         <p class="reviewer-address">
