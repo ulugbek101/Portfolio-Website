@@ -70,19 +70,19 @@ window.addEventListener('scroll', ()=> {
 });
 
 // scroll top
-let scrollTop = document.querySelector('.scroll-top')
+// let scrollTop = document.querySelector('.scroll-top')
 
-window.addEventListener('scroll', ()=> {
-    scrollTop.classList.toggle('scroll-active', window.scrollY >= 400)
-});
+// window.addEventListener('scroll', ()=> {
+//     scrollTop.classList.toggle('scroll-active', window.scrollY >= 400)
+// });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Remove all <br> tags
-    let preElements = document.querySelectorAll('pre');
-    preElements.forEach( pre => {
-        pre.removeChild( pre.firstElementChild );
-    } )
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Remove all <br> tags
+//     let preElements = document.querySelectorAll('pre');
+//     preElements.forEach( pre => {
+//         pre.removeChild( pre.firstElementChild );
+//     } )
+// });
 
 
 // Open auth links in a new tabs

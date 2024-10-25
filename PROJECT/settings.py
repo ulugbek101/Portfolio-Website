@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = bool(env.int('DEBUG'))
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'thedevu101.uz', 'www.thedevu101.uz']
 CSRF_TRUSTED_ORIGINS = [
@@ -83,23 +83,24 @@ WSGI_APPLICATION = 'PROJECT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.str('PGDATABASE'),
-        'HOST': env.str('PGHOST'),
-        'PORT': env.str('PGPORT'),
-        'USER': env.str('PGUSER'),
-        'PASSWORD': env.str('PGPASSWORD'),
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env.str('PGDATABASE'),
+            'HOST': env.str('PGHOST'),
+            'PORT': env.str('PGPORT'),
+            'USER': env.str('PGUSER'),
+            'PASSWORD': env.str('PGPASSWORD'),
+        }
+    }
 
 
 # Password validation
