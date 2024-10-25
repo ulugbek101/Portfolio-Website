@@ -1,9 +1,13 @@
 venv/
 .venv/
+.idea/
+
 .env
 .DS_Store
-.idea/
 db.sqlite3
+
+media/*
+
 __pycache__
 */__pycache__
 */*/__pycache__
