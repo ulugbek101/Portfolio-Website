@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<article class="wrap max-w-prose2 py-12">
+  {% if entry.poster %}
+  <div class="mb-7 overflow-hidden rounded-2xl shadow-soft">
+    <img src="{{ entry.poster.url }}" alt="{{ entry.title }}" class="aspect-[16/8] w-full object-cover" />
+  </div>
+  {% endif %}
+
+  {% if entry.tags.all %}
+  <div class="mb-4 flex flex-wrap gap-1.5">
+    {% for tag in entry.tags.all %}
+    <a href="{% if kind == 'news' %}{% url 'content:news_list' %}{% else %}{% url 'content:post_list' %}{% endif %}?tag={{ tag.slug }}" class="tag-chip">{% if forloop.first %}<svg class="ic text-[11px]"><use href="#i-tag"/></svg>{% endif %}{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <h1 class="font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">{{ entry.title }}</h1>
+
+  <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs text-ink3">
+    {% if entry.author %}<span class="inline-flex items-center gap-1.5"><svg class="ic text-sm"><use href="#i-person"/></svg>{{ entry.author.display_name }}</span>{% endif %}
+    <span class="inline-flex items-center gap-1.5"><svg class="ic text-sm"><use href="#i-schedule"/></svg>{{ entry.published_at|date:"Y-m-d"|default:"—" }}</span>
+    <span class="inline-flex items-center gap-1.5"><svg class="ic text-sm"><use href="#i-article"/></svg>{{ entry.reading_time }} {% trans "min read" %}</span>
+    <span class="inline-flex items-center gap-1.5"><svg class="ic text-sm"><use href="#i-search"/></svg>{{ entry.views }} {% trans "views" %}</span>
+  </div>
+
+  <div class="prose-content mt-8">{{ entry.body|safe }}</div>
+
+  <hr class="my-10 border-line" />
+
+  <!-- Comments -->
+  <section id="comments" class="scroll-mt-24">
+    <div class="mb-6 flex items-center justify-between">
+      <h2 class="font-serif text-2xl font-semibold">{% trans "Comments" %}</h2>
+      <span class="font-mono text-sm text-ink3">{{ comment_count }} {% trans "total" %}</span>
+    </div>
+
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'content:comment_create' kind=kind pk=entry.pk %}" class="mb-8 flex gap-3">
+      {% csrf_token %}
+      <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accentSoft font-mono text-sm font-bold text-accentInk">{{ user.initials }}</div>
+      <div class="flex-1">
+        <textarea name="body" rows="2" required placeholder="{% trans 'Write a comment…' %}" class="field"></textarea>
+        <div class="mt-2 flex justify-end">
+          <button type="submit" class="btn btn-primary"><svg class="ic text-base"><use href="#i-send"/></svg>{% trans "Post" %}</button>
+        </div>
+      </div>
+    </form>
+    {% else %}
+    <div class="mb-8 flex flex-wrap items-center gap-4 rounded-2xl border border-line bg-paper2 px-5 py-4">
+      <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accentSoft text-accent"><svg class="ic text-[22px]"><use href="#i-lock"/></svg></div>
+      <div class="flex-1 min-w-[180px]">
+        <div class="text-[15px] font-semibold">{% trans "Sign in to comment" %}</div>
+        <div class="text-[13px] text-ink3">{% trans "Comment and reply with your real profile." %}</div>
+      </div>
+      <a href="{% url 'login' %}?next={{ request.path }}%23comments" class="btn btn-primary"><svg class="ic text-base"><use href="#i-person"/></svg>{% trans "Sign in" %}</a>
+    </div>
+    {% endif %}
+
+    <div class="flex flex-col gap-6">
+      {% for comment in top_comments %}
+        {% include 'content/_comment.html' with comment=comment kind=kind entry=entry top=True %}
+      {% empty %}
+      <p class="py-8 text-center font-mono text-sm text-ink3">{% trans "No comments yet — be the first." %}</p>
+      {% endfor %}
+    </div>
+  </section>
+</article>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load i18n %}
+{% comment %}A single reply under a top-level comment. Expects: reply, comment{% endcomment %}
+<div class="flex gap-2.5">
+  <div class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-paper3 font-mono text-xs font-bold text-ink2">
+    {% if reply.author.avatar %}<img src="{{ reply.author.avatar.url }}" class="h-full w-full rounded-full object-cover" alt="">{% else %}{{ reply.author.initials }}{% endif %}
+  </div>
+  <div class="flex-1">
+    <div class="flex items-center gap-2">
+      <b class="text-[13.5px]">{{ reply.author.display_name }}</b>
+      <time class="font-mono text-[11px] text-ink3">{{ reply.created|timesince }} {% trans "ago" %}</time>
+    </div>
+    <p class="mt-0.5 text-[14px] text-ink2 whitespace-pre-line">{{ reply.body }}</p>
+    <div class="mt-1 flex items-center gap-4 font-mono text-[11px] text-ink3">
+      {% if user.is_authenticated %}
+      <button type="button" data-reply-toggle="reply-{{ comment.pk }}" class="inline-flex items-center gap-1 hover:text-accent"><svg class="ic text-[13px]"><use href="#i-reply"/></svg>{% trans "Reply" %}</button>
+      {% endif %}
+      {% if user.is_staff or reply.author == user %}
+      <form method="post" action="{% url 'content:comment_delete' pk=reply.pk %}" onsubmit="return confirm('{% trans "Delete this comment?" %}');">
+        {% csrf_token %}
+        <button type="submit" class="inline-flex items-center gap-1 hover:text-red-500"><svg class="ic text-[13px]"><use href="#i-delete"/></svg>{% trans "Delete" %}</button>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+</div>

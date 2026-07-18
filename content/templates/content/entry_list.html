@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<section class="wrap py-14">
+  <div class="section-label">
+    <svg class="ic"><use href="{% if kind == 'news' %}#i-campaign{% else %}#i-article{% endif %}"/></svg>
+    {% if kind == 'news' %}{% trans "News" %}{% else %}{% trans "Posts" %}{% endif %}
+  </div>
+
+  <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <h1 class="font-serif text-4xl font-semibold tracking-tight">
+      {% if kind == 'news' %}{% trans "Latest news" %}{% else %}{% trans "Writing & posts" %}{% endif %}
+    </h1>
+    <form method="get" class="relative w-full max-w-xs">
+      <svg class="ic pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink3"><use href="#i-search"/></svg>
+      <input type="search" name="q" value="{{ query }}" placeholder="{% trans 'Search by title…' %}"
+             class="field pl-9" />
+    </form>
+  </div>
+
+  {% if all_tags %}
+  <div class="mb-8 flex flex-wrap gap-2">
+    <a href="?" class="rounded-full border px-3 py-1 font-mono text-xs {% if not active_tag %}border-accent bg-accentSoft text-accentInk{% else %}border-line2 text-ink3 hover:border-ink{% endif %}">{% trans "All" %}</a>
+    {% for tag in all_tags %}
+    <a href="?tag={{ tag.slug }}" class="rounded-full border px-3 py-1 font-mono text-xs {% if active_tag.pk == tag.pk %}border-accent bg-accentSoft text-accentInk{% else %}border-line2 text-ink3 hover:border-ink{% endif %}">{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if entries %}
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {% for entry in entries %}
+      {% include 'content/_entry_card.html' with entry=entry kind=kind %}
+    {% endfor %}
+  </div>
+
+  {% if page_obj.has_other_pages %}
+  <nav class="mt-12 flex items-center justify-center gap-2 font-mono text-sm">
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if active_tag %}&tag={{ active_tag.slug }}{% endif %}" class="rounded-lg border border-line2 px-3 py-1.5 hover:border-ink">←</a>
+    {% endif %}
+    <span class="px-2 text-ink3">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if active_tag %}&tag={{ active_tag.slug }}{% endif %}" class="rounded-lg border border-line2 px-3 py-1.5 hover:border-ink">→</a>
+    {% endif %}
+  </nav>
+  {% endif %}
+
+  {% else %}
+  <div class="rounded-2xl border border-dashed border-line2 py-20 text-center">
+    <p class="font-mono text-sm text-ink3">{% trans "Nothing here yet." %}</p>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}
