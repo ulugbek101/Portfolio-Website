@@ -1,0 +1,62 @@
+{% load i18n %}
+{% comment %}Top-level comment with flattened replies. Expects: comment, kind, entry{% endcomment %}
+<div class="flex gap-3">
+  <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-accentSoft font-mono text-sm font-bold text-accentInk">
+    {% if comment.author.avatar %}<img src="{{ comment.author.avatar.url }}" class="h-full w-full rounded-full object-cover" alt="">{% else %}{{ comment.author.initials }}{% endif %}
+  </div>
+  <div class="flex-1">
+    <div class="flex items-center gap-2">
+      <b class="text-sm">{{ comment.author.display_name }}</b>
+      <time class="font-mono text-[11.5px] text-ink3">{{ comment.created|timesince }} {% trans "ago" %}</time>
+    </div>
+    <p class="mt-0.5 text-[14.5px] text-ink2 whitespace-pre-line">{{ comment.body }}</p>
+
+    <div class="mt-1.5 flex items-center gap-4 font-mono text-[11.5px] text-ink3">
+      {% if user.is_authenticated %}
+      <button type="button" data-reply-toggle="reply-{{ comment.pk }}" class="inline-flex items-center gap-1 hover:text-accent"><svg class="ic text-sm"><use href="#i-reply"/></svg>{% trans "Reply" %}</button>
+      {% endif %}
+      {% if user.is_staff or comment.author == user %}
+      <form method="post" action="{% url 'content:comment_delete' pk=comment.pk %}" onsubmit="return confirm('{% trans "Delete this comment?" %}');">
+        {% csrf_token %}
+        <button type="submit" class="inline-flex items-center gap-1 hover:text-red-500"><svg class="ic text-sm"><use href="#i-delete"/></svg>{% trans "Delete" %}</button>
+      </form>
+      {% endif %}
+    </div>
+
+    {% if user.is_authenticated %}
+    <form id="reply-{{ comment.pk }}" method="post" action="{% url 'content:comment_create' kind=kind pk=entry.pk %}" class="mt-3 hidden gap-2">
+      {% csrf_token %}
+      <input type="hidden" name="parent" value="{{ comment.pk }}" />
+      <textarea name="body" rows="1" required placeholder="{% trans 'Write a reply…' %}" class="field"></textarea>
+      <div class="mt-2 flex justify-end">
+        <button type="submit" class="btn btn-primary py-2 text-xs"><svg class="ic text-sm"><use href="#i-send"/></svg>{% trans "Reply" %}</button>
+      </div>
+    </form>
+    {% endif %}
+
+    {% with replies=comment.replies.all %}
+    {% if replies %}
+    <div class="mt-4 flex flex-col gap-4 border-l-2 border-line pl-4">
+      {% for reply in replies %}
+        {% if forloop.counter <= 2 %}
+          {% include 'content/_reply.html' with reply=reply comment=comment %}
+        {% endif %}
+      {% endfor %}
+
+      {% if replies|length > 2 %}
+      <div id="more-{{ comment.pk }}" class="hidden flex-col gap-4">
+        {% for reply in replies %}
+          {% if forloop.counter > 2 %}
+            {% include 'content/_reply.html' with reply=reply comment=comment %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <button type="button" data-show-more="more-{{ comment.pk }}" class="inline-flex items-center gap-2 self-start font-mono text-xs text-accent hover:underline">
+        <span class="h-px w-6 bg-accent/50"></span>{% blocktrans count counter=replies|length|add:"-2" %}Show {{ counter }} more reply{% plural %}Show {{ counter }} more replies{% endblocktrans %}
+      </button>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endwith %}
+  </div>
+</div>
