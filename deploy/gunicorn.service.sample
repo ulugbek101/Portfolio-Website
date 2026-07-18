@@ -1,0 +1,19 @@
+# /etc/systemd/system/thedevu101.service
+# systemctl daemon-reload && systemctl enable --now thedevu101
+
+[Unit]
+Description=thedevu101 gunicorn daemon
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/thedevu101
+EnvironmentFile=/var/www/thedevu101/.env
+ExecStart=/var/www/thedevu101/.venv/bin/gunicorn PROJECT.wsgi:application \
+    --bind 127.0.0.1:8000 \
+    --workers 3
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
