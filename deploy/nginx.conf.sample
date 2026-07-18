@@ -1,0 +1,54 @@
+# Sample nginx config for thedevu101.uz
+# Serves static & media directly and proxies the app to gunicorn.
+# Adjust paths and the upstream socket/port to your server.
+
+upstream thedevu101_app {
+    server 127.0.0.1:8000;   # gunicorn (see deploy/gunicorn.service.sample)
+}
+
+server {
+    listen 80;
+    server_name thedevu101.uz www.thedevu101.uz;
+    # Redirect all HTTP to HTTPS (certbot usually manages this block).
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name thedevu101.uz www.thedevu101.uz;
+
+    # TLS (managed by certbot / your CA)
+    ssl_certificate     /etc/letsencrypt/live/thedevu101.uz/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/thedevu101.uz/privkey.pem;
+
+    client_max_body_size 25M;   # allow poster / image uploads
+
+    # Absolute path to the project on the server:
+    set $project /var/www/thedevu101;
+
+    # --- Static files (collectstatic output) ---
+    location /static/ {
+        alias $project/staticfiles/;
+        access_log off;
+        expires 30d;
+        add_header Cache-Control "public";
+    }
+
+    # --- User-uploaded media (posters, avatars, CKEditor uploads) ---
+    location /media/ {
+        alias $project/media/;
+        access_log off;
+        expires 7d;
+        add_header Cache-Control "public";
+    }
+
+    # --- Application ---
+    location / {
+        proxy_pass http://thedevu101_app;
+        proxy_set_header Host              $host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect off;
+    }
+}
