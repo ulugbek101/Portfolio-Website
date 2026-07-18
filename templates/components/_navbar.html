@@ -1,59 +1,71 @@
 {% load i18n %}
-<header>    
-    <!-- nav -->
-    <div class="nav container" id="nav">
-        <!-- logo -->
-        <a class="logo" href="{% url 'index' %}">
-            {% if request.user.is_authenticated %}
-            {% trans "Hi" %}, {{ request.user.first_name }} !
-            {% else %}
-            Ulugbek Umaraliyev
-            {% endif %}
-        </a>
-        <!-- navbar -->
-        <ul class="navbar">
-            <li><a class="nav-link" href="{% url 'index' %}">{% trans "Home" %}</a></li>
-            <li><a class="nav-link" href="{% url 'index' %}#about">{% trans "About" %}</a></li>
-            <li><a class="nav-link" href="{% url 'services' %}">{% trans "Services" %}</a></li>
-            <li><a class="nav-link" href="{% url 'portfolio' %}">{% trans "Portfolio" %}</a></li>
-            <li><a class="nav-link" href="{% url 'index' %}#reviews">{% trans "Reviews" %}</a></li>
-            <li><a class="nav-link" href="{% url 'posts' %}">{% trans "Posts" %}</a></li>
-            
-            <form id="language-form" action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-                <select name="language" id="language">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                            {{ language.code|upper }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </form>
+{% get_current_language as LANGUAGE_CODE %}
+<header class="sticky top-0 z-50 border-b border-line bg-paper/80 backdrop-blur-md backdrop-saturate-150">
+  <div class="wrap flex h-16 items-center justify-between gap-4">
+    <a href="{% url 'index' %}" class="flex items-center gap-2 font-mono text-[15px] font-bold tracking-tight">
+      <svg class="ic text-accent text-lg"><use href="#i-terminal"/></svg>
+      thedevu101
+    </a>
 
-            {% if not request.user.is_authenticated %}
-            <li><a class="btn" style="margin: 0;" href="{% url 'login' %}">{% trans "Login" %}</a></li>
-            {% else %}
-            <li><a class="btn" style="margin: 0;" href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
-            {% endif %}
-        </ul>
-        <!-- menu icon -->
-        <div class="menu-icon">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+    <nav class="hidden items-center gap-6 text-sm text-ink2 md:flex">
+      <a href="{% url 'content:post_list' %}" class="group inline-flex items-center gap-1.5 hover:text-ink">
+        <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-article"/></svg>{% trans "Posts" %}</a>
+      <a href="{% url 'content:news_list' %}" class="group inline-flex items-center gap-1.5 hover:text-ink">
+        <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-campaign"/></svg>{% trans "News" %}</a>
+      <a href="{% url 'portfolio' %}" class="group inline-flex items-center gap-1.5 hover:text-ink">
+        <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-folder"/></svg>{% trans "Projects" %}</a>
+      <a href="{% url 'index' %}#reviews" class="group inline-flex items-center gap-1.5 hover:text-ink">
+        <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-star"/></svg>{% trans "Reviews" %}</a>
+    </nav>
+
+    <div class="flex items-center gap-2.5">
+      <!-- Language switcher -->
+      <form id="language-form" action="{% url 'set_language' %}" method="post" class="flex items-center overflow-hidden rounded-full border border-line2 font-mono text-xs">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+        {% get_available_languages as LANGUAGES %}
+        {% for code, name in LANGUAGES %}
+        <button type="submit" name="language" value="{{ code }}"
+                class="px-2.5 py-1.5 uppercase transition-colors {% if code == LANGUAGE_CODE %}bg-ink text-paper{% else %}text-ink3 hover:text-ink{% endif %}">
+          {{ code }}
+        </button>
+        {% endfor %}
+      </form>
+
+      <!-- Theme toggle -->
+      <button id="theme-toggle" type="button" title="{% trans 'Toggle theme' %}"
+              class="grid h-9 w-9 place-items-center rounded-lg border border-line2 bg-paper2 text-ink hover:border-accent">
+        <svg class="ic text-[17px] dark:hidden"><use href="#i-dark"/></svg>
+        <svg class="ic text-[17px] hidden dark:block"><use href="#i-light"/></svg>
+      </button>
+
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'logout' %}" class="hidden items-center gap-1.5 rounded-lg border border-line2 px-3 py-2 text-sm hover:border-ink sm:inline-flex">
+        <svg class="ic text-base"><use href="#i-logout"/></svg>{% trans "Logout" %}</a>
+      {% else %}
+      <a href="{% url 'login' %}" class="hidden items-center gap-1.5 rounded-lg bg-accent px-3.5 py-2 text-sm font-medium text-white hover:bg-accent2 sm:inline-flex">
+        <svg class="ic text-base"><use href="#i-person"/></svg>{% trans "Sign in" %}</a>
+      {% endif %}
+
+      <!-- Mobile menu button -->
+      <button id="menu-toggle" type="button" class="grid h-9 w-9 place-items-center rounded-lg border border-line2 md:hidden" title="{% trans 'Menu' %}">
+        <svg class="ic text-lg"><use href="#i-menu"/></svg>
+      </button>
     </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <div id="mobile-nav" class="hidden border-t border-line md:hidden">
+    <nav class="wrap flex flex-col gap-1 py-3 text-sm">
+      <a href="{% url 'content:post_list' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Posts" %}</a>
+      <a href="{% url 'content:news_list' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "News" %}</a>
+      <a href="{% url 'portfolio' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Projects" %}</a>
+      <a href="{% url 'index' %}#reviews" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Reviews" %}</a>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'logout' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Logout" %}</a>
+      {% else %}
+      <a href="{% url 'login' %}" class="rounded-lg px-3 py-2 font-medium text-accent hover:bg-paper2">{% trans "Sign in" %}</a>
+      {% endif %}
+    </nav>
+  </div>
 </header>
-
-
-<script type="text/javascript">
-    const language = document.getElementById('language')
-    const switchLanguageForm = document.getElementById('language-form')
-
-    language.addEventListener('change', (e) => {
-        switchLanguageForm.submit()
-    })
-</script>

@@ -1,66 +1,27 @@
 {% load i18n %}
-
-<section class="contact container" id="contact">
-    <!-- heading -->
-    <h2 class="heading">{% trans 'Contact' %}</h2>
-    <!-- contact content -->
-    <form action="" class="contact-form" id="contact-form">
-        <input type="text" class="name" placeholder="{% trans 'Your Full Name' %}" required />
-        <input
-            type="email"
-            class="email"
-            placeholder="{% trans 'Email address' %}"
-            required
-        />
-        <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            class="message"
-            required
-            placeholder="{% trans 'Write your message ...' %}"
-        ></textarea>
-        <input type="submit" value="{% trans 'Send' %}" class="send-btn" />
-    </form>
-</section>
-<footer class="footer container" id="footer">
-    <div class="social">
-        <a
-            href="https://t.me/thedevu101"
-            target="_blank"
-            title="Telegram"
-            ><i class="bx bxl-telegram"></i
-        ></a>
-        <a
-            href="https://www.instagram.com/the.dev.u/"
-            target="_blank"
-            title="Instagram"
-            ><i class="bx bxl-instagram"></i
-        ></a>
-        <a
-            href="https://www.facebook.com/ulugbek.umaraliyev.10"
-            target="_blank"
-            title="Facebook"
-            ><i class="bx bxl-facebook"></i
-        ></a>
-        <a
-            href="https://github.com/ulugbek101"
-            target="_blank"
-            title="GitHub"
-            ><i class="bx bxl-github"></i
-        ></a>
-        <a
-            href="tel:+998996937308"
-            title="GitHub"
-            ><i class="bx bxs-phone"></i
-        ></a>
+<footer class="mt-24 border-t border-line">
+  <div class="wrap flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <div class="font-serif text-xl font-semibold">Ulug'bek Umaraliyev</div>
+      <p class="mt-1 font-mono text-xs text-ink3">thedevu101.uz — {% trans "Full-Stack Developer" %}</p>
     </div>
-    <!-- gooter links -->
-    <!-- <div class="footer-links">
-        <a href="#">Privacy policy</a>
-        <a href="#">Terms of use</a>
-        <a href="#">Disclaimer</a>
-    </div> -->
-    <!-- copyright -->
+
+    <div class="flex flex-wrap items-center gap-2.5">
+      <a href="https://t.me/thedevu101" target="_blank" rel="noopener" title="Telegram"
+         class="inline-flex items-center gap-1.5 rounded-full border border-line2 px-3 py-1.5 font-mono text-xs text-ink2 hover:border-accent hover:text-accent">
+        <svg class="ic text-[15px]"><use href="#i-telegram"/></svg>Telegram</a>
+      <a href="https://github.com/ulugbek101" target="_blank" rel="noopener" title="GitHub"
+         class="inline-flex items-center gap-1.5 rounded-full border border-line2 px-3 py-1.5 font-mono text-xs text-ink2 hover:border-accent hover:text-accent">
+        <svg class="ic text-[15px]"><use href="#i-github"/></svg>GitHub</a>
+      <a href="https://www.instagram.com/the.dev.u/" target="_blank" rel="noopener" title="Instagram"
+         class="inline-flex items-center gap-1.5 rounded-full border border-line2 px-3 py-1.5 font-mono text-xs text-ink2 hover:border-accent hover:text-accent">
+        <svg class="ic text-[15px]"><use href="#i-instagram"/></svg>Instagram</a>
+      <a href="tel:+998996937308" title="Phone"
+         class="inline-flex items-center gap-1.5 rounded-full border border-line2 px-3 py-1.5 font-mono text-xs text-ink2 hover:border-accent hover:text-accent">
+        <svg class="ic text-[15px]"><use href="#i-phone"/></svg>{% trans "Call" %}</a>
+    </div>
+  </div>
+  <div class="wrap pb-8">
+    <p class="font-mono text-xs text-ink3">© {% now "Y" %} Ulug'bek Umaraliyev. {% trans "All rights reserved." %}</p>
+  </div>
 </footer>
