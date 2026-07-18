@@ -1,161 +1,121 @@
 {% extends 'base.html' %}
-{% load i18n %}
-{% load static %}
+{% load i18n static site_extras %}
 
 {% block content %}
-{% include 'components/_navbar.html' %}
-<section class="home container" id="home">
-    <div class="home-content">
-        <div class="home-img">
-            <img
-                src="https://avatars.githubusercontent.com/u/94630185?v=4"
-                alt="Ulugbek Umaraliyev"
-                title="Ulugbek Umaraliyev"
-            />
-        </div>
-        <div class="home-text">
-            {% blocktrans %}
-            <h3>Hello</h3>
-            <h2>I'm <span class="color">Ulugbek</span></h2>
-                <p>
-                    I'm a <span class="color">Full Stack</span>
-                    web developer with 3+ years of experience and strong passion for
-                    building
-                    <span class="color">Web Applications</span>
-                    and
-                    <span class="color">multifunctional Telegram Bots.</span>
-                    <br />
-                    Here's a bit more
-                    <span class="color">about me</span>
-                </p>
-            <!-- social -->
-            {% endblocktrans %}
-            <div class="social">
-                <a
-                    href="https://t.me/thedevu101"
-                    target="_blank"
-                    title="Telegram"
-                    ><i class="bx bxl-telegram"></i
-                ></a>
-                <a
-                    href="https://www.instagram.com/the.dev.u/"
-                    target="_blank"
-                    title="Instagram"
-                    ><i class="bx bxl-instagram"></i
-                ></a>
-                <a
-                    href="https://www.facebook.com/ulugbek.umaraliyev.10"
-                    target="_blank"
-                    title="Facebook"
-                    ><i class="bx bxl-facebook"></i
-                ></a>
-                <a
-                    href="https://github.com/ulugbek101"
-                    target="_blank"
-                    title="GitHub"
-                    ><i class="bx bxl-github"></i
-                ></a>
-                <a
-                    href="tel:+998996937308"
-                    title="GitHub"
-                    ><i class="bx bxs-phone"></i
-                ></a>
-            </div>
-        </div>
+<!-- Hero -->
+<section class="wrap grid items-center gap-14 py-20 md:grid-cols-[1.35fr_.95fr]">
+  <div>
+    <span class="eyebrow"><span class="h-px w-6 bg-accent/60"></span>{% trans "Full-Stack Developer · 5+ years" %}</span>
+    <h1 class="mt-4 font-serif text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+      {% blocktrans %}I'm <span class="italic text-accent">Ulug'bek</span> — I build production-grade web apps.{% endblocktrans %}
+    </h1>
+    <p class="mt-6 max-w-md text-lg text-ink2">{% trans "Django, real-time systems and multifunctional Telegram bots. Here I share my work, news and writing." %}</p>
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a href="{% url 'download_cv' %}" class="btn btn-primary"><svg class="ic text-base"><use href="#i-download"/></svg>{% trans "Download CV" %}</a>
+      <a href="{% url 'content:post_list' %}" class="btn btn-ghost"><svg class="ic text-base"><use href="#i-article"/></svg>{% trans "Read posts" %}</a>
     </div>
+    <div class="mt-11 flex gap-9">
+      <div>
+        <div class="flex items-center gap-2 font-serif text-3xl font-semibold"><svg class="ic text-xl text-accent"><use href="#i-work"/></svg>5+</div>
+        <div class="font-mono text-[11.5px] uppercase tracking-wide text-ink3">{% trans "Years" %}</div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2 font-serif text-3xl font-semibold"><svg class="ic text-xl text-accent"><use href="#i-folder"/></svg>40+</div>
+        <div class="font-mono text-[11.5px] uppercase tracking-wide text-ink3">{% trans "Projects" %}</div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2 font-serif text-3xl font-semibold"><svg class="ic text-xl text-accent"><use href="#i-translate"/></svg>3</div>
+        <div class="font-mono text-[11.5px] uppercase tracking-wide text-ink3">UZ · RU · EN</div>
+      </div>
+    </div>
+  </div>
+  <div class="relative">
+    <div class="aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-paper2 shadow-lift">
+      <img src="https://avatars.githubusercontent.com/u/94630185?v=4" alt="Ulug'bek Umaraliyev" class="h-full w-full object-cover" />
+    </div>
+    <div class="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-xl border border-line bg-paper px-3 py-2 font-mono text-xs shadow-soft">
+      <span class="h-2 w-2 rounded-full bg-accent"></span>{% trans "Available for work" %}
+    </div>
+  </div>
 </section>
 
-<!-- about -->
-<section class="about container" id="about">
-    <!-- heading -->
-    <h2 class="heading">{% trans "About" %}</h2>
-    <!-- about content -->
-    <div class="about-content">
-        <div class="about-data">
-            <span>{% trans "About Me" %}</span>
-            <h2>{% trans "Full Stack Web developer" %}</h2>
-            <a
-                class="btn"
-                href="{% url 'download_cv' %}"
-                download=""
-                target="_blank"
-            >
-                {% trans "Download CV" %}
-                <i class="bx bx-download"></i>
-            </a>
-        </div>
-        <div class="about-text">
-            <p>{% trans "Hello! I am Ulugbek Umaraliyev. Full Stack Web Developer." %}</p>
-            <p>
-                {% trans "I have been working in this area for 3+ years. I have excellent practical experience in building web sites (news sites, blog sites, ...) and web applications (online stores, social media, messangers, ...)." %}
-            <p>
-                {% trans "Also, I have a lot of experience in developing multifunctional Telegram Bots (online stores, restaurant telegram bots, ...)" %}
-            </p>
-        </div>
+<!-- About -->
+<section id="about" class="border-t border-line">
+  <div class="wrap grid gap-10 py-16 md:grid-cols-[.8fr_1.2fr]">
+    <div>
+      <div class="section-label"><svg class="ic"><use href="#i-person"/></svg>{% trans "About" %}</div>
+      <h2 class="font-serif text-3xl font-semibold tracking-tight">{% trans "Full-Stack Web Developer" %}</h2>
     </div>
+    <div class="space-y-4 text-ink2">
+      <p>{% trans "Hello! I'm Ulug'bek Umaraliyev. I have 5+ years of hands-on experience building websites (news sites, blogs) and web applications (online stores, social platforms, messengers)." %}</p>
+      <p>{% trans "I also build multifunctional Telegram bots — online stores, restaurant bots and more — designed to scale reliably." %}</p>
+    </div>
+  </div>
 </section>
 
-<section class="leave-review container" id="leave-review">
-    <h2 class="heading">{% trans "Leave a review" %}</h2>
-    {% if request.user.is_authenticated %}
-    <form action="{% url 'create_review' %}" method="post" enctype="multipart/form-data" class="contact-form">
-        {% csrf_token %}
-        <label for="id_{{ form.address.name }}">{% trans "*Your Address: " %}</label>
-        {{ form.address }}
-        <label for="id_{{ form.profile_photo.name }}">{% trans "Profile photo (This photo will be displayed on your review): " %}</label>
-        {{ form.profile_photo }}
-        <label for="id_{{ form.rate.name }}">{% trans "*Rate me: 1-5 (I know you want select 5 😉): " %}</label>
-        {{ form.rate }}
-        <label for="id_{{ form.rate.name }}">{% trans "*Your review: " %}</label>
-        {{ form.body }}
-        <button type="submit" class="login-btn send-btn btn" style="width: 100% !important;">{% trans "Post" %}</button>
-    </form>
+<!-- Featured posts -->
+{% if featured_posts %}
+<section class="wrap py-16">
+  <div class="mb-8 flex items-end justify-between">
+    <div>
+      <div class="section-label"><svg class="ic"><use href="#i-article"/></svg>{% trans "Latest posts" %}</div>
+      <h2 class="font-serif text-3xl font-semibold tracking-tight">{% trans "Recent writing" %}</h2>
+    </div>
+    <a href="{% url 'content:post_list' %}" class="hidden items-center gap-1.5 font-mono text-sm text-accent hover:underline sm:inline-flex">{% trans "All posts" %}<svg class="ic text-base"><use href="#i-arrow"/></svg></a>
+  </div>
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {% for entry in featured_posts %}{% include 'content/_entry_card.html' with entry=entry kind='post' %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Reviews -->
+<section id="reviews" class="scroll-mt-24 border-t border-line bg-paper2/50">
+  <div class="wrap py-16">
+    <div class="section-label"><svg class="ic"><use href="#i-star"/></svg>{% trans "Reviews" %}</div>
+    <h2 class="mb-8 font-serif text-3xl font-semibold tracking-tight">{% trans "What people say" %}</h2>
+
+    {% if reviews %}
+    <div class="grid gap-5 md:grid-cols-2">
+      {% for review in reviews %}
+      <figure class="flex flex-col gap-3 rounded-2xl border border-line bg-paper p-6 shadow-soft">
+        <div class="flex items-center gap-3">
+          {% if review.photo_url %}<img src="{{ review.photo_url }}" alt="{{ review.user.display_name }}" class="h-11 w-11 rounded-full object-cover" />{% else %}<div class="grid h-11 w-11 place-items-center rounded-full bg-accentSoft font-mono text-sm font-bold text-accentInk">{{ review.user.initials }}</div>{% endif %}
+          <figcaption>
+            <div class="text-[15px] font-semibold">{{ review.user.display_name }}</div>
+            <div class="inline-flex items-center gap-1 font-mono text-[11.5px] text-ink3"><svg class="ic text-[13px]"><use href="#i-place"/></svg>{{ review.address }}{% if review.country_flag %} <img src="{{ review.country_flag.url }}" class="ml-1 h-3 inline" alt="">{% endif %}</div>
+          </figcaption>
+          <div class="ml-auto inline-flex text-amber">{% for on in review.rate|stars %}<svg class="ic text-[15px]"><use href="{% if on %}#i-star{% else %}#i-star-o{% endif %}"/></svg>{% endfor %}</div>
+        </div>
+        <blockquote class="text-[14.5px] text-ink2 whitespace-pre-line">{{ review.body }}</blockquote>
+      </figure>
+      {% endfor %}
+    </div>
     {% else %}
-    <h3 style="text-align: center;"><a class="btn" href="{% url 'login' %}">{% trans "Log in" %}</a>{% trans " to leave a review" %}</h3>
+    <p class="rounded-2xl border border-dashed border-line2 py-12 text-center font-mono text-sm text-ink3">{% trans "No reviews yet." %}</p>
     {% endif %}
-</section>
 
-<section class="reviews container" id="reviews">
-    <!-- heading -->
-    <h2 class="heading">{% trans "Reviews" %}</h2>
-    <!-- reviews content -->
-    <div class="reviews-content">
-
-        {% for review in reviews %}
-            <div class="review">
-                <div class="review-header">
-                    <img class="review-profile-photo" src="{{ review.profile_photo.url }}">
-                    <h4 class="review-title">
-                         {{ review.user.first_name }} {{ review.user.last_name }}
-                        <p class="reviewer-address">
-                            {{ review.address }}
-                            {% if review.country_flag %}
-                            <img class="reviewer-country" src="{{ review.country_flag.url }}">
-                            {% endif %}
-                        </p>
-                    </h4>
-                </div>
-                <div class="review-details">
-                    <div>
-                        {% for star in rate %}
-                            {% if star <= review.rate %}
-                                <span class="fa fa-star checked"></span>
-                            {% else %}
-                                <span class="fa fa-star"></span>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-                <p class="review-body">
-                    {{ review.body|linebreaksbr }}
-                </p>
-                <p class="review-date">{{ review.created|date:"Y.m.d"}} <small>({{ review.created|timesince }} {% trans "ago" %})</small></p>
-            </div>
-            {% empty %}
-            <p style="font-size: initial;">{% trans "No reviews yet 🧐" %}</p>
-        {% endfor %}
+    <!-- Leave a review -->
+    <div class="mt-10 rounded-2xl border border-line bg-paper p-6 shadow-soft">
+      <h3 class="mb-4 font-serif text-xl font-semibold">{% trans "Leave a review" %}</h3>
+      {% if user.is_authenticated %}
+      <form method="post" action="{% url 'create_review' %}" enctype="multipart/form-data" class="grid gap-4 sm:grid-cols-2">
+        {% csrf_token %}
+        <label class="text-sm">{% trans "Your location" %}
+          <input type="text" name="address" required placeholder="Ex: Tashkent, UZ" class="field mt-1" /></label>
+        <label class="text-sm">{% trans "Rating" %}
+          <select name="rate" class="field mt-1">{% for i in "54321" %}<option value="{{ i }}">{{ i }} ★</option>{% endfor %}</select></label>
+        <label class="text-sm sm:col-span-2">{% trans "Profile photo (optional)" %}
+          <input type="file" name="profile_photo" accept="image/*" class="field mt-1" /></label>
+        <label class="text-sm sm:col-span-2">{% trans "Your review" %}
+          <textarea name="body" rows="3" required placeholder="{% trans 'Share your experience…' %}" class="field mt-1"></textarea></label>
+        <div class="sm:col-span-2"><button type="submit" class="btn btn-primary w-full"><svg class="ic text-base"><use href="#i-send"/></svg>{% trans "Submit review" %}</button></div>
+      </form>
+      <p class="mt-3 font-mono text-xs text-ink3">{% trans "Reviews appear after approval." %}</p>
+      {% else %}
+      <p class="text-ink2">{% trans "Please" %} <a href="{% url 'login' %}?next=/%23reviews" class="text-accent underline">{% trans "sign in" %}</a> {% trans "to leave a review." %}</p>
+      {% endif %}
     </div>
+  </div>
 </section>
-
-{% include 'components/_footer.html' %}
-{% endblock content %}
+{% endblock %}

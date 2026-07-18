@@ -1,14 +1,12 @@
 from django.contrib import admin
 
-from . import models
+from modeltranslation.admin import TabbedTranslationAdmin
+
+from .models import Project
 
 
-admin.site.register(models.Project)
-admin.site.register(models.Tag)
-
-
-@admin.register(models.Post)
-class PostAdmin(admin.ModelAdmin):
-    prepopulated_fields = {
-        'slug': ['title'],
-    }
+@admin.register(Project)
+class ProjectAdmin(TabbedTranslationAdmin):
+    list_display = ("title", "is_featured", "order", "created")
+    list_editable = ("is_featured", "order")
+    search_fields = ("title", "description")

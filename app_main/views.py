@@ -1,55 +1,26 @@
-from django.shortcuts import render, get_object_or_404
-# from django.contrib.auth.mixins import LoginRequiredMixin
-# from django.views.generic import CreateView
+from django.shortcuts import render
 
-from . import models
-from . import forms
-
-from app_users.models import Review
 from app_users.forms import ReviewForm
+from app_users.models import Review
+from content.models import News, Post
 
-
-# class CreatePost(LoginRequiredMixin, CreateView):
-#     template_name = 'form.html'
-#     model = models.Post
-#     form_class = forms.PostForm
+from .models import Project
 
 
 def index(request):
-    form = ReviewForm()
     context = {
-        "reviews": Review.objects.filter(verified=True),
-        "rate": range(1, 6),
-        "form": form,
+        "featured_posts": Post.objects.filter(is_published=True)[:3],
+        "latest_news": News.objects.filter(is_published=True)[:2],
+        "projects": Project.objects.filter(is_featured=True)[:6],
+        "reviews": Review.objects.filter(approved=True).select_related("user"),
+        "review_form": ReviewForm(),
     }
-    return render(request, 'app_main/index.html', context)
+    return render(request, "app_main/index.html", context)
 
 
 def portfolio(request):
     context = {
-        'projects': models.Project.objects.all(),
+        "projects": Project.objects.all(),
+        "meta_title": "Projects — Ulug'bek Umaraliyev",
     }
-    return render(request, 'app_main/portfolio.html', context)
-
-
-def services(request):
-    context = {}
-    return render(request, 'app_main/services.html', context)
-
-
-def posts(request):
-    posts = models.Post.objects.filter(is_active=True).order_by("-created")
-
-    context = {
-        'posts': posts,
-    }
-    return render(request, 'app_main/posts.html', context)
-
-
-def post(request, slug):
-    post = get_object_or_404(models.Post, slug=slug)
-
-    context = {
-        'post': post,
-    }
-    return render(request, 'app_main/post.html', context)
+    return render(request, "app_main/portfolio.html", context)
