@@ -1,62 +1,61 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
 from django.contrib import messages
-from django.utils.translation import gettext_lazy as _
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.http import FileResponse, Http404
+from django.shortcuts import redirect, render
+from django.utils.translation import gettext as _
+from django.views.decorators.http import require_POST
 
 from . import forms
 
+CV_PATH = "cv/CV ( Ulugbek Umaraliyev ).pdf"
+
 
 def download_cv(request):
-    pdf = open(file='cv/CV ( Ulugbek Umaraliyev ).pdf', mode='rb')
-    response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="CV ( Ulugbek Umaraliyev ).pdf"'
+    try:
+        response = FileResponse(open(CV_PATH, "rb"), content_type="application/pdf")
+    except FileNotFoundError:
+        raise Http404("CV not found")
+    response["Content-Disposition"] = 'attachment; filename="Ulugbek-Umaraliyev-CV.pdf"'
     return response
 
 
 def login_view(request):
     if request.user.is_authenticated:
-        # error message: Logout first to log in again
-        return redirect('index')
+        return redirect("index")
 
-    if request.method == 'POST':
-        next_page = request.POST.get('next')
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
         user = authenticate(request, username=username, password=password)
-
         if user:
-            # success message: invalid credentials
             login(request, user)
-            return redirect('index')
-        else:
-            context = {
-                'invalid_credentials': True,
-                'username': username if username else '',
-            }
-            # if not username: del context['username']
-            return render(request, 'app_users/login.html', context)
+            return redirect(request.POST.get("next") or "index")
+        messages.error(request, _("Invalid username or password."))
+        return render(request, "app_users/login.html", {"username": username or ""})
 
-    context = {}
-    return render(request, 'app_users/login.html', context)
+    return render(request, "app_users/login.html", {"next": request.GET.get("next", "")})
 
 
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    messages.success(request, _("You have been signed out."))
+    return redirect("index")
 
 
+@login_required
+@require_POST
 def create_review(request):
-    user = request.user
-
     form = forms.ReviewForm(request.POST, request.FILES)
-    if form.is_valid:
+    if form.is_valid():
         review = form.save(commit=False)
-        review.user = user
+        review.user = request.user
+        review.approved = False
         review.save()
-        messages.success(request, _("Thank you ! Your review was sent for verification, it will be posted soon 😉"))
-        return redirect('index')
+        messages.success(
+            request,
+            _("Thank you! Your review was submitted and will appear once approved."),
+        )
     else:
-        # error message
-        return render('index')
+        messages.error(request, _("Please check the review form and try again."))
+    return redirect("/#reviews")
