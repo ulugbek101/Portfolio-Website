@@ -1,7 +1,19 @@
 {% if messages %}
-{% for message in messages %}
-<div class="{{ message.tags }} informational-message">
-    {{ message }}
+<div id="toasts" class="fixed bottom-5 right-5 z-[100] flex w-[min(360px,90vw)] flex-col gap-2">
+  {% for message in messages %}
+  <div class="toast flex items-start gap-3 rounded-xl border px-4 py-3 text-sm shadow-lift
+              {% if message.tags == 'success' %}border-accent bg-accentSoft text-accentInk
+              {% elif message.tags == 'error' %}border-red-300 bg-red-50 text-red-700
+              {% else %}border-line2 bg-paper2 text-ink2{% endif %}"
+       role="status">
+    <svg class="ic mt-0.5 text-base">
+      <use href="{% if message.tags == 'success' %}#i-check{% elif message.tags == 'error' %}#i-close{% else %}#i-campaign{% endif %}"/>
+    </svg>
+    <span class="flex-1">{{ message }}</span>
+    <button type="button" class="toast-close text-ink3 hover:text-ink" aria-label="Close">
+      <svg class="ic text-base"><use href="#i-close"/></svg>
+    </button>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
 {% endif %}

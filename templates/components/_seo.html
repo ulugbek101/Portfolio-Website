@@ -1,0 +1,35 @@
+{% load i18n static site_extras %}
+{% get_current_language as CURRENT_LANG %}
+{% comment %}
+  SEO / Open Graph tags. Views may set: meta_title, meta_description,
+  og_image_url (absolute), og_type ('website'|'article'), and for detail
+  pages, alternate_urls / canonical.
+{% endcomment %}
+
+<title>{% block title %}{{ meta_title|default:"Ulug'bek Umaraliyev — Full-Stack Developer" }}{% endblock %}</title>
+<meta name="description" content="{{ meta_description|default:_('Full-Stack developer — posts, news, projects and reviews.') }}" />
+
+<link rel="canonical" href="{% canonical_url %}" />
+{% alternate_links as ALTS %}
+{% for a in ALTS %}
+<link rel="alternate" hreflang="{{ a.code }}" href="{{ a.url }}" />
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ SITE_URL }}{{ request.get_full_path }}" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="thedevu101" />
+<meta property="og:type" content="{{ og_type|default:'website' }}" />
+<meta property="og:title" content="{{ meta_title|default:_('Ulugbek Umaraliyev — Full-Stack Developer') }}" />
+<meta property="og:description" content="{{ meta_description|default:_('Full-Stack developer — posts, news, projects and reviews.') }}" />
+<meta property="og:url" content="{% canonical_url %}" />
+<meta property="og:locale" content="{% if CURRENT_LANG == 'uz' %}uz_UZ{% elif CURRENT_LANG == 'ru' %}ru_RU{% else %}en_US{% endif %}" />
+{% if og_image_url %}
+<meta property="og:image" content="{{ og_image_url }}" />
+<meta property="og:image:alt" content="{{ meta_title|default:'thedevu101' }}" />
+{% endif %}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="{% if og_image_url %}summary_large_image{% else %}summary{% endif %}" />
+<meta name="twitter:title" content="{{ meta_title|default:'Ulugbek Umaraliyev' }}" />
+<meta name="twitter:description" content="{{ meta_description|default:_('Full-Stack developer — posts, news, projects and reviews.') }}" />
+{% if og_image_url %}<meta name="twitter:image" content="{{ og_image_url }}" />{% endif %}
