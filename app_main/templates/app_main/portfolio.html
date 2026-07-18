@@ -1,57 +1,30 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% load i18n %} 
+{% extends 'base.html' %}
+{% load i18n %}
 
-{% block content %} 
-{% include 'components/_navbar.html' %}
-<!-- portfolio -->
-<section class="portfolio container" id="portfolio">
-    <!-- heading -->
-    <br>
-    <h2 class="heading">{% trans "Portfolio" %}</h2>
-    <!-- portfolio content -->
-    <div class="portfolio-content">
-        {% for project in projects %}
-        <div class="portfolio-box">
-            <img
-                class="portfolio-img"
-                src="{{ project.photo.url }}"
-                title="{{ project.title }}"
-            />
-            <!-- overlay -->
-            <div class="portfolio-overlay">
-                <h2>{{ project.title }}</h2>
-                <a href="{{ project.link }}" target="_blank">
-                    <i class="bx bx-link-alt"></i>
-                </a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</section>
+{% block content %}
+<section class="wrap py-14">
+  <div class="section-label"><svg class="ic"><use href="#i-folder"/></svg>{% trans "Projects" %}</div>
+  <h1 class="mb-8 font-serif text-4xl font-semibold tracking-tight">{% trans "Selected work & achievements" %}</h1>
 
-<!-- projects -->
-<section class="projects container" id="projects">
-    <!-- heading -->
-    <h2 class="heading">Projects</h2>
-    <!-- projects content -->
-    <div class="projects-content">
-        <div class="project-box">
-            <h2>15+</h2>
-            <span>Project Webistes Completed</span>
-        </div>
-        <div class="project-box">
-            <h2>20+</h2>
-            <span>Telegram Bots Developed</span>
-        </div>
-        <div class="project-box">
-            <h2>100%</h2>
-            <span>Happy Clients</span>
-        </div>
-        <div class="project-box">
-            <h2>30+</h2>
-            <span>Graduated Students</span>
-        </div>
-    </div>
+  {% if projects %}
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {% for project in projects %}
+    <article class="card group">
+      <div class="aspect-[16/10] overflow-hidden bg-paper3">
+        {% if project.photo %}<img src="{{ project.photo.url }}" alt="{{ project.title }}" loading="lazy" class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]" />{% endif %}
+      </div>
+      <div class="flex flex-1 flex-col gap-2 p-5">
+        <h3 class="font-serif text-xl font-semibold tracking-tight">{{ project.title }}</h3>
+        {% if project.description %}<p class="text-sm text-ink2 line-clamp-3">{{ project.description }}</p>{% endif %}
+        {% if project.link %}
+        <a href="{{ project.link }}" target="_blank" rel="noopener" class="mt-auto inline-flex items-center gap-1.5 pt-2 font-mono text-xs text-accent hover:underline">{% trans "Visit" %}<svg class="ic text-sm"><use href="#i-arrow"/></svg></a>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="rounded-2xl border border-dashed border-line2 py-20 text-center font-mono text-sm text-ink3">{% trans "Projects coming soon." %}</p>
+  {% endif %}
 </section>
-{% include 'components/_footer.html' %} {% endblock content %}
+{% endblock %}

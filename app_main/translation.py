@@ -1,8 +1,8 @@
-from modeltranslation.translator import register, TranslationOptions
+from modeltranslation.translator import TranslationOptions, register
 
-from .models import Post
+from .models import Project
 
 
-@register(Post)
-class PostTranslationOption(TranslationOptions):
-    fields = ('title', 'body')
+@register(Project)
+class ProjectTranslationOptions(TranslationOptions):
+    fields = ("title", "description")
