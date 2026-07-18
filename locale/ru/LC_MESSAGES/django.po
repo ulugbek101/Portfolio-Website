@@ -1,0 +1,385 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: thedevu101\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-19 00:00+0500\n"
+"PO-Revision-Date: 2026-07-19 00:00+0500\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+# --- Navigation & chrome ---
+msgid "Posts"
+msgstr "Посты"
+
+msgid "News"
+msgstr "Новости"
+
+msgid "Projects"
+msgstr "Проекты"
+
+msgid "Reviews"
+msgstr "Отзывы"
+
+msgid "Sign in"
+msgstr "Войти"
+
+msgid "Logout"
+msgstr "Выйти"
+
+msgid "Menu"
+msgstr "Меню"
+
+msgid "Toggle theme"
+msgstr "Переключить тему"
+
+msgid "Full-Stack Developer"
+msgstr "Full-Stack разработчик"
+
+msgid "Call"
+msgstr "Позвонить"
+
+msgid "All rights reserved."
+msgstr "Все права защищены."
+
+# --- Home / hero ---
+msgid "Full-Stack Developer · 5+ years"
+msgstr "Full-Stack разработчик · 5+ лет"
+
+msgid "I'm <span class=\"italic text-accent\">Ulug'bek</span> — I build production-grade web apps."
+msgstr "Я <span class=\"italic text-accent\">Улугбек</span> — создаю веб-приложения промышленного уровня."
+
+msgid "Django, real-time systems and multifunctional Telegram bots. Here I share my work, news and writing."
+msgstr "Django, системы реального времени и многофункциональные Telegram-боты. Здесь я делюсь своими работами, новостями и статьями."
+
+msgid "Download CV"
+msgstr "Скачать резюме"
+
+msgid "Read posts"
+msgstr "Читать посты"
+
+msgid "Years"
+msgstr "Лет"
+
+msgid "Available for work"
+msgstr "Открыт для работы"
+
+# --- About ---
+msgid "About"
+msgstr "Обо мне"
+
+msgid "Full-Stack Web Developer"
+msgstr "Full-Stack веб-разработчик"
+
+msgid "Hello! I'm Ulug'bek Umaraliyev. I have 5+ years of hands-on experience building websites (news sites, blogs) and web applications (online stores, social platforms, messengers)."
+msgstr "Привет! Я Улугбек Умаралиев. У меня более 5 лет практического опыта в создании сайтов (новостные сайты, блоги) и веб-приложений (интернет-магазины, социальные платформы, мессенджеры)."
+
+msgid "I also build multifunctional Telegram bots — online stores, restaurant bots and more — designed to scale reliably."
+msgstr "Я также создаю многофункциональные Telegram-боты — интернет-магазины, боты для ресторанов и другое — рассчитанные на надёжное масштабирование."
+
+# --- Listings ---
+msgid "Latest posts"
+msgstr "Последние посты"
+
+msgid "Latest news"
+msgstr "Последние новости"
+
+msgid "Recent writing"
+msgstr "Недавние статьи"
+
+msgid "All posts"
+msgstr "Все посты"
+
+msgid "Writing & posts"
+msgstr "Статьи и посты"
+
+msgid "Post"
+msgstr "Пост"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Search by title…"
+msgstr "Поиск по заголовку…"
+
+msgid "Nothing here yet."
+msgstr "Здесь пока пусто."
+
+msgid "min"
+msgstr "мин"
+
+msgid "min read"
+msgstr "мин чтения"
+
+msgid "views"
+msgstr "просмотров"
+
+# --- Detail / comments ---
+msgid "Comments"
+msgstr "Комментарии"
+
+msgid "total"
+msgstr "всего"
+
+msgid "Write a comment…"
+msgstr "Напишите комментарий…"
+
+msgid "Write a reply…"
+msgstr "Напишите ответ…"
+
+msgid "Reply"
+msgstr "Ответить"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete this comment?"
+msgstr "Удалить этот комментарий?"
+
+msgid "ago"
+msgstr "назад"
+
+msgid "No comments yet — be the first."
+msgstr "Пока нет комментариев — будьте первым."
+
+msgid "Sign in to comment"
+msgstr "Войдите, чтобы комментировать"
+
+msgid "Comment and reply with your real profile."
+msgstr "Комментируйте и отвечайте под своим профилем."
+
+msgid "Show %(counter)s more reply"
+msgid_plural "Show %(counter)s more replies"
+msgstr[0] "Показать ещё %(counter)s ответ"
+msgstr[1] "Показать ещё %(counter)s ответа"
+msgstr[2] "Показать ещё %(counter)s ответов"
+
+# --- Reviews ---
+msgid "What people say"
+msgstr "Что говорят люди"
+
+msgid "No reviews yet."
+msgstr "Пока нет отзывов."
+
+msgid "Leave a review"
+msgstr "Оставить отзыв"
+
+msgid "Your location"
+msgstr "Ваше местоположение"
+
+msgid "Rating"
+msgstr "Оценка"
+
+msgid "Profile photo (optional)"
+msgstr "Фото профиля (необязательно)"
+
+msgid "Your review"
+msgstr "Ваш отзыв"
+
+msgid "Share your experience…"
+msgstr "Поделитесь опытом…"
+
+msgid "Submit review"
+msgstr "Отправить отзыв"
+
+msgid "Reviews appear after approval."
+msgstr "Отзывы появляются после одобрения."
+
+msgid "Please"
+msgstr "Пожалуйста,"
+
+msgid "sign in"
+msgstr "войдите"
+
+msgid "to leave a review."
+msgstr "чтобы оставить отзыв."
+
+# --- Projects ---
+msgid "Selected work & achievements"
+msgstr "Избранные работы и достижения"
+
+msgid "Visit"
+msgstr "Перейти"
+
+msgid "Projects coming soon."
+msgstr "Проекты скоро появятся."
+
+# --- Login page ---
+msgid "Welcome back"
+msgstr "С возвращением"
+
+msgid "Sign in to comment and leave reviews."
+msgstr "Войдите, чтобы комментировать и оставлять отзывы."
+
+msgid "Continue with Google"
+msgstr "Продолжить через Google"
+
+msgid "Continue with GitHub"
+msgstr "Продолжить через GitHub"
+
+msgid "Continue with LinkedIn"
+msgstr "Продолжить через LinkedIn"
+
+msgid "or"
+msgstr "или"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+# --- Messages / views ---
+msgid "Comment cannot be empty."
+msgstr "Комментарий не может быть пустым."
+
+msgid "Your comment was posted."
+msgstr "Ваш комментарий опубликован."
+
+msgid "You can't delete this comment."
+msgstr "Вы не можете удалить этот комментарий."
+
+msgid "Comment deleted."
+msgstr "Комментарий удалён."
+
+msgid "Invalid username or password."
+msgstr "Неверное имя пользователя или пароль."
+
+msgid "You have been signed out."
+msgstr "Вы вышли из системы."
+
+msgid "Thank you! Your review was submitted and will appear once approved."
+msgstr "Спасибо! Ваш отзыв отправлен и появится после одобрения."
+
+msgid "Please check the review form and try again."
+msgstr "Пожалуйста, проверьте форму отзыва и попробуйте снова."
+
+# --- Admin: actions & fieldsets ---
+msgid "Approve selected reviews"
+msgstr "Одобрить выбранные отзывы"
+
+msgid "Unapprove selected reviews"
+msgstr "Отменить одобрение выбранных отзывов"
+
+msgid "Media & SEO"
+msgstr "Медиа и SEO"
+
+msgid "Publishing"
+msgstr "Публикация"
+
+msgid "Timestamps"
+msgstr "Отметки времени"
+
+msgid "Profile"
+msgstr "Профиль"
+
+# --- Model fields & help text ---
+msgid "Optional — falls back to your account avatar."
+msgstr "Необязательно — используется аватар вашего аккаунта."
+
+msgid "Short professional headline, e.g. 'Backend Engineer'."
+msgstr "Короткий профессиональный заголовок, например 'Backend Engineer'."
+
+msgid "Short summary shown in listings and link previews."
+msgstr "Краткое описание для списков и превью ссылок."
+
+msgid "Shown as the preview image when the link is shared."
+msgstr "Показывается как превью-изображение при отправке ссылки."
+
+msgid "Up to 160 chars for search engines. Falls back to excerpt."
+msgstr "До 160 символов для поисковых систем. Используется краткое описание."
+
+msgid "address"
+msgstr "адрес"
+
+msgid "approved"
+msgstr "одобрено"
+
+msgid "avatar"
+msgstr "аватар"
+
+msgid "body"
+msgstr "текст"
+
+msgid "comment"
+msgstr "комментарий"
+
+msgid "comments"
+msgstr "комментарии"
+
+msgid "country flag"
+msgstr "флаг страны"
+
+msgid "description"
+msgstr "описание"
+
+msgid "excerpt"
+msgstr "краткое описание"
+
+msgid "featured"
+msgstr "избранное"
+
+msgid "headline"
+msgstr "заголовок"
+
+msgid "link"
+msgstr "ссылка"
+
+msgid "location"
+msgstr "местоположение"
+
+msgid "meta description"
+msgstr "мета-описание"
+
+msgid "name"
+msgstr "название"
+
+msgid "news item"
+msgstr "новость"
+
+msgid "order"
+msgstr "порядок"
+
+msgid "photo"
+msgstr "фото"
+
+msgid "poster image"
+msgstr "изображение-постер"
+
+msgid "profile photo"
+msgstr "фото профиля"
+
+msgid "project"
+msgstr "проект"
+
+msgid "published at"
+msgstr "дата публикации"
+
+msgid "published"
+msgstr "опубликовано"
+
+msgid "rating"
+msgstr "оценка"
+
+msgid "review"
+msgstr "отзыв"
+
+msgid "slug"
+msgstr "слаг"
+
+msgid "tag"
+msgstr "тег"
+
+msgid "tags"
+msgstr "теги"
+
+msgid "title"
+msgstr "заголовок"
+
+msgid "user"
+msgstr "пользователь"
+
+msgid "users"
+msgstr "пользователи"

@@ -1,343 +1,384 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: thedevu101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 03:59+0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2026-07-19 00:00+0500\n"
+"PO-Revision-Date: 2026-07-19 00:00+0500\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\PROJECT\settings.py:135
-msgid "English"
-msgstr "English"
-
-#: .\PROJECT\settings.py:137
-msgid "O'zbek"
-msgstr "O'zbek"
-
-#: .\app_main\templates\app_main\index.html:17
-msgid ""
-"\n"
-"            <h3>Hello</h3>\n"
-"            <h2>I'm <span class=\"color\">Ulugbek</span></h2>\n"
-"                <p>\n"
-"                    I'm a <span class=\"color\">Full Stack</span>\n"
-"                    web developer with 3+ years of experience and strong "
-"passion for\n"
-"                    building\n"
-"                    <span class=\"color\">Web Applications</span>\n"
-"                    and\n"
-"                    <span class=\"color\">multifunctional Telegram Bots.</"
-"span>\n"
-"                    <br />\n"
-"                    Here's a bit more\n"
-"                    <span class=\"color\">about me</span>\n"
-"                </p>\n"
-"            <!-- social -->\n"
-"            "
-msgstr ""
-"\n"
-"            <h3>Salom</h3>\n"
-"            <h2>Xush kelibsiz !</h2>\n"
-"            Mening ismim <h3><span class=\"color\">Ulug'bek</span></"
-"h3>                <p>\n"
-"                    <span class=\"color\">Web Dasturlar</span> va \n"
-"                    ko'p funksional <span class=\"color\">Telegram Botlar</"
-"span> qurishda\n"
-"                    3+ yillik tajribaga ega <span class=\"color\">Full "
-"Stack</span> dasturchiman\n"
-"                    <br />\n"
-"                    Bu yerda\n"
-"                    <span class=\"color\">men haqimda</span> ma'lumot "
-"olishingiz mumkin\n"
-"                </p>\n"
-"            <!-- social -->\n"
-"            "
-
-#: .\app_main\templates\app_main\index.html:71
-#: .\templates\components\_navbar.html:16
-msgid "About"
-msgstr "Men haqimda"
-
-#: .\app_main\templates\app_main\index.html:75
-msgid "About Me"
-msgstr "Ma'lumot"
-
-#: .\app_main\templates\app_main\index.html:76
-msgid "Full Stack Web developer"
-msgstr "Full Stack Web dasturchi"
-
-#: .\app_main\templates\app_main\index.html:83
-msgid "Download CV"
-msgstr "CV ni yuklash"
-
-#: .\app_main\templates\app_main\index.html:88
-msgid "Hello! I am Ulugbek Umaraliyev. Full Stack Web Developer."
-msgstr "Salom! Men Ulug'bek Umaraliyev. Full Stack Web Dasturchiman"
-
-#: .\app_main\templates\app_main\index.html:90
-msgid ""
-"I have been working in this area for 3+ years. I have excellent practical "
-"experience in building web sites (news sites, blog sites, ...) and web "
-"applications (online stores, social media, messangers, ...)."
-msgstr ""
-"Bu sohada 3+ yildan beri faoliyat yuritib kelaman. Web sayt (yangiliklar "
-"sayti, biznes sahifalar va h.k) va web ilovalar (online do'kon, ijtimoiy "
-"tarmoqlar, messenjerlar va h.k) qurishda katta tajribam bor."
-
-#: .\app_main\templates\app_main\index.html:92
-msgid ""
-"Also, I have a lot of experience in developing multifunctional Telegram Bots "
-"(online stores, restaurant telegram bots, ...)"
-msgstr ""
-"Shuningdek, ko'p funksional Telegram Botlar (online do'kon, restorant va "
-"fast-food botlar, ...) qurishda ham katta tajribaga egaman."
-
-#: .\app_main\templates\app_main\index.html:99
-msgid "Leave a review"
-msgstr "Izoh qoldiring"
-
-#: .\app_main\templates\app_main\index.html:103
-msgid "*Your Address: "
-msgstr "*Manzilingiz"
-
-#: .\app_main\templates\app_main\index.html:105
-msgid "Profile photo (This photo will be displayed on your review): "
-msgstr "Profil rasmi (Bu rasm sizni izohingizda ko'rinib turadi)"
-
-#: .\app_main\templates\app_main\index.html:107
-msgid "*Rate me: 1-5 (I know you want select 5 😉): "
-msgstr "*Meni baholang: 1-5 (Bilaman 5 ni tanlamiqchisiz 😉):"
-
-#: .\app_main\templates\app_main\index.html:109
-msgid "*Your review: "
-msgstr "*Izoh"
-
-#: .\app_main\templates\app_main\index.html:111
-msgid "Post"
-msgstr "Yuklash"
-
-#: .\app_main\templates\app_main\index.html:114
-#: .\app_users\templates\app_users\login.html:28
-msgid "Log in"
-msgstr "Kirish"
-
-#: .\app_main\templates\app_main\index.html:114
-msgid " to leave a review"
-msgstr "<br>Izoh yuklash uchun tizimga kirish talab etiladi"
-
-#: .\app_main\templates\app_main\index.html:120
-#: .\templates\components\_navbar.html:19
-msgid "Reviews"
-msgstr "Izohlar"
-
-#: .\app_main\templates\app_main\index.html:152
-#: .\app_main\templates\app_main\posts.html:26
-msgid "ago"
-msgstr "avval"
-
-#: .\app_main\templates\app_main\index.html:155
-msgid "No reviews yet 🧐"
-msgstr "Izohlar mavjud emas 🧐"
-
-#: .\app_main\templates\app_main\portfolio.html:11
-#: .\templates\components\_navbar.html:18
-msgid "Portfolio"
-msgstr "Portfolio"
-
-#: .\app_main\templates\app_main\post.html:21
-#: .\templates\components\_navbar.html:20
+# --- Navigation & chrome ---
 msgid "Posts"
-msgstr "Postlar"
+msgstr "Maqolalar"
 
-#: .\app_main\templates\app_main\posts.html:9
-msgid "All posts"
-msgstr "Barcha postlar"
+msgid "News"
+msgstr "Yangiliklar"
 
-#: .\app_main\templates\app_main\posts.html:11
-msgid "Search by post title, tag and press Enter"
-msgstr "Post sarlavhasi yoki tag nomini kiritib Enter ni bosing"
+msgid "Projects"
+msgstr "Loyihalar"
 
-#: .\app_main\templates\app_main\services.html:11
-#: .\templates\components\_navbar.html:17
-msgid "Services"
-msgstr "Xizmatlar"
+msgid "Reviews"
+msgstr "Sharhlar"
 
-#: .\app_main\templates\app_main\services.html:16
-msgid "Frontend Development"
-msgstr "Frontent Dasturlash"
-
-#: .\app_main\templates\app_main\services.html:18
-msgid ""
-"\n"
-"                Development of the frontend part of the site, "
-"customization,\n"
-"                adding different animations of different complexity, a "
-"fully\n"
-"                working part of registration and authorization.<br />Layout "
-"of\n"
-"                multi-page sites with perfect adaptation and much more ...\n"
-"                "
-msgstr ""
-"\n"
-"                Web sahifalarnin frontend qismlarini yozish, bezatish,\n"
-"                har xil turdagi va qiyinlikdagi animatsiyalar "
-"qo'shish,                 to'liq funksional ko'rsatadigan avtorizatsiya va "
-"autentifikatsiya.<br />                Ko'p sahifali web saytlarni qurish va "
-"ularni mobil qurilmalar uchun to'liq adaptatsiya qilish va h.k\n"
-"                "
-
-#: .\app_main\templates\app_main\services.html:28
-msgid "Backend Development"
-msgstr "Backend Dasturlash"
-
-#: .\app_main\templates\app_main\services.html:30
-msgid ""
-"\n"
-"                Development of the backend part of multi-page sites with\n"
-"                registration, authorization, subscription system, viewing "
-"stats,\n"
-"                CRM system, admin panel for managing a web application.\n"
-"                "
-msgstr ""
-"\n"
-"                Ko'p sahifali web sayt va web ilovalarni backend qismini "
-"qurish va\n"
-"                registratsiya, avtorizatsiya, to'lov integratsiyasi, "
-"obunalar tizimi, statistika generatsiyalarini ulash va h.k.CRM, LMS tizimlar "
-"va admin panellar.\n"
-"                "
-
-#: .\app_main\templates\app_main\services.html:36
-msgid ""
-"\n"
-"                Websites for\n"
-"                <strong>\n"
-"                    Hotels, Restaurants, Organizations, Training Centers,\n"
-"                    Personal Blogs, Online Private Messengers\n"
-"                </strong>\n"
-"                "
-msgstr ""
-"\n"
-"                <strong>\n"
-"                    Mehmonxona, Restoran, Tashkilotlar, O'quv markaz, "
-"Xususiy maktablar,\n"
-"                    Personal blog sahifalari, Online do'kon, Messenjer\n"
-"                </strong>\n"
-"                platformalarini qurish"
-
-#: .\app_main\templates\app_main\services.html:47
-msgid "Telegram Bot"
-msgstr "Telegram Totlar"
-
-#: .\app_main\templates\app_main\services.html:49
-msgid ""
-"\n"
-"                Development of full-featured telegram bots with full\n"
-"                <strong>integration of payment</strong> through the bot, "
-"with\n"
-"                the ability to track and identify\n"
-"                <strong>statistics</strong> for\n"
-"                <strong>restaurants, Training Centers</strong>, a\n"
-"                <strong>Moderator Bot</strong> for managing and posting news "
-"to\n"
-"                channels, bot that collects data from the Internet on your\n"
-"                purposes, <strong>Bot-Scraper</strong> that collects data "
-"from\n"
-"                online stores, web sites in seconds and much more ...\n"
-"                "
-msgstr ""
-"\n"
-"                To'liq <strong>to'lov tizimi</strong>\n"
-"                integratsiya qilingan va <strong>statistika</strong> "
-"generatsiya qilib bera oladigan                <strong>Restoranlar, Fast-"
-"Food markazlari, O'quv markazlar</strong>\n"
-"                uchun <strong>ko'pfunksional Telegram Botlar</"
-"strong>.                Telegram guruxlarni boshqaruvi, avtomatlashgan "
-"postlar qo'yib boruvchi                <strong>moderator</strong> "
-"botlar.                 Online do'konlar, Web Saytlar dan soniyalar ichida "
-"ma'lumot yig'a oladigan                <strong>Bot-Scraper</strong> lar"
-
-#: .\app_users\templates\app_users\login.html:20
-msgid "Log in to the system"
-msgstr "Tizimga kirish"
-
-#: .\app_users\templates\app_users\login.html:21
-msgid "Username"
-msgstr "Username"
-
-#: .\app_users\templates\app_users\login.html:22
-msgid "Password"
-msgstr "Parol"
-
-#: .\app_users\templates\app_users\login.html:23
-msgid "Email or Password is incorrect"
-msgstr "E-mail manzil yoki Parol noto'g'ri"
-
-#: .\app_users\templates\app_users\login.html:32
-msgid "OR"
-msgstr "YOKI"
-
-#: .\app_users\templates\app_users\login.html:67
-#: .\app_users\templates\app_users\login.html:69
-msgid "Continue with Google"
-msgstr "Google bilan davom etish"
-
-#: .\app_users\templates\app_users\login.html:101
-#: .\app_users\templates\app_users\login.html:103
-msgid "Continue with GitHub"
-msgstr "GitHub bilan davom etish"
-
-#: .\app_users\views.py:58
-msgid ""
-"Thank you ! Your review was sent for verification, it will be posted soon 😉"
-msgstr "Izoh qoldirganingiz uchun tashakkur ! Tez orada tasdiqdan o'tganidan so'ng post qilinadi 😉"
-
-#: .\templates\components\_footer.html:5
-msgid "Contact"
-msgstr "Bog'lanish"
-
-#: .\templates\components\_footer.html:8
-msgid "Your Full Name"
-msgstr "To'liq ism familiyangiz"
-
-#: .\templates\components\_footer.html:12
-msgid "Email address"
-msgstr "E-mail manzilingiz"
-
-#: .\templates\components\_footer.html:22
-msgid "Write your message ..."
-msgstr "Murojaatingiz ..."
-
-#: .\templates\components\_footer.html:24
-msgid "Send"
-msgstr "Yuborish"
-
-#: .\templates\components\_navbar.html:8
-msgid "Hi"
-msgstr "Salom"
-
-#: .\templates\components\_navbar.html:15
-msgid "Home"
-msgstr "Bosh sahifa"
-
-#: .\templates\components\_navbar.html:37
-msgid "Login"
+msgid "Sign in"
 msgstr "Kirish"
 
-#: .\templates\components\_navbar.html:39
 msgid "Logout"
 msgstr "Chiqish"
 
-#~ msgid "Русский"
-#~ msgstr "Русский"
+msgid "Menu"
+msgstr "Menyu"
+
+msgid "Toggle theme"
+msgstr "Mavzuni almashtirish"
+
+msgid "Full-Stack Developer"
+msgstr "Full-Stack dasturchi"
+
+msgid "Call"
+msgstr "Qo'ng'iroq"
+
+msgid "All rights reserved."
+msgstr "Barcha huquqlar himoyalangan."
+
+# --- Home / hero ---
+msgid "Full-Stack Developer · 5+ years"
+msgstr "Full-Stack dasturchi · 5+ yil"
+
+msgid "I'm <span class=\"italic text-accent\">Ulug'bek</span> — I build production-grade web apps."
+msgstr "Men <span class=\"italic text-accent\">Ulug'bek</span> — ishlab chiqarish darajasidagi veb-ilovalar quraman."
+
+msgid "Django, real-time systems and multifunctional Telegram bots. Here I share my work, news and writing."
+msgstr "Django, real-time tizimlar va ko'p funksiyali Telegram botlar. Bu yerda ishlarim, yangiliklarim va yozganlarimni bo'lishaman."
+
+msgid "Download CV"
+msgstr "CV yuklab olish"
+
+msgid "Read posts"
+msgstr "Maqolalarni o'qish"
+
+msgid "Years"
+msgstr "Yil"
+
+msgid "Available for work"
+msgstr "Ish uchun ochiqman"
+
+# --- About ---
+msgid "About"
+msgstr "Men haqimda"
+
+msgid "Full-Stack Web Developer"
+msgstr "Full-Stack veb-dasturchi"
+
+msgid "Hello! I'm Ulug'bek Umaraliyev. I have 5+ years of hands-on experience building websites (news sites, blogs) and web applications (online stores, social platforms, messengers)."
+msgstr "Salom! Men Ulug'bek Umaraliyev. Veb-saytlar (yangilik saytlari, bloglar) va veb-ilovalar (onlayn do'konlar, ijtimoiy platformalar, messenjerlar) yaratishda 5+ yillik amaliy tajribaga egaman."
+
+msgid "I also build multifunctional Telegram bots — online stores, restaurant bots and more — designed to scale reliably."
+msgstr "Shuningdek, ko'p funksiyali Telegram botlar yarataman — onlayn do'konlar, restoran botlari va boshqalar — ishonchli miqyoslash uchun mo'ljallangan."
+
+# --- Listings ---
+msgid "Latest posts"
+msgstr "So'nggi maqolalar"
+
+msgid "Latest news"
+msgstr "So'nggi yangiliklar"
+
+msgid "Recent writing"
+msgstr "So'nggi yozuvlar"
+
+msgid "All posts"
+msgstr "Barcha maqolalar"
+
+msgid "Writing & posts"
+msgstr "Yozuvlar va maqolalar"
+
+msgid "Post"
+msgstr "Maqola"
+
+msgid "All"
+msgstr "Barchasi"
+
+msgid "Search by title…"
+msgstr "Sarlavha bo'yicha qidirish…"
+
+msgid "Nothing here yet."
+msgstr "Bu yerda hozircha hech narsa yo'q."
+
+msgid "min"
+msgstr "daq"
+
+msgid "min read"
+msgstr "daq o'qish"
+
+msgid "views"
+msgstr "ko'rishlar"
+
+# --- Detail / comments ---
+msgid "Comments"
+msgstr "Izohlar"
+
+msgid "total"
+msgstr "jami"
+
+msgid "Write a comment…"
+msgstr "Izoh yozing…"
+
+msgid "Write a reply…"
+msgstr "Javob yozing…"
+
+msgid "Reply"
+msgstr "Javob berish"
+
+msgid "Delete"
+msgstr "O'chirish"
+
+msgid "Delete this comment?"
+msgstr "Ushbu izoh o'chirilsinmi?"
+
+msgid "ago"
+msgstr "oldin"
+
+msgid "No comments yet — be the first."
+msgstr "Hali izohlar yo'q — birinchi bo'ling."
+
+msgid "Sign in to comment"
+msgstr "Izoh qoldirish uchun kiring"
+
+msgid "Comment and reply with your real profile."
+msgstr "Haqiqiy profilingiz bilan izoh va javob yozing."
+
+msgid "Show %(counter)s more reply"
+msgid_plural "Show %(counter)s more replies"
+msgstr[0] "Yana %(counter)s ta javobni ko'rsatish"
+msgstr[1] "Yana %(counter)s ta javobni ko'rsatish"
+
+# --- Reviews ---
+msgid "What people say"
+msgstr "Odamlar nima deydi"
+
+msgid "No reviews yet."
+msgstr "Hali sharhlar yo'q."
+
+msgid "Leave a review"
+msgstr "Sharh qoldiring"
+
+msgid "Your location"
+msgstr "Manzilingiz"
+
+msgid "Rating"
+msgstr "Baho"
+
+msgid "Profile photo (optional)"
+msgstr "Profil rasmi (ixtiyoriy)"
+
+msgid "Your review"
+msgstr "Sharhingiz"
+
+msgid "Share your experience…"
+msgstr "Tajribangizni ulashing…"
+
+msgid "Submit review"
+msgstr "Sharhni yuborish"
+
+msgid "Reviews appear after approval."
+msgstr "Sharhlar tasdiqlangandan so'ng ko'rinadi."
+
+msgid "Please"
+msgstr "Iltimos,"
+
+msgid "sign in"
+msgstr "kiring"
+
+msgid "to leave a review."
+msgstr "sharh qoldirish uchun."
+
+# --- Projects ---
+msgid "Selected work & achievements"
+msgstr "Tanlangan ishlar va yutuqlar"
+
+msgid "Visit"
+msgstr "Tashrif buyurish"
+
+msgid "Projects coming soon."
+msgstr "Loyihalar tez orada."
+
+# --- Login page ---
+msgid "Welcome back"
+msgstr "Xush kelibsiz"
+
+msgid "Sign in to comment and leave reviews."
+msgstr "Izoh va sharh qoldirish uchun kiring."
+
+msgid "Continue with Google"
+msgstr "Google bilan davom etish"
+
+msgid "Continue with GitHub"
+msgstr "GitHub bilan davom etish"
+
+msgid "Continue with LinkedIn"
+msgstr "LinkedIn bilan davom etish"
+
+msgid "or"
+msgstr "yoki"
+
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+msgid "Password"
+msgstr "Parol"
+
+# --- Messages / views ---
+msgid "Comment cannot be empty."
+msgstr "Izoh bo'sh bo'lishi mumkin emas."
+
+msgid "Your comment was posted."
+msgstr "Izohingiz joylandi."
+
+msgid "You can't delete this comment."
+msgstr "Siz bu izohni o'chira olmaysiz."
+
+msgid "Comment deleted."
+msgstr "Izoh o'chirildi."
+
+msgid "Invalid username or password."
+msgstr "Foydalanuvchi nomi yoki parol noto'g'ri."
+
+msgid "You have been signed out."
+msgstr "Tizimdan chiqdingiz."
+
+msgid "Thank you! Your review was submitted and will appear once approved."
+msgstr "Rahmat! Sharhingiz yuborildi va tasdiqlangach ko'rinadi."
+
+msgid "Please check the review form and try again."
+msgstr "Iltimos, sharh shaklini tekshirib, qayta urinib ko'ring."
+
+# --- Admin: actions & fieldsets ---
+msgid "Approve selected reviews"
+msgstr "Tanlangan sharhlarni tasdiqlash"
+
+msgid "Unapprove selected reviews"
+msgstr "Tanlangan sharhlar tasdig'ini bekor qilish"
+
+msgid "Media & SEO"
+msgstr "Media va SEO"
+
+msgid "Publishing"
+msgstr "Chop etish"
+
+msgid "Timestamps"
+msgstr "Vaqt belgilari"
+
+msgid "Profile"
+msgstr "Profil"
+
+# --- Model fields & help text ---
+msgid "Optional — falls back to your account avatar."
+msgstr "Ixtiyoriy — hisobingiz avatariga qaytadi."
+
+msgid "Short professional headline, e.g. 'Backend Engineer'."
+msgstr "Qisqa kasbiy sarlavha, masalan 'Backend Engineer'."
+
+msgid "Short summary shown in listings and link previews."
+msgstr "Ro'yxatlar va havola ko'rinishlarida ko'rsatiladigan qisqa mazmun."
+
+msgid "Shown as the preview image when the link is shared."
+msgstr "Havola ulashilganda ko'rinish rasmi sifatida ko'rsatiladi."
+
+msgid "Up to 160 chars for search engines. Falls back to excerpt."
+msgstr "Qidiruv tizimlari uchun 160 belgigacha. Qisqacha mazmunga qaytadi."
+
+msgid "address"
+msgstr "manzil"
+
+msgid "approved"
+msgstr "tasdiqlangan"
+
+msgid "avatar"
+msgstr "avatar"
+
+msgid "body"
+msgstr "matn"
+
+msgid "comment"
+msgstr "izoh"
+
+msgid "comments"
+msgstr "izohlar"
+
+msgid "country flag"
+msgstr "mamlakat bayrog'i"
+
+msgid "description"
+msgstr "tavsif"
+
+msgid "excerpt"
+msgstr "qisqacha mazmun"
+
+msgid "featured"
+msgstr "tanlangan"
+
+msgid "headline"
+msgstr "sarlavha"
+
+msgid "link"
+msgstr "havola"
+
+msgid "location"
+msgstr "joylashuv"
+
+msgid "meta description"
+msgstr "meta tavsif"
+
+msgid "name"
+msgstr "nom"
+
+msgid "news item"
+msgstr "yangilik"
+
+msgid "order"
+msgstr "tartib"
+
+msgid "photo"
+msgstr "rasm"
+
+msgid "poster image"
+msgstr "poster rasm"
+
+msgid "profile photo"
+msgstr "profil rasmi"
+
+msgid "project"
+msgstr "loyiha"
+
+msgid "published at"
+msgstr "chop etilgan sana"
+
+msgid "published"
+msgstr "chop etilgan"
+
+msgid "rating"
+msgstr "baho"
+
+msgid "review"
+msgstr "sharh"
+
+msgid "slug"
+msgstr "slug"
+
+msgid "tag"
+msgstr "teg"
+
+msgid "tags"
+msgstr "teglar"
+
+msgid "title"
+msgstr "sarlavha"
+
+msgid "user"
+msgstr "foydalanuvchi"
+
+msgid "users"
+msgstr "foydalanuvchilar"
