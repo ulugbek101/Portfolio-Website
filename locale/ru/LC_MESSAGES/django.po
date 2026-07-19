@@ -1,8 +1,9 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: thedevu101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 00:00+0500\n"
+"POT-Creation-Date: 2026-07-19 10:46+0500\n"
 "PO-Revision-Date: 2026-07-19 00:00+0500\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -10,376 +11,1147 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-# --- Navigation & chrome ---
-msgid "Posts"
-msgstr "Посты"
+#: PROJECT/settings.py:162
+msgid "O'zbek"
+msgstr "O'zbek"
 
-msgid "News"
-msgstr "Новости"
+#: PROJECT/settings.py:163
+msgid "Русский"
+msgstr "Русский"
 
-msgid "Projects"
-msgstr "Проекты"
+#: PROJECT/settings.py:164
+msgid "English"
+msgstr "English"
 
-msgid "Reviews"
-msgstr "Отзывы"
+#: accounts/admin.py:12 templates/components/_navbar.html:45
+#: templates/components/_navbar.html:46 templates/components/_navbar.html:70
+msgid "Profile"
+msgstr "Профиль"
 
-msgid "Sign in"
-msgstr "Войти"
+#: accounts/models.py:17
+msgid "avatar"
+msgstr "аватар"
 
-msgid "Logout"
-msgstr "Выйти"
+#: accounts/models.py:20
+msgid "headline"
+msgstr "заголовок"
 
-msgid "Menu"
-msgstr "Меню"
+#: accounts/models.py:21
+msgid "Short professional headline, e.g. 'Backend Engineer'."
+msgstr "Короткий профессиональный заголовок, например 'Backend Engineer'."
 
-msgid "Toggle theme"
-msgstr "Переключить тему"
+#: accounts/models.py:23
+msgid "location"
+msgstr "местоположение"
 
-msgid "Full-Stack Developer"
-msgstr "Full-Stack разработчик"
+#: accounts/models.py:25
+msgid "email newsletter"
+msgstr "email-рассылка"
 
-msgid "Call"
-msgstr "Позвонить"
+#: accounts/models.py:26 app_users/templates/app_users/profile.html:60
+msgid "Receive occasional email updates and newsletters."
+msgstr "Получать периодические обновления и рассылки по электронной почте."
 
-msgid "All rights reserved."
-msgstr "Все права защищены."
+#: accounts/models.py:30
+msgid "user"
+msgstr "пользователь"
+
+#: accounts/models.py:31
+msgid "users"
+msgstr "пользователи"
+
+#: app_main/models.py:12 content/models.py:51
+msgid "title"
+msgstr "заголовок"
+
+#: app_main/models.py:13
+msgid "link"
+msgstr "ссылка"
+
+#: app_main/models.py:14
+msgid "description"
+msgstr "описание"
+
+#: app_main/models.py:15
+msgid "photo"
+msgstr "фото"
+
+#: app_main/models.py:17
+msgid "featured"
+msgstr "избранное"
+
+#: app_main/models.py:18 app_main/models.py:55 app_users/models.py:31
+msgid "order"
+msgstr "порядок"
+
+#: app_main/models.py:26
+msgid "project"
+msgstr "проект"
+
+#: app_main/models.py:27
+msgid "projects"
+msgstr "проекты"
+
+#: app_main/models.py:36
+msgid "company"
+msgstr "компания"
+
+#: app_main/models.py:38
+msgid "logo"
+msgstr "логотип"
+
+#: app_main/models.py:39
+msgid "Shown as a round avatar."
+msgstr "Отображается как круглый аватар."
+
+#: app_main/models.py:42
+msgid "responsibilities"
+msgstr "обязанности"
+
+#: app_main/models.py:43
+msgid "What you did here — one item per line is rendered as a list."
+msgstr ""
+"Чем вы занимались — каждая строка отображается отдельным пунктом списка."
+
+#: app_main/models.py:45
+msgid "worked from"
+msgstr "работал с"
+
+#: app_main/models.py:47
+msgid "worked until"
+msgstr "работал до"
+
+#: app_main/models.py:48
+msgid "Leave empty and tick “currently working here” for an ongoing job."
+msgstr "Оставьте пустым и отметьте «работаю здесь сейчас» для текущей работы."
+
+#: app_main/models.py:51
+msgid "currently working here"
+msgstr "работаю здесь сейчас"
+
+#: app_main/models.py:52
+msgid "Ongoing — the end date is treated as today when computing duration."
+msgstr ""
+"Продолжается — при расчёте срока дата окончания считается сегодняшним днём."
+
+#: app_main/models.py:56
+msgid "Lower numbers appear first. Ties fall back to newest start date."
+msgstr ""
+"Меньшие числа отображаются первыми. При равенстве — по самой новой дате "
+"начала."
+
+#: app_main/models.py:65
+msgid "job"
+msgstr "работа"
+
+#: app_main/models.py:66
+msgid "work history"
+msgstr "опыт работы"
+
+#: app_main/models.py:88
+#, python-format
+msgid "%(n)d year"
+msgid_plural "%(n)d years"
+msgstr[0] "%(n)d год"
+msgstr[1] "%(n)d года"
+msgstr[2] "%(n)d лет"
+
+#: app_main/models.py:90
+#, python-format
+msgid "%(n)d month"
+msgid_plural "%(n)d months"
+msgstr[0] "%(n)d месяц"
+msgstr[1] "%(n)d месяца"
+msgstr[2] "%(n)d месяцев"
+
+#: app_main/models.py:92
+msgid "Less than a month"
+msgstr "Менее месяца"
+
+#: app_main/models.py:96
+msgid "present"
+msgstr "настоящее время"
 
 # --- Home / hero ---
+#: app_main/templates/app_main/index.html:8
 msgid "Full-Stack Developer · 5+ years"
 msgstr "Full-Stack разработчик · 5+ лет"
 
-msgid "I'm <span class=\"italic text-accent\">Ulug'bek</span> — I build production-grade web apps."
-msgstr "Я <span class=\"italic text-accent\">Улугбек</span> — создаю веб-приложения промышленного уровня."
+#: app_main/templates/app_main/index.html:10
+msgid ""
+"I'm <span class=\"italic text-accent\">Ulug'bek</span> — I build production-"
+"grade web apps."
+msgstr ""
+"Я <span class=\"italic text-accent\">Улугбек</span> — создаю веб-приложения "
+"промышленного уровня."
 
-msgid "Django, real-time systems and multifunctional Telegram bots. Here I share my work, news and writing."
-msgstr "Django, системы реального времени и многофункциональные Telegram-боты. Здесь я делюсь своими работами, новостями и статьями."
+#: app_main/templates/app_main/index.html:12
+msgid ""
+"Django, real-time systems and multifunctional Telegram bots. Here I share my"
+" work, news and writing."
+msgstr ""
+"Django, системы реального времени и многофункциональные Telegram-боты. Здесь"
+" я делюсь своими работами, новостями и статьями."
 
+#: app_main/templates/app_main/index.html:14
 msgid "Download CV"
 msgstr "Скачать резюме"
 
+#: app_main/templates/app_main/index.html:15
 msgid "Read posts"
 msgstr "Читать посты"
 
+#: app_main/templates/app_main/index.html:20
 msgid "Years"
 msgstr "Лет"
 
+#: app_main/templates/app_main/index.html:24
+#: app_main/templates/app_main/portfolio.html:6
+#: templates/components/_navbar.html:16 templates/components/_navbar.html:66
+msgid "Projects"
+msgstr "Проекты"
+
+#: app_main/templates/app_main/index.html:37
 msgid "Available for work"
 msgstr "Открыт для работы"
 
 # --- About ---
+#: app_main/templates/app_main/index.html:46
 msgid "About"
 msgstr "Обо мне"
 
+#: app_main/templates/app_main/index.html:47
 msgid "Full-Stack Web Developer"
 msgstr "Full-Stack веб-разработчик"
 
-msgid "Hello! I'm Ulug'bek Umaraliyev. I have 5+ years of hands-on experience building websites (news sites, blogs) and web applications (online stores, social platforms, messengers)."
-msgstr "Привет! Я Улугбек Умаралиев. У меня более 5 лет практического опыта в создании сайтов (новостные сайты, блоги) и веб-приложений (интернет-магазины, социальные платформы, мессенджеры)."
+#: app_main/templates/app_main/index.html:50
+msgid ""
+"Hello! I'm Ulug'bek Umaraliyev. I have 5+ years of hands-on experience "
+"building websites (news sites, blogs) and web applications (online stores, "
+"social platforms, messengers)."
+msgstr ""
+"Привет! Я Улугбек Умаралиев. У меня более 5 лет практического опыта в "
+"создании сайтов (новостные сайты, блоги) и веб-приложений (интернет-"
+"магазины, социальные платформы, мессенджеры)."
 
-msgid "I also build multifunctional Telegram bots — online stores, restaurant bots and more — designed to scale reliably."
-msgstr "Я также создаю многофункциональные Telegram-боты — интернет-магазины, боты для ресторанов и другое — рассчитанные на надёжное масштабирование."
+#: app_main/templates/app_main/index.html:51
+msgid ""
+"I also build multifunctional Telegram bots — online stores, restaurant bots "
+"and more — designed to scale reliably."
+msgstr ""
+"Я также создаю многофункциональные Telegram-боты — интернет-магазины, боты "
+"для ресторанов и другое — рассчитанные на надёжное масштабирование."
 
 # --- Listings ---
+#: app_main/templates/app_main/index.html:61
 msgid "Latest posts"
 msgstr "Последние посты"
 
-msgid "Latest news"
-msgstr "Последние новости"
-
+#: app_main/templates/app_main/index.html:62
 msgid "Recent writing"
 msgstr "Недавние статьи"
 
+#: app_main/templates/app_main/index.html:64
 msgid "All posts"
 msgstr "Все посты"
 
-msgid "Writing & posts"
-msgstr "Статьи и посты"
+#: app_main/templates/app_main/index.html:75
+#: templates/components/_navbar.html:20 templates/components/_navbar.html:68
+msgid "Reviews"
+msgstr "Отзывы"
 
-msgid "Post"
-msgstr "Пост"
+# --- Reviews ---
+#: app_main/templates/app_main/index.html:76
+msgid "What people say"
+msgstr "Что говорят люди"
 
-msgid "All"
-msgstr "Все"
+#: app_main/templates/app_main/index.html:98
+msgid "Show more"
+msgstr "Показать ещё"
 
-msgid "Search by title…"
-msgstr "Поиск по заголовку…"
+#: app_main/templates/app_main/index.html:102
+msgid "No reviews yet."
+msgstr "Пока нет отзывов."
 
-msgid "Nothing here yet."
-msgstr "Здесь пока пусто."
+#: app_main/templates/app_main/index.html:107
+msgid "Leave a review"
+msgstr "Оставить отзыв"
 
-msgid "min"
-msgstr "мин"
+#: app_main/templates/app_main/index.html:111
+msgid "Your location"
+msgstr "Ваше местоположение"
 
-msgid "min read"
-msgstr "мин чтения"
+#: app_main/templates/app_main/index.html:112
+msgid "Ex: Tashkent, UZ"
+msgstr "Напр.: Ташкент, UZ"
 
-msgid "views"
-msgstr "просмотров"
+#: app_main/templates/app_main/index.html:113 content/notifications.py:92
+#: templates/emails/new_review.html:16
+msgid "Rating"
+msgstr "Оценка"
 
-# --- Detail / comments ---
-msgid "Comments"
-msgstr "Комментарии"
+#: app_main/templates/app_main/index.html:124
+msgid "Profile photo (optional)"
+msgstr "Фото профиля (необязательно)"
 
-msgid "total"
-msgstr "всего"
+#: app_main/templates/app_main/index.html:126
+msgid "Your review"
+msgstr "Ваш отзыв"
 
-msgid "Write a comment…"
-msgstr "Напишите комментарий…"
+#: app_main/templates/app_main/index.html:127
+msgid "Share your experience…"
+msgstr "Поделитесь опытом…"
 
-msgid "Write a reply…"
-msgstr "Напишите ответ…"
+#: app_main/templates/app_main/index.html:128
+msgid "Submit review"
+msgstr "Отправить отзыв"
 
-msgid "Reply"
-msgstr "Ответить"
+#: app_main/templates/app_main/index.html:130
+msgid "Reviews appear after approval."
+msgstr "Отзывы появляются после одобрения."
 
-msgid "Delete"
-msgstr "Удалить"
+#: app_main/templates/app_main/index.html:132
+msgid "Please"
+msgstr "Пожалуйста,"
 
-msgid "Delete this comment?"
-msgstr "Удалить этот комментарий?"
+#: app_main/templates/app_main/index.html:132
+msgid "sign in"
+msgstr "войдите"
 
+#: app_main/templates/app_main/index.html:132
+msgid "to leave a review."
+msgstr "чтобы оставить отзыв."
+
+# --- Projects ---
+#: app_main/templates/app_main/portfolio.html:7
+msgid "Selected work & achievements"
+msgstr "Избранные работы и достижения"
+
+#: app_main/templates/app_main/portfolio.html:20
+msgid "Visit"
+msgstr "Перейти"
+
+#: app_main/templates/app_main/portfolio.html:27
+msgid "Projects coming soon."
+msgstr "Проекты скоро появятся."
+
+#: app_main/templates/app_main/work_history.html:6
+#: templates/components/_navbar.html:18 templates/components/_navbar.html:67
+msgid "Work"
+msgstr "Работа"
+
+#: app_main/templates/app_main/work_history.html:7
+msgid "Work history"
+msgstr "Опыт работы"
+
+#: app_main/templates/app_main/work_history.html:36
+msgid "Currently working"
+msgstr "Работаю сейчас"
+
+#: app_main/templates/app_main/work_history.html:42
+msgid "Present"
+msgstr "Настоящее время"
+
+#: app_main/templates/app_main/work_history.html:61
+msgid "Work history coming soon."
+msgstr "Опыт работы скоро появится."
+
+# --- Admin: actions & fieldsets ---
+#: app_users/admin.py:15
+msgid "Approve selected reviews"
+msgstr "Одобрить выбранные отзывы"
+
+#: app_users/admin.py:19
+msgid "Unapprove selected reviews"
+msgstr "Отменить одобрение выбранных отзывов"
+
+#: app_users/forms.py:30
+#: app_users/templates/app_users/password_reset/form.html:18
+#: app_users/templates/app_users/profile.html:41
+#: app_users/templates/app_users/register.html:32
+msgid "Email"
+msgstr "Эл. почта"
+
+#: app_users/forms.py:32
+msgid "you@example.com"
+msgstr "you@example.com"
+
+#: app_users/forms.py:35 app_users/templates/app_users/profile.html:31
+#: app_users/templates/app_users/register.html:39
+msgid "First name"
+msgstr "Имя"
+
+#: app_users/forms.py:37 app_users/forms.py:42
+msgid "Optional"
+msgstr "Необязательно"
+
+#: app_users/forms.py:40 app_users/templates/app_users/profile.html:35
+#: app_users/templates/app_users/register.html:43
+msgid "Last name"
+msgstr "Фамилия"
+
+#: app_users/forms.py:52 app_users/templates/app_users/register.html:26
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: app_users/forms.py:55 app_users/templates/app_users/login.html:29
+#: app_users/templates/app_users/register.html:49
+msgid "Password"
+msgstr "Пароль"
+
+#: app_users/forms.py:58 app_users/templates/app_users/register.html:59
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
+
+#: app_users/forms.py:64 app_users/forms.py:95
+msgid "An account with this email already exists."
+msgstr "Аккаунт с таким email уже существует."
+
+#: app_users/i18n_strings.py:11
+msgid "Your password can’t be too similar to your other personal information."
+msgstr "Пароль не должен быть слишком похож на вашу другую личную информацию."
+
+#: app_users/i18n_strings.py:12
+msgid "Your password can’t be a commonly used password."
+msgstr "Пароль не должен быть широко распространённым."
+
+#: app_users/i18n_strings.py:13
+msgid "This password is too common."
+msgstr "Этот пароль слишком широко распространён."
+
+#: app_users/i18n_strings.py:14
+msgid "Your password can’t be entirely numeric."
+msgstr "Пароль не может состоять только из цифр."
+
+#: app_users/i18n_strings.py:15
+msgid "This password is entirely numeric."
+msgstr "Этот пароль состоит только из цифр."
+
+#: app_users/i18n_strings.py:16
+#, python-format
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Пароль слишком похож на %(verbose_name)s."
+
+#: app_users/i18n_strings.py:21
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+"Этот пароль слишком короткий. Он должен содержать как минимум %(min_length)d"
+" символ."
+msgstr[1] ""
+"Этот пароль слишком короткий. Он должен содержать как минимум %(min_length)d"
+" символа."
+msgstr[2] ""
+"Этот пароль слишком короткий. Он должен содержать как минимум %(min_length)d"
+" символов."
+
+#: app_users/i18n_strings.py:26
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] "Ваш пароль должен содержать как минимум %(min_length)d символ."
+msgstr[1] "Ваш пароль должен содержать как минимум %(min_length)d символа."
+msgstr[2] "Ваш пароль должен содержать как минимум %(min_length)d символов."
+
+#: app_users/models.py:19
+msgid "address"
+msgstr "адрес"
+
+#: app_users/models.py:21
+msgid "profile photo"
+msgstr "фото профиля"
+
+# --- Model fields & help text ---
+#: app_users/models.py:22
+msgid "Optional — falls back to your account avatar."
+msgstr "Необязательно — используется аватар вашего аккаунта."
+
+#: app_users/models.py:25
+msgid "country flag"
+msgstr "флаг страны"
+
+#: app_users/models.py:27
+msgid "rating"
+msgstr "оценка"
+
+#: app_users/models.py:28 app_users/models.py:42
+msgid "review"
+msgstr "отзыв"
+
+#: app_users/models.py:29
+msgid "approved"
+msgstr "одобрено"
+
+#: app_users/models.py:33
+msgid "Lower numbers appear first. Ties fall back to newest."
+msgstr "Меньшие числа отображаются первыми. При равенстве — по самым новым."
+
+#: app_users/models.py:43
+msgid "reviews"
+msgstr "отзывы"
+
+#: app_users/templates/app_users/_password_rules.html:2
+msgid "At least 8 characters"
+msgstr "Не менее 8 символов"
+
+#: app_users/templates/app_users/_password_rules.html:3
+#| msgid "This password is entirely numeric."
+msgid "Not entirely numeric"
+msgstr "Не только цифры"
+
+#: app_users/templates/app_users/_password_rules.html:4
+#| msgid ""
+#| "Your password can’t be too similar to your other personal information."
+msgid "Not too similar to your personal info"
+msgstr "Не слишком похож на вашу личную информацию"
+
+#: app_users/templates/app_users/login.html:4
+#: app_users/templates/app_users/login.html:33
+#: app_users/templates/app_users/password_reset/complete.html:12
+#: app_users/templates/app_users/register.html:69
+#: content/templates/content/entry_detail.html:58
+#: templates/components/_navbar.html:51 templates/components/_navbar.html:73
+msgid "Sign in"
+msgstr "Войти"
+
+# --- Login page ---
+#: app_users/templates/app_users/login.html:11
+msgid "Welcome back"
+msgstr "С возвращением"
+
+#: app_users/templates/app_users/login.html:12
+msgid "Sign in to comment and leave reviews."
+msgstr "Войдите, чтобы комментировать и оставлять отзывы."
+
+#: app_users/templates/app_users/login.html:16
+msgid "Continue with Google"
+msgstr "Продолжить через Google"
+
+#: app_users/templates/app_users/login.html:17
+msgid "Continue with GitHub"
+msgstr "Продолжить через GitHub"
+
+#: app_users/templates/app_users/login.html:18
+msgid "Continue with LinkedIn"
+msgstr "Продолжить через LinkedIn"
+
+#: app_users/templates/app_users/login.html:22
+msgid "or"
+msgstr "или"
+
+#: app_users/templates/app_users/login.html:28
+msgid "Username or email"
+msgstr "Имя пользователя или email"
+
+#: app_users/templates/app_users/login.html:31
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: app_users/templates/app_users/login.html:37
+msgid "Don't have an account?"
+msgstr "Нет аккаунта?"
+
+#: app_users/templates/app_users/login.html:38
+msgid "Create one"
+msgstr "Создайте"
+
+#: app_users/templates/app_users/password_reset/complete.html:4
+msgid "Password reset complete"
+msgstr "Пароль сброшен"
+
+#: app_users/templates/app_users/password_reset/complete.html:10
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: app_users/templates/app_users/password_reset/complete.html:11
+msgid ""
+"Your password has been set. You can now sign in with your new password."
+msgstr "Ваш пароль установлен. Теперь вы можете войти с новым паролем."
+
+#: app_users/templates/app_users/password_reset/confirm.html:4
+#: app_users/templates/app_users/password_reset/confirm.html:40
+msgid "Set new password"
+msgstr "Установить новый пароль"
+
+#: app_users/templates/app_users/password_reset/confirm.html:12
+msgid "Set a new password"
+msgstr "Установите новый пароль"
+
+#: app_users/templates/app_users/password_reset/confirm.html:13
+msgid "Enter your new password twice to confirm."
+msgstr "Введите новый пароль дважды для подтверждения."
+
+#: app_users/templates/app_users/password_reset/confirm.html:23
+#: app_users/templates/app_users/profile.html:83
+msgid "New password"
+msgstr "Новый пароль"
+
+#: app_users/templates/app_users/password_reset/confirm.html:35
+#: app_users/templates/app_users/profile.html:90
+msgid "Confirm new password"
+msgstr "Подтвердите новый пароль"
+
+#: app_users/templates/app_users/password_reset/confirm.html:45
+msgid "Invalid reset link"
+msgstr "Недействительная ссылка сброса"
+
+#: app_users/templates/app_users/password_reset/confirm.html:46
+msgid ""
+"This password reset link is invalid or has already been used. Please request"
+" a new one."
+msgstr ""
+"Эта ссылка для сброса пароля недействительна или уже использована. "
+"Пожалуйста, запросите новую."
+
+#: app_users/templates/app_users/password_reset/confirm.html:47
+msgid "Request a new link"
+msgstr "Запросить новую ссылку"
+
+#: app_users/templates/app_users/password_reset/done.html:4
+#: app_users/templates/app_users/password_reset/done.html:10
+msgid "Check your email"
+msgstr "Проверьте почту"
+
+#: app_users/templates/app_users/password_reset/done.html:11
+msgid ""
+"If an account exists for the address you entered, we've sent a link to reset"
+" your password. Please check your inbox and spam folder."
+msgstr ""
+"Если аккаунт с указанным адресом существует, мы отправили ссылку для сброса "
+"пароля. Проверьте входящие и папку со спамом."
+
+#: app_users/templates/app_users/password_reset/done.html:12
+#: app_users/templates/app_users/password_reset/form.html:26
+msgid "Back to sign in"
+msgstr "Вернуться ко входу"
+
+#: app_users/templates/app_users/password_reset/email.html:4
+#: app_users/templates/app_users/password_reset/subject.txt:1
+msgid "Reset your thedevu101 password"
+msgstr "Сброс пароля thedevu101"
+
+#: app_users/templates/app_users/password_reset/email.html:5
+msgid "Use the button below to choose a new password. The link expires soon."
+msgstr ""
+"Нажмите кнопку ниже, чтобы выбрать новый пароль. Срок действия ссылки скоро "
+"истечёт."
+
+#: app_users/templates/app_users/password_reset/email.html:8
+#: app_users/templates/app_users/password_reset/form.html:11
+msgid "Reset your password"
+msgstr "Сбросить пароль"
+
+#: app_users/templates/app_users/password_reset/email.html:9
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for the "
+"account <strong>%(username)s</strong> at thedevu101."
+msgstr ""
+"Вы получили это письмо, потому что запросили сброс пароля для аккаунта "
+"<strong>%(username)s</strong> на thedevu101."
+
+#: app_users/templates/app_users/password_reset/email.html:10
+msgid "Click the button below to choose a new password:"
+msgstr "Нажмите кнопку ниже, чтобы выбрать новый пароль:"
+
+#: app_users/templates/app_users/password_reset/email.html:14
+#: app_users/templates/app_users/password_reset/form.html:4
+msgid "Reset password"
+msgstr "Сбросить пароль"
+
+#: app_users/templates/app_users/password_reset/email.html:18
+msgid "Or copy and paste this link into your browser:"
+msgstr "Или скопируйте и вставьте эту ссылку в браузер:"
+
+#: app_users/templates/app_users/password_reset/email.html:21
+msgid ""
+"If you didn't request a password reset, you can safely ignore this email."
+msgstr ""
+"Если вы не запрашивали сброс пароля, просто проигнорируйте это письмо."
+
+#: app_users/templates/app_users/password_reset/email.txt:1
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"account at thedevu101."
+msgstr ""
+"Вы получили это письмо, потому что запросили сброс пароля для вашего "
+"аккаунта на thedevu101."
+
+#: app_users/templates/app_users/password_reset/email.txt:3
+msgid "Please go to the following page and choose a new password:"
+msgstr "Пожалуйста, перейдите на следующую страницу и выберите новый пароль:"
+
+#: app_users/templates/app_users/password_reset/email.txt:7
+#, python-format
+msgid "Your username, in case you've forgotten: %(username)s"
+msgstr "Ваше имя пользователя, если вы забыли: %(username)s"
+
+#: app_users/templates/app_users/password_reset/email.txt:9
+msgid "If you didn't request this, you can safely ignore this email."
+msgstr "Если вы не запрашивали это, просто проигнорируйте это письмо."
+
+#: app_users/templates/app_users/password_reset/form.html:12
+msgid "Enter your email and we'll send you a reset link."
+msgstr "Введите ваш email, и мы отправим ссылку для сброса."
+
+#: app_users/templates/app_users/password_reset/form.html:22
+msgid "Send reset link"
+msgstr "Отправить ссылку"
+
+#: app_users/templates/app_users/profile.html:4
+#: app_users/templates/app_users/profile.html:9
+msgid "Your profile"
+msgstr "Ваш профиль"
+
+#: app_users/templates/app_users/profile.html:8
+msgid "Account"
+msgstr "Аккаунт"
+
+#: app_users/templates/app_users/profile.html:13
+msgid "Personal information"
+msgstr "Личная информация"
+
+#: app_users/templates/app_users/profile.html:23
+msgid "Avatar"
+msgstr "Аватар"
+
+#: app_users/templates/app_users/profile.html:47
+msgid "Headline"
+msgstr "Профессиональное описание"
+
+#: app_users/templates/app_users/profile.html:52 content/notifications.py:91
+#: templates/emails/new_review.html:14
+msgid "Location"
+msgstr "Местоположение"
+
+#: app_users/templates/app_users/profile.html:59
+msgid "Email newsletter"
+msgstr "Email-рассылка"
+
+#: app_users/templates/app_users/profile.html:64
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: app_users/templates/app_users/profile.html:70
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: app_users/templates/app_users/profile.html:71
+msgid "Enter a new password and confirm it."
+msgstr "Введите новый пароль и подтвердите его."
+
+#: app_users/templates/app_users/profile.html:95
+msgid "Update password"
+msgstr "Обновить пароль"
+
+#: app_users/templates/app_users/register.html:4
+#: app_users/templates/app_users/register.html:64
+msgid "Create account"
+msgstr "Создать аккаунт"
+
+#: app_users/templates/app_users/register.html:11
+msgid "Create your account"
+msgstr "Создайте аккаунт"
+
+#: app_users/templates/app_users/register.html:12
+msgid "Sign up to comment and leave reviews."
+msgstr "Зарегистрируйтесь, чтобы комментировать и оставлять отзывы."
+
+#: app_users/templates/app_users/register.html:39
+#: app_users/templates/app_users/register.html:43
+msgid "optional"
+msgstr "необязательно"
+
+#: app_users/templates/app_users/register.html:68
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: app_users/views.py:44
+msgid "Invalid username/email or password."
+msgstr "Неверное имя пользователя/email или пароль."
+
+#: app_users/views.py:52
+msgid "You have been signed out."
+msgstr "Вы вышли из системы."
+
+#: app_users/views.py:65
+msgid "Welcome! Your account has been created."
+msgstr "Добро пожаловать! Ваш аккаунт создан."
+
+#: app_users/views.py:91
+msgid "Your password has been updated."
+msgstr "Ваш пароль обновлён."
+
+#: app_users/views.py:93 app_users/views.py:102
+msgid "Please correct the errors below."
+msgstr "Пожалуйста, исправьте ошибки ниже."
+
+#: app_users/views.py:100
+msgid "Your profile has been updated."
+msgstr "Ваш профиль обновлён."
+
+#: app_users/views.py:122
+msgid "Thank you! Your review was submitted and will appear once approved."
+msgstr "Спасибо! Ваш отзыв отправлен и появится после одобрения."
+
+#: app_users/views.py:125
+msgid "Please check the review form and try again."
+msgstr "Пожалуйста, проверьте форму отзыва и попробуйте снова."
+
+#: content/admin.py:24 content/models.py:32
+msgid "tag"
+msgstr "тег"
+
+#: content/admin.py:25 content/models.py:33
+msgid "tags"
+msgstr "теги"
+
+#: content/admin.py:42
+msgid "Media & SEO"
+msgstr "Медиа и SEO"
+
+#: content/admin.py:43
+msgid "Publishing"
+msgstr "Публикация"
+
+#: content/admin.py:44
+msgid "Timestamps"
+msgstr "Отметки времени"
+
+#: content/models.py:23
+msgid "name"
+msgstr "название"
+
+#: content/models.py:24 content/models.py:52
+msgid "slug"
+msgstr "слаг"
+
+#: content/models.py:54
+msgid "excerpt"
+msgstr "краткое описание"
+
+#: content/models.py:55
+msgid "Short summary shown in listings and link previews."
+msgstr "Краткое описание для списков и превью ссылок."
+
+#: content/models.py:57
+msgid "body"
+msgstr "текст"
+
+#: content/models.py:60
+msgid "poster image"
+msgstr "изображение-постер"
+
+#: content/models.py:61
+msgid "Shown as the preview image when the link is shared."
+msgstr "Показывается как превью-изображение при отправке ссылки."
+
+#: content/models.py:65
+msgid "meta description"
+msgstr "мета-описание"
+
+#: content/models.py:66
+msgid "Up to 160 chars for search engines. Falls back to excerpt."
+msgstr "До 160 символов для поисковых систем. Используется краткое описание."
+
+#: content/models.py:75
+msgid "published"
+msgstr "опубликовано"
+
+#: content/models.py:76
+msgid "published at"
+msgstr "дата публикации"
+
+#: content/models.py:111
+msgid "post"
+msgstr "пост"
+
+# --- Navigation & chrome ---
+#: content/models.py:112
+msgid "posts"
+msgstr "посты"
+
+#: content/models.py:120
+msgid "news item"
+msgstr "новость"
+
+#: content/models.py:121
+msgid "news"
+msgstr "новости"
+
+#: content/models.py:147 content/models.py:155 content/notifications.py:49
+msgid "comment"
+msgstr "комментарий"
+
+#: content/models.py:156
+msgid "comments"
+msgstr "комментарии"
+
+#: content/notifications.py:49
+msgid "reply"
+msgstr "ответ"
+
+#: content/notifications.py:61 templates/emails/new_comment.html:4
+#, python-format
+msgid "New %(kind)s from %(name)s"
+msgstr "Новый %(kind)s от %(name)s"
+
+#: content/notifications.py:65
+#, python-format
+msgid "A new %(kind)s was posted."
+msgstr "Оставлен новый %(kind)s."
+
+#: content/notifications.py:66 content/notifications.py:90
+#: templates/emails/new_comment.html:12 templates/emails/new_review.html:12
+msgid "From"
+msgstr "От"
+
+#: content/notifications.py:67 templates/emails/new_comment.html:14
+msgid "On"
+msgstr "На"
+
+#: content/notifications.py:68 content/notifications.py:93
+#: templates/emails/new_comment.html:16 templates/emails/new_review.html:18
+msgid "When"
+msgstr "Когда"
+
+#: content/notifications.py:85
+#, python-format
+msgid "New review from %(name)s (%(rate)s/5)"
+msgstr "Новый отзыв от %(name)s (%(rate)s/5)"
+
+#: content/notifications.py:89 templates/emails/new_review.html:9
+msgid "A new review was submitted and is awaiting approval."
+msgstr "Новый отзыв отправлен и ожидает одобрения."
+
+#: content/notifications.py:118 templates/emails/new_post.html:4
+#, python-format
+msgid "New post: %(title)s"
+msgstr "Новый пост: %(title)s"
+
+#: content/notifications.py:120
+msgid "A new post was just published:"
+msgstr "Только что опубликован новый пост:"
+
+#: content/templates/content/_comment.html:11
+#: content/templates/content/_reply.html:11
 msgid "ago"
 msgstr "назад"
 
-msgid "No comments yet — be the first."
-msgstr "Пока нет комментариев — будьте первым."
+#: content/templates/content/_comment.html:17
+#: content/templates/content/_comment.html:33
+#: content/templates/content/_reply.html:16
+msgid "Reply"
+msgstr "Ответить"
 
-msgid "Sign in to comment"
-msgstr "Войдите, чтобы комментировать"
+#: content/templates/content/_comment.html:20
+#: content/templates/content/_reply.html:19
+msgid "Delete this comment?"
+msgstr "Удалить этот комментарий?"
 
-msgid "Comment and reply with your real profile."
-msgstr "Комментируйте и отвечайте под своим профилем."
+#: content/templates/content/_comment.html:22
+#: content/templates/content/_reply.html:21
+msgid "Delete"
+msgstr "Удалить"
 
+#: content/templates/content/_comment.html:31
+msgid "Write a reply…"
+msgstr "Напишите ответ…"
+
+#: content/templates/content/_comment.html:56
+#, python-format
 msgid "Show %(counter)s more reply"
 msgid_plural "Show %(counter)s more replies"
 msgstr[0] "Показать ещё %(counter)s ответ"
 msgstr[1] "Показать ещё %(counter)s ответа"
 msgstr[2] "Показать ещё %(counter)s ответов"
 
-# --- Reviews ---
-msgid "What people say"
-msgstr "Что говорят люди"
+#: content/templates/content/_entry_card.html:14
+#: content/templates/content/entry_list.html:8 content/views.py:43
+#: templates/components/_navbar.html:14 templates/components/_navbar.html:65
+msgid "News"
+msgstr "Новости"
 
-msgid "No reviews yet."
-msgstr "Пока нет отзывов."
+#: content/templates/content/_entry_card.html:14
+#: content/templates/content/entry_detail.html:47
+msgid "Post"
+msgstr "Пост"
 
-msgid "Leave a review"
-msgstr "Оставить отзыв"
+#: content/templates/content/_entry_card.html:32
+msgid "min"
+msgstr "мин"
 
-msgid "Your location"
-msgstr "Ваше местоположение"
+#: content/templates/content/entry_detail.html:25
+msgid "min read"
+msgstr "мин чтения"
 
-msgid "Rating"
-msgstr "Оценка"
+#: content/templates/content/entry_detail.html:26
+msgid "views"
+msgstr "просмотров"
 
-msgid "Profile photo (optional)"
-msgstr "Фото профиля (необязательно)"
+# --- Detail / comments ---
+#: content/templates/content/entry_detail.html:36
+msgid "Comments"
+msgstr "Комментарии"
 
-msgid "Your review"
-msgstr "Ваш отзыв"
+#: content/templates/content/entry_detail.html:37
+msgid "total"
+msgstr "всего"
 
-msgid "Share your experience…"
-msgstr "Поделитесь опытом…"
+#: content/templates/content/entry_detail.html:45
+msgid "Write a comment…"
+msgstr "Напишите комментарий…"
 
-msgid "Submit review"
-msgstr "Отправить отзыв"
+#: content/templates/content/entry_detail.html:55
+msgid "Sign in to comment"
+msgstr "Войдите, чтобы комментировать"
 
-msgid "Reviews appear after approval."
-msgstr "Отзывы появляются после одобрения."
+#: content/templates/content/entry_detail.html:56
+msgid "Comment and reply with your real profile."
+msgstr "Комментируйте и отвечайте под своим профилем."
 
-msgid "Please"
-msgstr "Пожалуйста,"
+#: content/templates/content/entry_detail.html:66
+msgid "No comments yet — be the first."
+msgstr "Пока нет комментариев — будьте первым."
 
-msgid "sign in"
-msgstr "войдите"
+# --- Navigation & chrome ---
+#: content/templates/content/entry_list.html:8 content/views.py:43
+#: templates/components/_navbar.html:12 templates/components/_navbar.html:64
+msgid "Posts"
+msgstr "Посты"
 
-msgid "to leave a review."
-msgstr "чтобы оставить отзыв."
+#: content/templates/content/entry_list.html:13
+msgid "Latest news"
+msgstr "Последние новости"
 
-# --- Projects ---
-msgid "Selected work & achievements"
-msgstr "Избранные работы и достижения"
+#: content/templates/content/entry_list.html:13
+msgid "Writing & posts"
+msgstr "Статьи и посты"
 
-msgid "Visit"
-msgstr "Перейти"
+#: content/templates/content/entry_list.html:17
+msgid "Search by title…"
+msgstr "Поиск по заголовку…"
 
-msgid "Projects coming soon."
-msgstr "Проекты скоро появятся."
+#: content/templates/content/entry_list.html:24
+msgid "All"
+msgstr "Все"
 
-# --- Login page ---
-msgid "Welcome back"
-msgstr "С возвращением"
-
-msgid "Sign in to comment and leave reviews."
-msgstr "Войдите, чтобы комментировать и оставлять отзывы."
-
-msgid "Continue with Google"
-msgstr "Продолжить через Google"
-
-msgid "Continue with GitHub"
-msgstr "Продолжить через GitHub"
-
-msgid "Continue with LinkedIn"
-msgstr "Продолжить через LinkedIn"
-
-msgid "or"
-msgstr "или"
-
-msgid "Username"
-msgstr "Имя пользователя"
-
-msgid "Password"
-msgstr "Пароль"
+#: content/templates/content/entry_list.html:52
+msgid "Nothing here yet."
+msgstr "Здесь пока пусто."
 
 # --- Messages / views ---
+#: content/views.py:142
 msgid "Comment cannot be empty."
 msgstr "Комментарий не может быть пустым."
 
+#: content/views.py:147
 msgid "Your comment was posted."
 msgstr "Ваш комментарий опубликован."
 
+#: content/views.py:158
 msgid "You can't delete this comment."
 msgstr "Вы не можете удалить этот комментарий."
 
+#: content/views.py:163
 msgid "Comment deleted."
 msgstr "Комментарий удалён."
 
-msgid "Invalid username or password."
-msgstr "Неверное имя пользователя или пароль."
+#: templates/components/_footer.html:6
+msgid "Full-Stack Developer"
+msgstr "Full-Stack разработчик"
 
-msgid "You have been signed out."
-msgstr "Вы вышли из системы."
+#: templates/components/_footer.html:16
+msgid "Phone"
+msgstr "Телефон"
 
-msgid "Thank you! Your review was submitted and will appear once approved."
-msgstr "Спасибо! Ваш отзыв отправлен и появится после одобрения."
+#: templates/components/_footer.html:18
+msgid "Call"
+msgstr "Позвонить"
 
-msgid "Please check the review form and try again."
-msgstr "Пожалуйста, проверьте форму отзыва и попробуйте снова."
+#: templates/components/_footer.html:22
+msgid "All rights reserved."
+msgstr "Все права защищены."
 
-# --- Admin: actions & fieldsets ---
-msgid "Approve selected reviews"
-msgstr "Одобрить выбранные отзывы"
+#: templates/components/_messages.html:14
+msgid "Close"
+msgstr "Закрыть"
 
-msgid "Unapprove selected reviews"
-msgstr "Отменить одобрение выбранных отзывов"
+#: templates/components/_navbar.html:38
+msgid "Toggle theme"
+msgstr "Переключить тему"
 
-msgid "Media & SEO"
-msgstr "Медиа и SEO"
+#: templates/components/_navbar.html:48 templates/components/_navbar.html:71
+msgid "Logout"
+msgstr "Выйти"
 
-msgid "Publishing"
-msgstr "Публикация"
+#: templates/components/_navbar.html:55
+msgid "Menu"
+msgstr "Меню"
 
-msgid "Timestamps"
-msgstr "Отметки времени"
+#: templates/components/_seo.html:10 templates/components/_seo.html:23
+#: templates/components/_seo.html:34
+msgid "Full-Stack developer — posts, news, projects and reviews."
+msgstr "Full-Stack разработчик — посты, новости, проекты и отзывы."
 
-msgid "Profile"
-msgstr "Профиль"
+#: templates/components/_seo.html:22
+msgid "Ulugbek Umaraliyev — Full-Stack Developer"
+msgstr "Улугбек Умаралиев — Full-Stack разработчик"
 
-# --- Model fields & help text ---
-msgid "Optional — falls back to your account avatar."
-msgstr "Необязательно — используется аватар вашего аккаунта."
+#: templates/emails/new_comment.html:5
+#, python-format
+msgid "%(name)s posted a new %(kind)s on your site."
+msgstr "%(name)s оставил новый %(kind)s на вашем сайте."
 
-msgid "Short professional headline, e.g. 'Backend Engineer'."
-msgstr "Короткий профессиональный заголовок, например 'Backend Engineer'."
+#: templates/emails/new_comment.html:8
+#, python-format
+msgid "New %(kind)s"
+msgstr "Новый %(kind)s"
 
-msgid "Short summary shown in listings and link previews."
-msgstr "Краткое описание для списков и превью ссылок."
+#: templates/emails/new_comment.html:9
+#, python-format
+msgid "Someone posted a new %(kind)s."
+msgstr "Кто-то оставил новый %(kind)s."
 
-msgid "Shown as the preview image when the link is shared."
-msgstr "Показывается как превью-изображение при отправке ссылки."
+#: templates/emails/new_comment.html:24
+msgid "View on site"
+msgstr "Смотреть на сайте"
 
-msgid "Up to 160 chars for search engines. Falls back to excerpt."
-msgstr "До 160 символов для поисковых систем. Используется краткое описание."
+#: templates/emails/new_post.html:8
+msgid "New post"
+msgstr "Новый пост"
 
-msgid "address"
-msgstr "адрес"
+#: templates/emails/new_post.html:21
+msgid "Read the post"
+msgstr "Читать пост"
 
-msgid "approved"
-msgstr "одобрено"
+#: templates/emails/new_post.html:28
+msgid "You're receiving this because you subscribed to the newsletter."
+msgstr "Вы получили это письмо, потому что подписаны на рассылку."
 
-msgid "avatar"
-msgstr "аватар"
+#: templates/emails/new_post.html:29
+msgid "Manage preferences"
+msgstr "Управление настройками"
 
-msgid "body"
-msgstr "текст"
+#: templates/emails/new_review.html:4
+#, python-format
+msgid "New review from %(name)s"
+msgstr "Новый отзыв от %(name)s"
 
-msgid "comment"
-msgstr "комментарий"
+#: templates/emails/new_review.html:5
+#, python-format
+msgid "%(name)s left a %(stars)s review — awaiting your approval."
+msgstr "%(name)s оставил отзыв %(stars)s — ожидает вашего одобрения."
 
-msgid "comments"
-msgstr "комментарии"
+#: templates/emails/new_review.html:8
+msgid "New review"
+msgstr "Новый отзыв"
 
-msgid "country flag"
-msgstr "флаг страны"
-
-msgid "description"
-msgstr "описание"
-
-msgid "excerpt"
-msgstr "краткое описание"
-
-msgid "featured"
-msgstr "избранное"
-
-msgid "headline"
-msgstr "заголовок"
-
-msgid "link"
-msgstr "ссылка"
-
-msgid "location"
-msgstr "местоположение"
-
-msgid "meta description"
-msgstr "мета-описание"
-
-msgid "name"
-msgstr "название"
-
-msgid "news item"
-msgstr "новость"
-
-msgid "order"
-msgstr "порядок"
-
-msgid "photo"
-msgstr "фото"
-
-msgid "poster image"
-msgstr "изображение-постер"
-
-msgid "profile photo"
-msgstr "фото профиля"
-
-msgid "project"
-msgstr "проект"
-
-msgid "published at"
-msgstr "дата публикации"
-
-msgid "published"
-msgstr "опубликовано"
-
-msgid "rating"
-msgstr "оценка"
-
-msgid "review"
-msgstr "отзыв"
-
-msgid "slug"
-msgstr "слаг"
-
-msgid "tag"
-msgstr "тег"
-
-msgid "tags"
-msgstr "теги"
-
-msgid "title"
-msgstr "заголовок"
-
-msgid "user"
-msgstr "пользователь"
-
-msgid "users"
-msgstr "пользователи"
+#: templates/emails/new_review.html:26
+msgid "Approve in admin"
+msgstr "Одобрить в админке"

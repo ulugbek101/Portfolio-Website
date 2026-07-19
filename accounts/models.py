@@ -21,6 +21,10 @@ class User(AbstractUser):
         help_text=_("Short professional headline, e.g. 'Backend Engineer'."),
     )
     location = models.CharField(_("location"), max_length=120, blank=True)
+    newsletter = models.BooleanField(
+        _("email newsletter"), default=True,
+        help_text=_("Receive occasional email updates and newsletters."),
+    )
 
     class Meta:
         verbose_name = _("user")

@@ -29,7 +29,7 @@
       </div>
     </div>
   </div>
-  <div class="relative">
+  <div class="relative hidden md:block">
     <div class="aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-paper2 shadow-lift">
       <img src="https://avatars.githubusercontent.com/u/94630185?v=4" alt="Ulug'bek Umaraliyev" class="h-full w-full object-cover" />
     </div>
@@ -109,7 +109,7 @@
       <form method="post" action="{% url 'create_review' %}" enctype="multipart/form-data" class="grid gap-4">
         {% csrf_token %}
         <label class="text-sm">{% trans "Your location" %}
-          <input type="text" name="address" required placeholder="Ex: Tashkent, UZ" class="field mt-1" /></label>
+          <input type="text" name="address" required placeholder="{% trans 'Ex: Tashkent, UZ' %}" class="field mt-1" /></label>
         <div class="text-sm">{% trans "Rating" %}
           <div id="star-rating" class="mt-1 inline-flex items-center gap-1 text-amber" data-rate="5">
             <input type="hidden" name="rate" value="5" />

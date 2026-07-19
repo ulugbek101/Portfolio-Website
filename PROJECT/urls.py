@@ -9,20 +9,23 @@ from app_main.i18n_views import set_language
 from app_main.seo_views import robots_txt
 from content.sitemaps import sitemaps
 
-# Non-translated URLs (admin, editor, auth machinery, i18n switcher, SEO).
+# Non-translated URLs (admin, editor, i18n switcher, OAuth callbacks, SEO).
+# OAuth callbacks must stay unprefixed so provider redirect URIs stay stable.
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("ckeditor5/", include("django_ckeditor_5.urls")),
     path("i18n/setlang/", set_language, name="set_language"),
     path("i18n/", include("django.conf.urls.i18n")),
-    path("users/", include("app_users.urls")),
+    path("users/social-auth/", include("social_django.urls", namespace="social")),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
     path("robots.txt", robots_txt, name="robots_txt"),
 ]
 
 # Translated URLs. Uzbek is the default and carries no prefix; Russian and
-# English are served under /ru/ and /en/.
+# English are served under /ru/ and /en/. The user-facing auth pages live here
+# too so the language switcher works on login/register/profile/reset pages.
 urlpatterns += i18n_patterns(
+    path("users/", include("app_users.urls")),
     path("", include("app_main.urls")),
     path("", include("content.urls")),
     prefix_default_language=False,

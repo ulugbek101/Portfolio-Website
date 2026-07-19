@@ -15,7 +15,6 @@
     <div class="flex flex-col gap-3">
       <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ next|default:'/' }}" class="btn btn-oauth"><svg class="ic text-lg"><use href="#i-google"/></svg>{% trans "Continue with Google" %}</a>
       <a href="{% url 'social:begin' 'github' %}?next={{ next|default:'/' }}" class="btn btn-oauth"><svg class="ic text-lg"><use href="#i-github"/></svg>{% trans "Continue with GitHub" %}</a>
-      <a href="{% url 'social:begin' 'linkedin-openidconnect' %}?next={{ next|default:'/' }}" class="btn btn-oauth"><svg class="ic text-lg"><use href="#i-linkedin"/></svg>{% trans "Continue with LinkedIn" %}</a>
     </div>
 
     <div class="my-6 flex items-center gap-3 text-ink3">
@@ -25,10 +24,18 @@
     <form method="post" action="{% url 'login' %}" class="flex flex-col gap-3">
       {% csrf_token %}
       <input type="hidden" name="next" value="{{ next }}" />
-      <input type="text" name="username" value="{{ username|default:'' }}" required placeholder="{% trans 'Username' %}" class="field" />
+      <input type="text" name="username" value="{{ username|default:'' }}" required placeholder="{% trans 'Username or email' %}" class="field" />
       <input type="password" name="password" required placeholder="{% trans 'Password' %}" class="field" />
+      <div class="text-right">
+        <a href="{% url 'password_reset' %}" class="text-xs text-ink3 hover:text-accent hover:underline">{% trans "Forgot password?" %}</a>
+      </div>
       <button type="submit" class="btn btn-primary w-full">{% trans "Sign in" %}</button>
     </form>
+
+    <p class="mt-6 text-center text-sm text-ink3">
+      {% trans "Don't have an account?" %}
+      <a href="{% url 'register' %}{% if next %}?next={{ next }}{% endif %}" class="text-accent hover:underline">{% trans "Create one" %}</a>
+    </p>
   </div>
 </section>
 {% endblock %}

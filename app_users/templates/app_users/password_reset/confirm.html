@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Set new password" %} — thedevu101{% endblock %}
+
+{% block content %}
+<section class="wrap flex justify-center py-20">
+  <div class="w-full max-w-md">
+    {% if validlink %}
+    <div class="mb-8 text-center">
+      <div class="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-accentSoft text-accent"><svg class="ic text-2xl"><use href="#i-lock"/></svg></div>
+      <h1 class="font-serif text-3xl font-semibold tracking-tight">{% trans "Set a new password" %}</h1>
+      <p class="mt-1 text-sm text-ink3">{% trans "Enter your new password twice to confirm." %}</p>
+    </div>
+
+    <form method="post" class="flex flex-col gap-4">
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+      <div class="rounded-xl border border-red-300 bg-red-50 px-3.5 py-2.5 text-sm text-red-700">{{ form.non_field_errors }}</div>
+      {% endif %}
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "New password" %}</span>
+        <input type="password" id="id_new_password1" name="new_password1" required autocomplete="new-password" class="field" />
+        {% if form.new_password1.errors %}<span class="text-xs text-red-600">{{ form.new_password1.errors|striptags }}</span>{% endif %}
+        <ul data-password-rules data-password-input="id_new_password1"
+            data-username="{{ form.user.get_username }}" data-email="{{ form.user.email }}"
+            data-first="{{ form.user.first_name }}" data-last="{{ form.user.last_name }}"
+            class="mt-1 flex flex-col gap-1 text-xs text-ink3">
+          {% include 'app_users/_password_rules.html' %}
+        </ul>
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Confirm new password" %}</span>
+        <input type="password" name="new_password2" required autocomplete="new-password" class="field" />
+        {% if form.new_password2.errors %}<span class="text-xs text-red-600">{{ form.new_password2.errors|striptags }}</span>{% endif %}
+      </label>
+
+      <button type="submit" class="btn btn-primary w-full">{% trans "Set new password" %}</button>
+    </form>
+    {% else %}
+    <div class="text-center">
+      <div class="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-red-50 text-red-600"><svg class="ic text-2xl"><use href="#i-close"/></svg></div>
+      <h1 class="font-serif text-3xl font-semibold tracking-tight">{% trans "Invalid reset link" %}</h1>
+      <p class="mt-2 text-sm text-ink3">{% trans "This password reset link is invalid or has already been used. Please request a new one." %}</p>
+      <a href="{% url 'password_reset' %}" class="btn btn-primary mt-6 inline-flex">{% trans "Request a new link" %}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

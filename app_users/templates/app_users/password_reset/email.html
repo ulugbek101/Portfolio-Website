@@ -1,0 +1,22 @@
+{% extends 'emails/base.html' %}
+{% load i18n %}
+
+{% block subject %}{% trans "Reset your thedevu101 password" %}{% endblock %}
+{% block preheader %}{% trans "Use the button below to choose a new password. The link expires soon." %}{% endblock %}
+
+{% block body %}
+<h1 style="margin:0 0 12px; font-size:22px; font-weight:700; letter-spacing:-0.4px; color:#14171c;">{% trans "Reset your password" %}</h1>
+<p style="margin:0 0 8px; color:#3c424b; font-size:15px; line-height:1.65;">{% blocktrans with username=user.get_username %}You're receiving this email because you requested a password reset for the account <strong>{{ username }}</strong> at thedevu101.{% endblocktrans %}</p>
+<p style="margin:0 0 20px; color:#3c424b; font-size:15px; line-height:1.65;">{% trans "Click the button below to choose a new password:" %}</p>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 20px;">
+  <tr><td style="border-radius:10px; background-color:#0f7a5a;">
+    <a href="{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}" style="display:inline-block; padding:13px 26px; color:#ffffff; text-decoration:none; font-size:15px; font-weight:600;">{% trans "Reset password" %}</a>
+  </td></tr>
+</table>
+
+<p style="margin:0 0 6px; color:#6b7280; font-size:13px; line-height:1.6;">{% trans "Or copy and paste this link into your browser:" %}</p>
+<p style="margin:0 0 20px; font-size:13px; word-break:break-all;"><a href="{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}" style="color:#0f7a5a;">{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}</a></p>
+
+<p style="margin:0; color:#6b7280; font-size:13px; line-height:1.6;">{% trans "If you didn't request a password reset, you can safely ignore this email." %}</p>
+{% endblock %}

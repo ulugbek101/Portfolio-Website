@@ -74,6 +74,7 @@ class Entry(models.Model):
 
     is_published = models.BooleanField(_("published"), default=False)
     published_at = models.DateTimeField(_("published at"), null=True, blank=True)
+    newsletter_sent = models.BooleanField(default=False, editable=False)
     views = models.PositiveIntegerField(default=0, editable=False)
 
     id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
