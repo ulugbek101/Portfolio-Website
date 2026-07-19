@@ -6,9 +6,9 @@ from .models import Review
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ("__str__", "rate", "approved", "created")
+    list_display = ("__str__", "rate", "order", "approved", "created")
     list_filter = ("approved", "rate", "created")
-    list_editable = ("approved",)
+    list_editable = ("order", "approved")
     search_fields = ("user__username", "user__first_name", "user__last_name", "body", "address")
     actions = ("approve_selected", "unapprove_selected")
 

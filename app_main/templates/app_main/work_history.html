@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<section class="wrap py-14">
+  <div class="section-label"><svg class="ic"><use href="#i-work"/></svg>{% trans "Work" %}</div>
+  <h1 class="mb-8 font-serif text-4xl font-semibold tracking-tight">{% trans "Work history" %}</h1>
+
+  {% if jobs %}
+  <ol class="relative">
+    {% for job in jobs %}
+    <li class="relative flex gap-5 pb-10 last:pb-0">
+      <!-- Timeline pipe connecting this job down to the next one -->
+      {% if not forloop.last %}
+      <span class="absolute left-7 top-14 bottom-0 w-px -translate-x-1/2 bg-line2"></span>
+      {% endif %}
+
+      <!-- Round company logo -->
+      <div class="relative z-10 grid h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-full border border-line2 bg-paper2">
+        {% if job.logo %}
+        <img src="{{ job.logo.url }}" alt="{{ job.company }}" loading="lazy" class="h-full w-full object-cover" />
+        {% else %}
+        <svg class="ic text-2xl text-ink3"><use href="#i-work"/></svg>
+        {% endif %}
+      </div>
+
+      <!-- Job card -->
+      <div class="card flex-1 p-5 sm:p-6">
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          <h3 class="font-serif text-xl font-semibold tracking-tight">{{ job.company }}</h3>
+          {% if job.is_current %}
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-accentSoft px-2.5 py-0.5 font-mono text-[11px] font-medium text-accentInk">
+            <span class="relative flex h-1.5 w-1.5">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+              <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent"></span>
+            </span>{% trans "Currently working" %}
+          </span>
+          {% endif %}
+        </div>
+
+        <div class="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-ink3">
+          <span class="inline-flex items-center gap-1"><svg class="ic text-[13px]"><use href="#i-schedule"/></svg>{{ job.start_date|date:"M Y" }} — {% if job.is_current %}{% trans "Present" %}{% else %}{{ job.end_date|date:"M Y" }}{% endif %}</span>
+          <span aria-hidden="true">·</span>
+          <span class="text-ink2">{{ job.duration }}</span>
+        </div>
+
+        {% if job.responsibilities %}
+        <ul class="mt-3 flex flex-col gap-1.5 text-[14.5px] text-ink2">
+          {% for line in job.responsibilities.splitlines %}
+          {% if line.strip %}
+          <li class="flex gap-2"><svg class="ic mt-1 shrink-0 text-[13px] text-accent"><use href="#i-check"/></svg><span>{{ line }}</span></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="rounded-2xl border border-dashed border-line2 py-20 text-center font-mono text-sm text-ink3">{% trans "Work history coming soon." %}</p>
+  {% endif %}
+</section>
+{% endblock %}

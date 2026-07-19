@@ -4,7 +4,7 @@ from app_users.forms import ReviewForm
 from app_users.models import Review
 from content.models import News, Post
 
-from .models import Project
+from .models import Job, Project
 
 
 def index(request):
@@ -24,3 +24,11 @@ def portfolio(request):
         "meta_title": "Projects — Ulug'bek Umaraliyev",
     }
     return render(request, "app_main/portfolio.html", context)
+
+
+def work_history(request):
+    context = {
+        "jobs": Job.objects.all(),
+        "meta_title": "Work history — Ulug'bek Umaraliyev",
+    }
+    return render(request, "app_main/work_history.html", context)

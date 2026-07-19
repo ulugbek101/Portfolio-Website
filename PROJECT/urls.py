@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
+from app_main.i18n_views import set_language
 from app_main.seo_views import robots_txt
 from content.sitemaps import sitemaps
 
@@ -12,6 +13,7 @@ from content.sitemaps import sitemaps
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("ckeditor5/", include("django_ckeditor_5.urls")),
+    path("i18n/setlang/", set_language, name="set_language"),
     path("i18n/", include("django.conf.urls.i18n")),
     path("users/", include("app_users.urls")),
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap"),

@@ -8,14 +8,15 @@
 /* ------------------------------------------------------------------ */
 @layer base {
   :root {
-    --paper: #FCFCFB;
-    --paper-2: #F4F5F3;
-    --paper-3: #ECEEEB;
+    /* Soft, greyish light theme — easy on the eyes, not a blinding white. */
+    --paper: #E8EAE5;
+    --paper-2: #DFE2DC;
+    --paper-3: #D5D9D2;
     --ink: #14171C;
     --ink-2: #3C424B;
-    --ink-3: #6B7280;
-    --line: #E2E5E1;
-    --line-2: #D3D7D2;
+    --ink-3: #626C77;
+    --line: #CBD1C9;
+    --line-2: #BAC1B7;
     --accent: #0F7A5A;
     --accent-2: #0B5E45;
     --accent-soft: #E6F2ED;
