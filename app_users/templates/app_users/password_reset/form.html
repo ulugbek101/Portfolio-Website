@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Reset password" %} — thedevu101{% endblock %}
+
+{% block content %}
+<section class="wrap flex justify-center py-20">
+  <div class="w-full max-w-md">
+    <div class="mb-8 text-center">
+      <div class="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-accentSoft text-accent"><svg class="ic text-2xl"><use href="#i-lock"/></svg></div>
+      <h1 class="font-serif text-3xl font-semibold tracking-tight">{% trans "Reset your password" %}</h1>
+      <p class="mt-1 text-sm text-ink3">{% trans "Enter your email and we'll send you a reset link." %}</p>
+    </div>
+
+    <form method="post" class="flex flex-col gap-4">
+      {% csrf_token %}
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Email" %}</span>
+        <input type="email" name="email" required autocomplete="email" class="field" placeholder="you@example.com" />
+        {% if form.email.errors %}<span class="text-xs text-red-600">{{ form.email.errors|striptags }}</span>{% endif %}
+      </label>
+      <button type="submit" class="btn btn-primary w-full">{% trans "Send reset link" %}</button>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-ink3">
+      <a href="{% url 'login' %}" class="text-accent hover:underline">{% trans "Back to sign in" %}</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

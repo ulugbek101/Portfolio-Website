@@ -1,8 +1,9 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: thedevu101\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 00:00+0500\n"
+"POT-Creation-Date: 2026-07-19 10:46+0500\n"
 "PO-Revision-Date: 2026-07-19 00:00+0500\n"
 "Language: uz\n"
 "MIME-Version: 1.0\n"
@@ -10,375 +11,1150 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# --- Navigation & chrome ---
-msgid "Posts"
-msgstr "Maqolalar"
+#: PROJECT/settings.py:162
+msgid "O'zbek"
+msgstr "O'zbek"
 
-msgid "News"
-msgstr "Yangiliklar"
+#: PROJECT/settings.py:163
+msgid "Русский"
+msgstr "Русский"
 
-msgid "Projects"
-msgstr "Loyihalar"
+#: PROJECT/settings.py:164
+msgid "English"
+msgstr "English"
 
-msgid "Reviews"
-msgstr "Sharhlar"
+#: accounts/admin.py:12 templates/components/_navbar.html:45
+#: templates/components/_navbar.html:46 templates/components/_navbar.html:70
+msgid "Profile"
+msgstr "Profil"
 
-msgid "Sign in"
-msgstr "Kirish"
+#: accounts/models.py:17
+msgid "avatar"
+msgstr "avatar"
 
-msgid "Logout"
-msgstr "Chiqish"
+#: accounts/models.py:20
+msgid "headline"
+msgstr "sarlavha"
 
-msgid "Menu"
-msgstr "Menyu"
+#: accounts/models.py:21
+msgid "Short professional headline, e.g. 'Backend Engineer'."
+msgstr "Qisqa kasbiy sarlavha, masalan 'Backend Engineer'."
 
-msgid "Toggle theme"
-msgstr "Mavzuni almashtirish"
+#: accounts/models.py:23
+msgid "location"
+msgstr "joylashuv"
 
-msgid "Full-Stack Developer"
-msgstr "Full-Stack dasturchi"
+#: accounts/models.py:25
+msgid "email newsletter"
+msgstr "elektron yangiliklar"
 
-msgid "Call"
-msgstr "Qo'ng'iroq"
+#: accounts/models.py:26 app_users/templates/app_users/profile.html:60
+msgid "Receive occasional email updates and newsletters."
+msgstr ""
+"Vaqti-vaqti bilan yangiliklar va e'lonlarni elektron pochta orqali oling."
 
-msgid "All rights reserved."
-msgstr "Barcha huquqlar himoyalangan."
+#: accounts/models.py:30
+msgid "user"
+msgstr "foydalanuvchi"
+
+#: accounts/models.py:31
+msgid "users"
+msgstr "foydalanuvchilar"
+
+#: app_main/models.py:12 content/models.py:51
+msgid "title"
+msgstr "sarlavha"
+
+#: app_main/models.py:13
+msgid "link"
+msgstr "havola"
+
+#: app_main/models.py:14
+msgid "description"
+msgstr "tavsif"
+
+#: app_main/models.py:15
+msgid "photo"
+msgstr "rasm"
+
+#: app_main/models.py:17
+msgid "featured"
+msgstr "tanlangan"
+
+#: app_main/models.py:18 app_main/models.py:55 app_users/models.py:31
+msgid "order"
+msgstr "tartib"
+
+#: app_main/models.py:26
+msgid "project"
+msgstr "loyiha"
+
+#: app_main/models.py:27
+msgid "projects"
+msgstr "loyihalar"
+
+#: app_main/models.py:36
+msgid "company"
+msgstr "kompaniya"
+
+#: app_main/models.py:38
+msgid "logo"
+msgstr "logotip"
+
+#: app_main/models.py:39
+msgid "Shown as a round avatar."
+msgstr "Dumaloq avatar sifatida ko'rsatiladi."
+
+#: app_main/models.py:42
+msgid "responsibilities"
+msgstr "majburiyatlar"
+
+#: app_main/models.py:43
+msgid "What you did here — one item per line is rendered as a list."
+msgstr ""
+"Bu yerda nima qilganingiz — har bir qator alohida ro'yxat bandi sifatida "
+"ko'rsatiladi."
+
+#: app_main/models.py:45
+msgid "worked from"
+msgstr "ishlagan sana (dan)"
+
+#: app_main/models.py:47
+msgid "worked until"
+msgstr "ishlagan sana (gacha)"
+
+#: app_main/models.py:48
+msgid "Leave empty and tick “currently working here” for an ongoing job."
+msgstr ""
+"Hozir ishlayotgan bo'lsangiz, bo'sh qoldiring va “hozirda shu yerda "
+"ishlayapman”ni belgilang."
+
+#: app_main/models.py:51
+msgid "currently working here"
+msgstr "hozirda shu yerda ishlayapman"
+
+#: app_main/models.py:52
+msgid "Ongoing — the end date is treated as today when computing duration."
+msgstr ""
+"Davom etmoqda — muddat hisoblanganda tugash sanasi bugungi kun deb olinadi."
+
+#: app_main/models.py:56
+msgid "Lower numbers appear first. Ties fall back to newest start date."
+msgstr ""
+"Kichik raqamlar birinchi ko'rinadi. Teng bo'lsa, eng yangi boshlanish sanasi"
+" bo'yicha."
+
+#: app_main/models.py:65
+msgid "job"
+msgstr "ish"
+
+#: app_main/models.py:66
+msgid "work history"
+msgstr "ish tajribasi"
+
+#: app_main/models.py:88
+#, python-format
+msgid "%(n)d year"
+msgid_plural "%(n)d years"
+msgstr[0] "%(n)d yil"
+msgstr[1] "%(n)d yil"
+
+#: app_main/models.py:90
+#, python-format
+msgid "%(n)d month"
+msgid_plural "%(n)d months"
+msgstr[0] "%(n)d oy"
+msgstr[1] "%(n)d oy"
+
+#: app_main/models.py:92
+msgid "Less than a month"
+msgstr "Bir oydan kam"
+
+#: app_main/models.py:96
+msgid "present"
+msgstr "hozirgi vaqt"
 
 # --- Home / hero ---
+#: app_main/templates/app_main/index.html:8
 msgid "Full-Stack Developer · 5+ years"
 msgstr "Full-Stack dasturchi · 5+ yil"
 
-msgid "I'm <span class=\"italic text-accent\">Ulug'bek</span> — I build production-grade web apps."
-msgstr "Men <span class=\"italic text-accent\">Ulug'bek</span> — ishlab chiqarish darajasidagi veb-ilovalar quraman."
+#: app_main/templates/app_main/index.html:10
+msgid ""
+"I'm <span class=\"italic text-accent\">Ulug'bek</span> — I build production-"
+"grade web apps."
+msgstr ""
+"Men <span class=\"italic text-accent\">Ulug'bek</span> — ishlab chiqarish "
+"darajasidagi veb-ilovalar quraman."
 
-msgid "Django, real-time systems and multifunctional Telegram bots. Here I share my work, news and writing."
-msgstr "Django, real-time tizimlar va ko'p funksiyali Telegram botlar. Bu yerda ishlarim, yangiliklarim va yozganlarimni bo'lishaman."
+#: app_main/templates/app_main/index.html:12
+msgid ""
+"Django, real-time systems and multifunctional Telegram bots. Here I share my"
+" work, news and writing."
+msgstr ""
+"Django, real-time tizimlar va ko'p funksiyali Telegram botlar. Bu yerda "
+"ishlarim, yangiliklarim va yozganlarimni bo'lishaman."
 
+#: app_main/templates/app_main/index.html:14
 msgid "Download CV"
 msgstr "CV yuklab olish"
 
+#: app_main/templates/app_main/index.html:15
 msgid "Read posts"
 msgstr "Maqolalarni o'qish"
 
+#: app_main/templates/app_main/index.html:20
 msgid "Years"
 msgstr "Yil"
 
+#: app_main/templates/app_main/index.html:24
+#: app_main/templates/app_main/portfolio.html:6
+#: templates/components/_navbar.html:16 templates/components/_navbar.html:66
+msgid "Projects"
+msgstr "Loyihalar"
+
+#: app_main/templates/app_main/index.html:37
 msgid "Available for work"
 msgstr "Ish uchun ochiqman"
 
 # --- About ---
+#: app_main/templates/app_main/index.html:46
 msgid "About"
 msgstr "Men haqimda"
 
+#: app_main/templates/app_main/index.html:47
 msgid "Full-Stack Web Developer"
 msgstr "Full-Stack veb-dasturchi"
 
-msgid "Hello! I'm Ulug'bek Umaraliyev. I have 5+ years of hands-on experience building websites (news sites, blogs) and web applications (online stores, social platforms, messengers)."
-msgstr "Salom! Men Ulug'bek Umaraliyev. Veb-saytlar (yangilik saytlari, bloglar) va veb-ilovalar (onlayn do'konlar, ijtimoiy platformalar, messenjerlar) yaratishda 5+ yillik amaliy tajribaga egaman."
+#: app_main/templates/app_main/index.html:50
+msgid ""
+"Hello! I'm Ulug'bek Umaraliyev. I have 5+ years of hands-on experience "
+"building websites (news sites, blogs) and web applications (online stores, "
+"social platforms, messengers)."
+msgstr ""
+"Salom! Men Ulug'bek Umaraliyev. Veb-saytlar (yangilik saytlari, bloglar) va "
+"veb-ilovalar (onlayn do'konlar, ijtimoiy platformalar, messenjerlar) "
+"yaratishda 5+ yillik amaliy tajribaga egaman."
 
-msgid "I also build multifunctional Telegram bots — online stores, restaurant bots and more — designed to scale reliably."
-msgstr "Shuningdek, ko'p funksiyali Telegram botlar yarataman — onlayn do'konlar, restoran botlari va boshqalar — ishonchli miqyoslash uchun mo'ljallangan."
+#: app_main/templates/app_main/index.html:51
+msgid ""
+"I also build multifunctional Telegram bots — online stores, restaurant bots "
+"and more — designed to scale reliably."
+msgstr ""
+"Shuningdek, ko'p funksiyali Telegram botlar yarataman — onlayn do'konlar, "
+"restoran botlari va boshqalar — ishonchli miqyoslash uchun mo'ljallangan."
 
 # --- Listings ---
+#: app_main/templates/app_main/index.html:61
 msgid "Latest posts"
 msgstr "So'nggi maqolalar"
 
-msgid "Latest news"
-msgstr "So'nggi yangiliklar"
-
+#: app_main/templates/app_main/index.html:62
 msgid "Recent writing"
 msgstr "So'nggi yozuvlar"
 
+#: app_main/templates/app_main/index.html:64
 msgid "All posts"
 msgstr "Barcha maqolalar"
 
-msgid "Writing & posts"
-msgstr "Yozuvlar va maqolalar"
+#: app_main/templates/app_main/index.html:75
+#: templates/components/_navbar.html:20 templates/components/_navbar.html:68
+msgid "Reviews"
+msgstr "Sharhlar"
 
-msgid "Post"
-msgstr "Maqola"
+# --- Reviews ---
+#: app_main/templates/app_main/index.html:76
+msgid "What people say"
+msgstr "Odamlar nima deydi"
 
-msgid "All"
-msgstr "Barchasi"
+#: app_main/templates/app_main/index.html:98
+msgid "Show more"
+msgstr "Ko'proq ko'rsatish"
 
-msgid "Search by title…"
-msgstr "Sarlavha bo'yicha qidirish…"
+#: app_main/templates/app_main/index.html:102
+msgid "No reviews yet."
+msgstr "Hali sharhlar yo'q."
 
-msgid "Nothing here yet."
-msgstr "Bu yerda hozircha hech narsa yo'q."
+#: app_main/templates/app_main/index.html:107
+msgid "Leave a review"
+msgstr "Sharh qoldiring"
 
-msgid "min"
-msgstr "daq"
+#: app_main/templates/app_main/index.html:111
+msgid "Your location"
+msgstr "Manzilingiz"
 
-msgid "min read"
-msgstr "daq o'qish"
+#: app_main/templates/app_main/index.html:112
+msgid "Ex: Tashkent, UZ"
+msgstr "Masalan: Toshkent, UZ"
 
-msgid "views"
-msgstr "ko'rishlar"
+#: app_main/templates/app_main/index.html:113 content/notifications.py:92
+#: templates/emails/new_review.html:16
+msgid "Rating"
+msgstr "Baho"
 
-# --- Detail / comments ---
-msgid "Comments"
-msgstr "Izohlar"
+#: app_main/templates/app_main/index.html:124
+msgid "Profile photo (optional)"
+msgstr "Profil rasmi (ixtiyoriy)"
 
-msgid "total"
-msgstr "jami"
+#: app_main/templates/app_main/index.html:126
+msgid "Your review"
+msgstr "Sharhingiz"
 
-msgid "Write a comment…"
-msgstr "Izoh yozing…"
+#: app_main/templates/app_main/index.html:127
+msgid "Share your experience…"
+msgstr "Tajribangizni ulashing…"
 
-msgid "Write a reply…"
-msgstr "Javob yozing…"
+#: app_main/templates/app_main/index.html:128
+msgid "Submit review"
+msgstr "Sharhni yuborish"
 
-msgid "Reply"
-msgstr "Javob berish"
+#: app_main/templates/app_main/index.html:130
+msgid "Reviews appear after approval."
+msgstr "Sharhlar tasdiqlangandan so'ng ko'rinadi."
 
-msgid "Delete"
-msgstr "O'chirish"
+#: app_main/templates/app_main/index.html:132
+msgid "Please"
+msgstr "Iltimos,"
 
-msgid "Delete this comment?"
-msgstr "Ushbu izoh o'chirilsinmi?"
+#: app_main/templates/app_main/index.html:132
+msgid "sign in"
+msgstr "kiring"
 
+#: app_main/templates/app_main/index.html:132
+msgid "to leave a review."
+msgstr "sharh qoldirish uchun."
+
+# --- Projects ---
+#: app_main/templates/app_main/portfolio.html:7
+msgid "Selected work & achievements"
+msgstr "Tanlangan ishlar va yutuqlar"
+
+#: app_main/templates/app_main/portfolio.html:20
+msgid "Visit"
+msgstr "Tashrif buyurish"
+
+#: app_main/templates/app_main/portfolio.html:27
+msgid "Projects coming soon."
+msgstr "Loyihalar tez orada."
+
+#: app_main/templates/app_main/work_history.html:6
+#: templates/components/_navbar.html:18 templates/components/_navbar.html:67
+msgid "Work"
+msgstr "Ish"
+
+#: app_main/templates/app_main/work_history.html:7
+msgid "Work history"
+msgstr "Ish tajribasi"
+
+#: app_main/templates/app_main/work_history.html:36
+msgid "Currently working"
+msgstr "Hozirda ishlamoqda"
+
+#: app_main/templates/app_main/work_history.html:42
+msgid "Present"
+msgstr "Hozirgi"
+
+#: app_main/templates/app_main/work_history.html:61
+msgid "Work history coming soon."
+msgstr "Ish tajribasi tez orada."
+
+# --- Admin: actions & fieldsets ---
+#: app_users/admin.py:15
+msgid "Approve selected reviews"
+msgstr "Tanlangan sharhlarni tasdiqlash"
+
+#: app_users/admin.py:19
+msgid "Unapprove selected reviews"
+msgstr "Tanlangan sharhlar tasdig'ini bekor qilish"
+
+#: app_users/forms.py:30
+#: app_users/templates/app_users/password_reset/form.html:18
+#: app_users/templates/app_users/profile.html:41
+#: app_users/templates/app_users/register.html:32
+msgid "Email"
+msgstr "Elektron pochta"
+
+#: app_users/forms.py:32
+msgid "you@example.com"
+msgstr "you@example.com"
+
+#: app_users/forms.py:35 app_users/templates/app_users/profile.html:31
+#: app_users/templates/app_users/register.html:39
+msgid "First name"
+msgstr "Ism"
+
+#: app_users/forms.py:37 app_users/forms.py:42
+msgid "Optional"
+msgstr "Ixtiyoriy"
+
+#: app_users/forms.py:40 app_users/templates/app_users/profile.html:35
+#: app_users/templates/app_users/register.html:43
+msgid "Last name"
+msgstr "Familiya"
+
+#: app_users/forms.py:52 app_users/templates/app_users/register.html:26
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: app_users/forms.py:55 app_users/templates/app_users/login.html:29
+#: app_users/templates/app_users/register.html:49
+msgid "Password"
+msgstr "Parol"
+
+#: app_users/forms.py:58 app_users/templates/app_users/register.html:59
+msgid "Confirm password"
+msgstr "Parolni tasdiqlang"
+
+#: app_users/forms.py:64 app_users/forms.py:95
+msgid "An account with this email already exists."
+msgstr "Bu elektron pochta bilan hisob allaqachon mavjud."
+
+#: app_users/i18n_strings.py:11
+msgid "Your password can’t be too similar to your other personal information."
+msgstr ""
+"Parolingiz boshqa shaxsiy ma'lumotlaringizga juda o'xshash bo'lishi mumkin "
+"emas."
+
+#: app_users/i18n_strings.py:12
+msgid "Your password can’t be a commonly used password."
+msgstr "Parolingiz keng tarqalgan parol bo'lishi mumkin emas."
+
+#: app_users/i18n_strings.py:13
+msgid "This password is too common."
+msgstr "Bu parol juda oddiy."
+
+#: app_users/i18n_strings.py:14
+msgid "Your password can’t be entirely numeric."
+msgstr "Parolingiz faqat raqamlardan iborat bo'lishi mumkin emas."
+
+#: app_users/i18n_strings.py:15
+msgid "This password is entirely numeric."
+msgstr "Bu parol faqat raqamlardan iborat."
+
+#: app_users/i18n_strings.py:16
+#, python-format
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr "Parol %(verbose_name)s ga juda o'xshash."
+
+#: app_users/i18n_strings.py:21
+#, python-format
+msgid ""
+"This password is too short. It must contain at least %(min_length)d "
+"character."
+msgid_plural ""
+"This password is too short. It must contain at least %(min_length)d "
+"characters."
+msgstr[0] ""
+"Bu parol juda qisqa. U kamida %(min_length)d ta belgidan iborat bo'lishi "
+"kerak."
+msgstr[1] ""
+"Bu parol juda qisqa. U kamida %(min_length)d ta belgidan iborat bo'lishi "
+"kerak."
+
+#: app_users/i18n_strings.py:26
+#, python-format
+msgid "Your password must contain at least %(min_length)d character."
+msgid_plural "Your password must contain at least %(min_length)d characters."
+msgstr[0] ""
+"Parolingiz kamida %(min_length)d ta belgidan iborat bo'lishi kerak."
+msgstr[1] ""
+"Parolingiz kamida %(min_length)d ta belgidan iborat bo'lishi kerak."
+
+#: app_users/models.py:19
+msgid "address"
+msgstr "manzil"
+
+#: app_users/models.py:21
+msgid "profile photo"
+msgstr "profil rasmi"
+
+# --- Model fields & help text ---
+#: app_users/models.py:22
+msgid "Optional — falls back to your account avatar."
+msgstr "Ixtiyoriy — hisobingiz avatariga qaytadi."
+
+#: app_users/models.py:25
+msgid "country flag"
+msgstr "mamlakat bayrog'i"
+
+#: app_users/models.py:27
+msgid "rating"
+msgstr "baho"
+
+#: app_users/models.py:28 app_users/models.py:42
+msgid "review"
+msgstr "sharh"
+
+#: app_users/models.py:29
+msgid "approved"
+msgstr "tasdiqlangan"
+
+#: app_users/models.py:33
+msgid "Lower numbers appear first. Ties fall back to newest."
+msgstr ""
+"Kichik raqamlar birinchi ko'rinadi. Teng bo'lsa, eng yangisi bo'yicha."
+
+#: app_users/models.py:43
+msgid "reviews"
+msgstr "sharhlar"
+
+#: app_users/templates/app_users/_password_rules.html:2
+msgid "At least 8 characters"
+msgstr "Kamida 8 ta belgi"
+
+#: app_users/templates/app_users/_password_rules.html:3
+#| msgid "This password is entirely numeric."
+msgid "Not entirely numeric"
+msgstr "Faqat raqamlardan iborat emas"
+
+#: app_users/templates/app_users/_password_rules.html:4
+#| msgid ""
+#| "Your password can’t be too similar to your other personal information."
+msgid "Not too similar to your personal info"
+msgstr "Shaxsiy ma'lumotlaringizga juda o'xshamaydi"
+
+#: app_users/templates/app_users/login.html:4
+#: app_users/templates/app_users/login.html:33
+#: app_users/templates/app_users/password_reset/complete.html:12
+#: app_users/templates/app_users/register.html:69
+#: content/templates/content/entry_detail.html:58
+#: templates/components/_navbar.html:51 templates/components/_navbar.html:73
+msgid "Sign in"
+msgstr "Kirish"
+
+# --- Login page ---
+#: app_users/templates/app_users/login.html:11
+msgid "Welcome back"
+msgstr "Xush kelibsiz"
+
+#: app_users/templates/app_users/login.html:12
+msgid "Sign in to comment and leave reviews."
+msgstr "Izoh va sharh qoldirish uchun kiring."
+
+#: app_users/templates/app_users/login.html:16
+msgid "Continue with Google"
+msgstr "Google bilan davom etish"
+
+#: app_users/templates/app_users/login.html:17
+msgid "Continue with GitHub"
+msgstr "GitHub bilan davom etish"
+
+#: app_users/templates/app_users/login.html:18
+msgid "Continue with LinkedIn"
+msgstr "LinkedIn bilan davom etish"
+
+#: app_users/templates/app_users/login.html:22
+msgid "or"
+msgstr "yoki"
+
+#: app_users/templates/app_users/login.html:28
+msgid "Username or email"
+msgstr "Foydalanuvchi nomi yoki email"
+
+#: app_users/templates/app_users/login.html:31
+msgid "Forgot password?"
+msgstr "Parolni unutdingizmi?"
+
+#: app_users/templates/app_users/login.html:37
+msgid "Don't have an account?"
+msgstr "Hisobingiz yo'qmi?"
+
+#: app_users/templates/app_users/login.html:38
+msgid "Create one"
+msgstr "Yarating"
+
+#: app_users/templates/app_users/password_reset/complete.html:4
+msgid "Password reset complete"
+msgstr "Parol tiklandi"
+
+#: app_users/templates/app_users/password_reset/complete.html:10
+msgid "Password reset"
+msgstr "Parolni tiklash"
+
+#: app_users/templates/app_users/password_reset/complete.html:11
+msgid ""
+"Your password has been set. You can now sign in with your new password."
+msgstr "Parolingiz o'rnatildi. Endi yangi parol bilan kirishingiz mumkin."
+
+#: app_users/templates/app_users/password_reset/confirm.html:4
+#: app_users/templates/app_users/password_reset/confirm.html:40
+msgid "Set new password"
+msgstr "Yangi parol o'rnatish"
+
+#: app_users/templates/app_users/password_reset/confirm.html:12
+msgid "Set a new password"
+msgstr "Yangi parol o'rnating"
+
+#: app_users/templates/app_users/password_reset/confirm.html:13
+msgid "Enter your new password twice to confirm."
+msgstr "Tasdiqlash uchun yangi parolni ikki marta kiriting."
+
+#: app_users/templates/app_users/password_reset/confirm.html:23
+#: app_users/templates/app_users/profile.html:83
+msgid "New password"
+msgstr "Yangi parol"
+
+#: app_users/templates/app_users/password_reset/confirm.html:35
+#: app_users/templates/app_users/profile.html:90
+msgid "Confirm new password"
+msgstr "Yangi parolni tasdiqlang"
+
+#: app_users/templates/app_users/password_reset/confirm.html:45
+msgid "Invalid reset link"
+msgstr "Yaroqsiz tiklash havolasi"
+
+#: app_users/templates/app_users/password_reset/confirm.html:46
+msgid ""
+"This password reset link is invalid or has already been used. Please request"
+" a new one."
+msgstr ""
+"Ushbu parolni tiklash havolasi yaroqsiz yoki allaqachon ishlatilgan. "
+"Iltimos, yangisini so'rang."
+
+#: app_users/templates/app_users/password_reset/confirm.html:47
+msgid "Request a new link"
+msgstr "Yangi havola so'rash"
+
+#: app_users/templates/app_users/password_reset/done.html:4
+#: app_users/templates/app_users/password_reset/done.html:10
+msgid "Check your email"
+msgstr "Elektron pochtangizni tekshiring"
+
+#: app_users/templates/app_users/password_reset/done.html:11
+msgid ""
+"If an account exists for the address you entered, we've sent a link to reset"
+" your password. Please check your inbox and spam folder."
+msgstr ""
+"Agar kiritilgan manzil uchun hisob mavjud bo'lsa, biz parolni tiklash "
+"havolasini yubordik. Iltimos, kelgan xatlar va spam papkasini tekshiring."
+
+#: app_users/templates/app_users/password_reset/done.html:12
+#: app_users/templates/app_users/password_reset/form.html:26
+msgid "Back to sign in"
+msgstr "Kirishga qaytish"
+
+#: app_users/templates/app_users/password_reset/email.html:4
+#: app_users/templates/app_users/password_reset/subject.txt:1
+msgid "Reset your thedevu101 password"
+msgstr "thedevu101 parolingizni tiklang"
+
+#: app_users/templates/app_users/password_reset/email.html:5
+msgid "Use the button below to choose a new password. The link expires soon."
+msgstr ""
+"Yangi parol tanlash uchun quyidagi tugmadan foydalaning. Havola tez orada "
+"eskiradi."
+
+#: app_users/templates/app_users/password_reset/email.html:8
+#: app_users/templates/app_users/password_reset/form.html:11
+msgid "Reset your password"
+msgstr "Parolingizni tiklang"
+
+#: app_users/templates/app_users/password_reset/email.html:9
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for the "
+"account <strong>%(username)s</strong> at thedevu101."
+msgstr ""
+"Siz thedevu101 saytida <strong>%(username)s</strong> hisobi uchun parolni "
+"tiklashni so'raganingiz uchun ushbu xatni oldingiz."
+
+#: app_users/templates/app_users/password_reset/email.html:10
+msgid "Click the button below to choose a new password:"
+msgstr "Yangi parol tanlash uchun quyidagi tugmani bosing:"
+
+#: app_users/templates/app_users/password_reset/email.html:14
+#: app_users/templates/app_users/password_reset/form.html:4
+msgid "Reset password"
+msgstr "Parolni tiklash"
+
+#: app_users/templates/app_users/password_reset/email.html:18
+msgid "Or copy and paste this link into your browser:"
+msgstr "Yoki ushbu havolani brauzeringizga nusxalab qo'ying:"
+
+#: app_users/templates/app_users/password_reset/email.html:21
+msgid ""
+"If you didn't request a password reset, you can safely ignore this email."
+msgstr ""
+"Agar parolni tiklashni so'ramagan bo'lsangiz, ushbu xatga e'tibor bermang."
+
+#: app_users/templates/app_users/password_reset/email.txt:1
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"account at thedevu101."
+msgstr ""
+"Siz thedevu101 saytidagi hisobingiz uchun parolni tiklashni so'raganingiz "
+"uchun ushbu xatni oldingiz."
+
+#: app_users/templates/app_users/password_reset/email.txt:3
+msgid "Please go to the following page and choose a new password:"
+msgstr "Iltimos, quyidagi sahifaga o'ting va yangi parol tanlang:"
+
+#: app_users/templates/app_users/password_reset/email.txt:7
+#, python-format
+msgid "Your username, in case you've forgotten: %(username)s"
+msgstr "Foydalanuvchi nomingiz, agar unutgan bo'lsangiz: %(username)s"
+
+#: app_users/templates/app_users/password_reset/email.txt:9
+msgid "If you didn't request this, you can safely ignore this email."
+msgstr "Agar buni so'ramagan bo'lsangiz, ushbu xatga e'tibor bermang."
+
+#: app_users/templates/app_users/password_reset/form.html:12
+msgid "Enter your email and we'll send you a reset link."
+msgstr ""
+"Elektron pochtangizni kiriting, biz sizga tiklash havolasini yuboramiz."
+
+#: app_users/templates/app_users/password_reset/form.html:22
+msgid "Send reset link"
+msgstr "Tiklash havolasini yuborish"
+
+#: app_users/templates/app_users/profile.html:4
+#: app_users/templates/app_users/profile.html:9
+msgid "Your profile"
+msgstr "Profilingiz"
+
+#: app_users/templates/app_users/profile.html:8
+msgid "Account"
+msgstr "Hisob"
+
+#: app_users/templates/app_users/profile.html:13
+msgid "Personal information"
+msgstr "Shaxsiy ma'lumotlar"
+
+#: app_users/templates/app_users/profile.html:23
+msgid "Avatar"
+msgstr "Avatar"
+
+#: app_users/templates/app_users/profile.html:47
+msgid "Headline"
+msgstr "Kasbiy sarlavha"
+
+#: app_users/templates/app_users/profile.html:52 content/notifications.py:91
+#: templates/emails/new_review.html:14
+msgid "Location"
+msgstr "Manzil"
+
+#: app_users/templates/app_users/profile.html:59
+msgid "Email newsletter"
+msgstr "Elektron yangiliklar"
+
+#: app_users/templates/app_users/profile.html:64
+msgid "Save changes"
+msgstr "O'zgarishlarni saqlash"
+
+#: app_users/templates/app_users/profile.html:70
+msgid "Change password"
+msgstr "Parolni o'zgartirish"
+
+#: app_users/templates/app_users/profile.html:71
+msgid "Enter a new password and confirm it."
+msgstr "Yangi parol kiriting va uni tasdiqlang."
+
+#: app_users/templates/app_users/profile.html:95
+msgid "Update password"
+msgstr "Parolni yangilash"
+
+#: app_users/templates/app_users/register.html:4
+#: app_users/templates/app_users/register.html:64
+msgid "Create account"
+msgstr "Hisob yaratish"
+
+#: app_users/templates/app_users/register.html:11
+msgid "Create your account"
+msgstr "Hisobingizni yarating"
+
+#: app_users/templates/app_users/register.html:12
+msgid "Sign up to comment and leave reviews."
+msgstr "Izoh qoldirish va sharh yozish uchun ro'yxatdan o'ting."
+
+#: app_users/templates/app_users/register.html:39
+#: app_users/templates/app_users/register.html:43
+msgid "optional"
+msgstr "ixtiyoriy"
+
+#: app_users/templates/app_users/register.html:68
+msgid "Already have an account?"
+msgstr "Hisobingiz bormi?"
+
+#: app_users/views.py:44
+msgid "Invalid username/email or password."
+msgstr "Noto'g'ri foydalanuvchi nomi/email yoki parol."
+
+#: app_users/views.py:52
+msgid "You have been signed out."
+msgstr "Tizimdan chiqdingiz."
+
+#: app_users/views.py:65
+msgid "Welcome! Your account has been created."
+msgstr "Xush kelibsiz! Hisobingiz yaratildi."
+
+#: app_users/views.py:91
+msgid "Your password has been updated."
+msgstr "Parolingiz yangilandi."
+
+#: app_users/views.py:93 app_users/views.py:102
+msgid "Please correct the errors below."
+msgstr "Iltimos, quyidagi xatolarni tuzating."
+
+#: app_users/views.py:100
+msgid "Your profile has been updated."
+msgstr "Profilingiz yangilandi."
+
+#: app_users/views.py:122
+msgid "Thank you! Your review was submitted and will appear once approved."
+msgstr "Rahmat! Sharhingiz yuborildi va tasdiqlangach ko'rinadi."
+
+#: app_users/views.py:125
+msgid "Please check the review form and try again."
+msgstr "Iltimos, sharh shaklini tekshirib, qayta urinib ko'ring."
+
+#: content/admin.py:24 content/models.py:32
+msgid "tag"
+msgstr "teg"
+
+#: content/admin.py:25 content/models.py:33
+msgid "tags"
+msgstr "teglar"
+
+#: content/admin.py:42
+msgid "Media & SEO"
+msgstr "Media va SEO"
+
+#: content/admin.py:43
+msgid "Publishing"
+msgstr "Chop etish"
+
+#: content/admin.py:44
+msgid "Timestamps"
+msgstr "Vaqt belgilari"
+
+#: content/models.py:23
+msgid "name"
+msgstr "nom"
+
+#: content/models.py:24 content/models.py:52
+msgid "slug"
+msgstr "slug"
+
+#: content/models.py:54
+msgid "excerpt"
+msgstr "qisqacha mazmun"
+
+#: content/models.py:55
+msgid "Short summary shown in listings and link previews."
+msgstr "Ro'yxatlar va havola ko'rinishlarida ko'rsatiladigan qisqa mazmun."
+
+#: content/models.py:57
+msgid "body"
+msgstr "matn"
+
+#: content/models.py:60
+msgid "poster image"
+msgstr "poster rasm"
+
+#: content/models.py:61
+msgid "Shown as the preview image when the link is shared."
+msgstr "Havola ulashilganda ko'rinish rasmi sifatida ko'rsatiladi."
+
+#: content/models.py:65
+msgid "meta description"
+msgstr "meta tavsif"
+
+#: content/models.py:66
+msgid "Up to 160 chars for search engines. Falls back to excerpt."
+msgstr "Qidiruv tizimlari uchun 160 belgigacha. Qisqacha mazmunga qaytadi."
+
+#: content/models.py:75
+msgid "published"
+msgstr "chop etilgan"
+
+#: content/models.py:76
+msgid "published at"
+msgstr "chop etilgan sana"
+
+#: content/models.py:111
+msgid "post"
+msgstr "post"
+
+# --- Navigation & chrome ---
+#: content/models.py:112
+msgid "posts"
+msgstr "postlar"
+
+#: content/models.py:120
+msgid "news item"
+msgstr "yangilik"
+
+#: content/models.py:121
+msgid "news"
+msgstr "yangiliklar"
+
+#: content/models.py:147 content/models.py:155 content/notifications.py:49
+msgid "comment"
+msgstr "izoh"
+
+#: content/models.py:156
+msgid "comments"
+msgstr "izohlar"
+
+#: content/notifications.py:49
+msgid "reply"
+msgstr "javob"
+
+#: content/notifications.py:61 templates/emails/new_comment.html:4
+#, python-format
+msgid "New %(kind)s from %(name)s"
+msgstr "%(name)s dan yangi %(kind)s"
+
+#: content/notifications.py:65
+#, python-format
+msgid "A new %(kind)s was posted."
+msgstr "Yangi %(kind)s qoldirildi."
+
+#: content/notifications.py:66 content/notifications.py:90
+#: templates/emails/new_comment.html:12 templates/emails/new_review.html:12
+msgid "From"
+msgstr "Kimdan"
+
+#: content/notifications.py:67 templates/emails/new_comment.html:14
+msgid "On"
+msgstr "Qayerda"
+
+#: content/notifications.py:68 content/notifications.py:93
+#: templates/emails/new_comment.html:16 templates/emails/new_review.html:18
+msgid "When"
+msgstr "Qachon"
+
+#: content/notifications.py:85
+#, python-format
+msgid "New review from %(name)s (%(rate)s/5)"
+msgstr "%(name)s dan yangi sharh (%(rate)s/5)"
+
+#: content/notifications.py:89 templates/emails/new_review.html:9
+msgid "A new review was submitted and is awaiting approval."
+msgstr "Yangi sharh yuborildi va tasdiqlanishini kutmoqda."
+
+#: content/notifications.py:118 templates/emails/new_post.html:4
+#, python-format
+msgid "New post: %(title)s"
+msgstr "Yangi post: %(title)s"
+
+#: content/notifications.py:120
+msgid "A new post was just published:"
+msgstr "Yangi post chop etildi:"
+
+#: content/templates/content/_comment.html:11
+#: content/templates/content/_reply.html:11
 msgid "ago"
 msgstr "oldin"
 
-msgid "No comments yet — be the first."
-msgstr "Hali izohlar yo'q — birinchi bo'ling."
+#: content/templates/content/_comment.html:17
+#: content/templates/content/_comment.html:33
+#: content/templates/content/_reply.html:16
+msgid "Reply"
+msgstr "Javob berish"
 
-msgid "Sign in to comment"
-msgstr "Izoh qoldirish uchun kiring"
+#: content/templates/content/_comment.html:20
+#: content/templates/content/_reply.html:19
+msgid "Delete this comment?"
+msgstr "Ushbu izoh o'chirilsinmi?"
 
-msgid "Comment and reply with your real profile."
-msgstr "Haqiqiy profilingiz bilan izoh va javob yozing."
+#: content/templates/content/_comment.html:22
+#: content/templates/content/_reply.html:21
+msgid "Delete"
+msgstr "O'chirish"
 
+#: content/templates/content/_comment.html:31
+msgid "Write a reply…"
+msgstr "Javob yozing…"
+
+#: content/templates/content/_comment.html:56
+#, python-format
 msgid "Show %(counter)s more reply"
 msgid_plural "Show %(counter)s more replies"
 msgstr[0] "Yana %(counter)s ta javobni ko'rsatish"
 msgstr[1] "Yana %(counter)s ta javobni ko'rsatish"
 
-# --- Reviews ---
-msgid "What people say"
-msgstr "Odamlar nima deydi"
+#: content/templates/content/_entry_card.html:14
+#: content/templates/content/entry_list.html:8 content/views.py:43
+#: templates/components/_navbar.html:14 templates/components/_navbar.html:65
+msgid "News"
+msgstr "Yangiliklar"
 
-msgid "No reviews yet."
-msgstr "Hali sharhlar yo'q."
+#: content/templates/content/_entry_card.html:14
+#: content/templates/content/entry_detail.html:47
+msgid "Post"
+msgstr "Maqola"
 
-msgid "Leave a review"
-msgstr "Sharh qoldiring"
+#: content/templates/content/_entry_card.html:32
+msgid "min"
+msgstr "daq"
 
-msgid "Your location"
-msgstr "Manzilingiz"
+#: content/templates/content/entry_detail.html:25
+msgid "min read"
+msgstr "daq o'qish"
 
-msgid "Rating"
-msgstr "Baho"
+#: content/templates/content/entry_detail.html:26
+msgid "views"
+msgstr "ko'rishlar"
 
-msgid "Profile photo (optional)"
-msgstr "Profil rasmi (ixtiyoriy)"
+# --- Detail / comments ---
+#: content/templates/content/entry_detail.html:36
+msgid "Comments"
+msgstr "Izohlar"
 
-msgid "Your review"
-msgstr "Sharhingiz"
+#: content/templates/content/entry_detail.html:37
+msgid "total"
+msgstr "jami"
 
-msgid "Share your experience…"
-msgstr "Tajribangizni ulashing…"
+#: content/templates/content/entry_detail.html:45
+msgid "Write a comment…"
+msgstr "Izoh yozing…"
 
-msgid "Submit review"
-msgstr "Sharhni yuborish"
+#: content/templates/content/entry_detail.html:55
+msgid "Sign in to comment"
+msgstr "Izoh qoldirish uchun kiring"
 
-msgid "Reviews appear after approval."
-msgstr "Sharhlar tasdiqlangandan so'ng ko'rinadi."
+#: content/templates/content/entry_detail.html:56
+msgid "Comment and reply with your real profile."
+msgstr "Haqiqiy profilingiz bilan izoh va javob yozing."
 
-msgid "Please"
-msgstr "Iltimos,"
+#: content/templates/content/entry_detail.html:66
+msgid "No comments yet — be the first."
+msgstr "Hali izohlar yo'q — birinchi bo'ling."
 
-msgid "sign in"
-msgstr "kiring"
+# --- Navigation & chrome ---
+#: content/templates/content/entry_list.html:8 content/views.py:43
+#: templates/components/_navbar.html:12 templates/components/_navbar.html:64
+msgid "Posts"
+msgstr "Maqolalar"
 
-msgid "to leave a review."
-msgstr "sharh qoldirish uchun."
+#: content/templates/content/entry_list.html:13
+msgid "Latest news"
+msgstr "So'nggi yangiliklar"
 
-# --- Projects ---
-msgid "Selected work & achievements"
-msgstr "Tanlangan ishlar va yutuqlar"
+#: content/templates/content/entry_list.html:13
+msgid "Writing & posts"
+msgstr "Yozuvlar va maqolalar"
 
-msgid "Visit"
-msgstr "Tashrif buyurish"
+#: content/templates/content/entry_list.html:17
+msgid "Search by title…"
+msgstr "Sarlavha bo'yicha qidirish…"
 
-msgid "Projects coming soon."
-msgstr "Loyihalar tez orada."
+#: content/templates/content/entry_list.html:24
+msgid "All"
+msgstr "Barchasi"
 
-# --- Login page ---
-msgid "Welcome back"
-msgstr "Xush kelibsiz"
-
-msgid "Sign in to comment and leave reviews."
-msgstr "Izoh va sharh qoldirish uchun kiring."
-
-msgid "Continue with Google"
-msgstr "Google bilan davom etish"
-
-msgid "Continue with GitHub"
-msgstr "GitHub bilan davom etish"
-
-msgid "Continue with LinkedIn"
-msgstr "LinkedIn bilan davom etish"
-
-msgid "or"
-msgstr "yoki"
-
-msgid "Username"
-msgstr "Foydalanuvchi nomi"
-
-msgid "Password"
-msgstr "Parol"
+#: content/templates/content/entry_list.html:52
+msgid "Nothing here yet."
+msgstr "Bu yerda hozircha hech narsa yo'q."
 
 # --- Messages / views ---
+#: content/views.py:142
 msgid "Comment cannot be empty."
 msgstr "Izoh bo'sh bo'lishi mumkin emas."
 
+#: content/views.py:147
 msgid "Your comment was posted."
 msgstr "Izohingiz joylandi."
 
+#: content/views.py:158
 msgid "You can't delete this comment."
 msgstr "Siz bu izohni o'chira olmaysiz."
 
+#: content/views.py:163
 msgid "Comment deleted."
 msgstr "Izoh o'chirildi."
 
-msgid "Invalid username or password."
-msgstr "Foydalanuvchi nomi yoki parol noto'g'ri."
+#: templates/components/_footer.html:6
+msgid "Full-Stack Developer"
+msgstr "Full-Stack dasturchi"
 
-msgid "You have been signed out."
-msgstr "Tizimdan chiqdingiz."
+#: templates/components/_footer.html:16
+msgid "Phone"
+msgstr "Telefon"
 
-msgid "Thank you! Your review was submitted and will appear once approved."
-msgstr "Rahmat! Sharhingiz yuborildi va tasdiqlangach ko'rinadi."
+#: templates/components/_footer.html:18
+msgid "Call"
+msgstr "Qo'ng'iroq"
 
-msgid "Please check the review form and try again."
-msgstr "Iltimos, sharh shaklini tekshirib, qayta urinib ko'ring."
+#: templates/components/_footer.html:22
+msgid "All rights reserved."
+msgstr "Barcha huquqlar himoyalangan."
 
-# --- Admin: actions & fieldsets ---
-msgid "Approve selected reviews"
-msgstr "Tanlangan sharhlarni tasdiqlash"
+#: templates/components/_messages.html:14
+msgid "Close"
+msgstr "Yopish"
 
-msgid "Unapprove selected reviews"
-msgstr "Tanlangan sharhlar tasdig'ini bekor qilish"
+#: templates/components/_navbar.html:38
+msgid "Toggle theme"
+msgstr "Mavzuni almashtirish"
 
-msgid "Media & SEO"
-msgstr "Media va SEO"
+#: templates/components/_navbar.html:48 templates/components/_navbar.html:71
+msgid "Logout"
+msgstr "Chiqish"
 
-msgid "Publishing"
-msgstr "Chop etish"
+#: templates/components/_navbar.html:55
+msgid "Menu"
+msgstr "Menyu"
 
-msgid "Timestamps"
-msgstr "Vaqt belgilari"
+#: templates/components/_seo.html:10 templates/components/_seo.html:23
+#: templates/components/_seo.html:34
+msgid "Full-Stack developer — posts, news, projects and reviews."
+msgstr "Full-Stack dasturchi — postlar, yangiliklar, loyihalar va sharhlar."
 
-msgid "Profile"
-msgstr "Profil"
+#: templates/components/_seo.html:22
+msgid "Ulugbek Umaraliyev — Full-Stack Developer"
+msgstr "Ulug'bek Umaraliyev — Full-Stack dasturchi"
 
-# --- Model fields & help text ---
-msgid "Optional — falls back to your account avatar."
-msgstr "Ixtiyoriy — hisobingiz avatariga qaytadi."
+#: templates/emails/new_comment.html:5
+#, python-format
+msgid "%(name)s posted a new %(kind)s on your site."
+msgstr "%(name)s saytingizda yangi %(kind)s qoldirdi."
 
-msgid "Short professional headline, e.g. 'Backend Engineer'."
-msgstr "Qisqa kasbiy sarlavha, masalan 'Backend Engineer'."
+#: templates/emails/new_comment.html:8
+#, python-format
+msgid "New %(kind)s"
+msgstr "Yangi %(kind)s"
 
-msgid "Short summary shown in listings and link previews."
-msgstr "Ro'yxatlar va havola ko'rinishlarida ko'rsatiladigan qisqa mazmun."
+#: templates/emails/new_comment.html:9
+#, python-format
+msgid "Someone posted a new %(kind)s."
+msgstr "Kimdir yangi %(kind)s qoldirdi."
 
-msgid "Shown as the preview image when the link is shared."
-msgstr "Havola ulashilganda ko'rinish rasmi sifatida ko'rsatiladi."
+#: templates/emails/new_comment.html:24
+msgid "View on site"
+msgstr "Saytda ko'rish"
 
-msgid "Up to 160 chars for search engines. Falls back to excerpt."
-msgstr "Qidiruv tizimlari uchun 160 belgigacha. Qisqacha mazmunga qaytadi."
+#: templates/emails/new_post.html:8
+msgid "New post"
+msgstr "Yangi post"
 
-msgid "address"
-msgstr "manzil"
+#: templates/emails/new_post.html:21
+msgid "Read the post"
+msgstr "Postni o'qish"
 
-msgid "approved"
-msgstr "tasdiqlangan"
+#: templates/emails/new_post.html:28
+msgid "You're receiving this because you subscribed to the newsletter."
+msgstr "Siz ushbu xatni yangiliklarga obuna bo'lganingiz uchun oldingiz."
 
-msgid "avatar"
-msgstr "avatar"
+#: templates/emails/new_post.html:29
+msgid "Manage preferences"
+msgstr "Sozlamalarni boshqarish"
 
-msgid "body"
-msgstr "matn"
+#: templates/emails/new_review.html:4
+#, python-format
+msgid "New review from %(name)s"
+msgstr "%(name)s dan yangi sharh"
 
-msgid "comment"
-msgstr "izoh"
+#: templates/emails/new_review.html:5
+#, python-format
+msgid "%(name)s left a %(stars)s review — awaiting your approval."
+msgstr "%(name)s %(stars)s sharh qoldirdi — tasdiqlashingizni kutmoqda."
 
-msgid "comments"
-msgstr "izohlar"
+#: templates/emails/new_review.html:8
+msgid "New review"
+msgstr "Yangi sharh"
 
-msgid "country flag"
-msgstr "mamlakat bayrog'i"
-
-msgid "description"
-msgstr "tavsif"
-
-msgid "excerpt"
-msgstr "qisqacha mazmun"
-
-msgid "featured"
-msgstr "tanlangan"
-
-msgid "headline"
-msgstr "sarlavha"
-
-msgid "link"
-msgstr "havola"
-
-msgid "location"
-msgstr "joylashuv"
-
-msgid "meta description"
-msgstr "meta tavsif"
-
-msgid "name"
-msgstr "nom"
-
-msgid "news item"
-msgstr "yangilik"
-
-msgid "order"
-msgstr "tartib"
-
-msgid "photo"
-msgstr "rasm"
-
-msgid "poster image"
-msgstr "poster rasm"
-
-msgid "profile photo"
-msgstr "profil rasmi"
-
-msgid "project"
-msgstr "loyiha"
-
-msgid "published at"
-msgstr "chop etilgan sana"
-
-msgid "published"
-msgstr "chop etilgan"
-
-msgid "rating"
-msgstr "baho"
-
-msgid "review"
-msgstr "sharh"
-
-msgid "slug"
-msgstr "slug"
-
-msgid "tag"
-msgstr "teg"
-
-msgid "tags"
-msgstr "teglar"
-
-msgid "title"
-msgstr "sarlavha"
-
-msgid "user"
-msgstr "foydalanuvchi"
-
-msgid "users"
-msgstr "foydalanuvchilar"
+#: templates/emails/new_review.html:26
+msgid "Approve in admin"
+msgstr "Admin panelda tasdiqlash"

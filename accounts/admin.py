@@ -9,5 +9,5 @@ from .models import User
 class UserAdmin(DjangoUserAdmin):
     list_display = ("username", "email", "display_name", "is_staff", "date_joined")
     fieldsets = DjangoUserAdmin.fieldsets + (
-        (_("Profile"), {"fields": ("avatar", "headline", "location")}),
+        (_("Profile"), {"fields": ("avatar", "headline", "location", "newsletter")}),
     )

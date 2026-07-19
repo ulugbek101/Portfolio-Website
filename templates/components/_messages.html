@@ -1,3 +1,4 @@
+{% load i18n %}
 {% if messages %}
 <div id="toasts" class="fixed bottom-5 right-5 z-[100] flex w-[min(360px,90vw)] flex-col gap-2">
   {% for message in messages %}
@@ -10,7 +11,7 @@
       <use href="{% if message.tags == 'success' %}#i-check{% elif message.tags == 'error' %}#i-close{% else %}#i-campaign{% endif %}"/>
     </svg>
     <span class="flex-1">{{ message }}</span>
-    <button type="button" class="toast-close text-ink3 hover:text-ink" aria-label="Close">
+    <button type="button" class="toast-close text-ink3 hover:text-ink" aria-label="{% trans 'Close' %}">
       <svg class="ic text-base"><use href="#i-close"/></svg>
     </button>
   </div>

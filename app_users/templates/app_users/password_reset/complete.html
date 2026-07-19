@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Password reset complete" %} — thedevu101{% endblock %}
+
+{% block content %}
+<section class="wrap flex justify-center py-20">
+  <div class="w-full max-w-md text-center">
+    <div class="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-accentSoft text-accent"><svg class="ic text-2xl"><use href="#i-check"/></svg></div>
+    <h1 class="font-serif text-3xl font-semibold tracking-tight">{% trans "Password reset" %}</h1>
+    <p class="mt-2 text-sm text-ink3">{% trans "Your password has been set. You can now sign in with your new password." %}</p>
+    <a href="{% url 'login' %}" class="btn btn-primary mt-6 inline-flex">{% trans "Sign in" %}</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Your profile" %} — thedevu101{% endblock %}
+
+{% block content %}
+<section class="wrap max-w-2xl py-14">
+  <div class="section-label"><svg class="ic"><use href="#i-person"/></svg>{% trans "Account" %}</div>
+  <h1 class="mb-8 font-serif text-4xl font-semibold tracking-tight">{% trans "Your profile" %}</h1>
+
+  <!-- Personal information -->
+  <div class="card p-6 sm:p-8">
+    <h2 class="mb-5 font-serif text-xl font-semibold">{% trans "Personal information" %}</h2>
+    <form method="post" action="{% url 'profile' %}" enctype="multipart/form-data" class="flex flex-col gap-4">
+      {% csrf_token %}
+      <input type="hidden" name="action" value="profile" />
+
+      <div class="flex items-center gap-4">
+        <div class="grid h-16 w-16 shrink-0 place-items-center overflow-hidden rounded-full border border-line2 bg-paper2">
+          {% if user.avatar %}<img src="{{ user.avatar.url }}" alt="{{ user.display_name }}" class="h-full w-full object-cover" />{% else %}<span class="font-mono text-lg font-bold text-ink3">{{ user.initials }}</span>{% endif %}
+        </div>
+        <label class="flex-1 text-sm">
+          <span class="font-medium">{% trans "Avatar" %}</span>
+          {{ profile_form.avatar }}
+          {% if profile_form.avatar.errors %}<span class="text-xs text-red-600">{{ profile_form.avatar.errors|striptags }}</span>{% endif %}
+        </label>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <label class="flex flex-col gap-1 text-sm">
+          <span class="font-medium">{% trans "First name" %}</span>
+          {{ profile_form.first_name }}
+        </label>
+        <label class="flex flex-col gap-1 text-sm">
+          <span class="font-medium">{% trans "Last name" %}</span>
+          {{ profile_form.last_name }}
+        </label>
+      </div>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Email" %}</span>
+        {{ profile_form.email }}
+        {% if profile_form.email.errors %}<span class="text-xs text-red-600">{{ profile_form.email.errors|striptags }}</span>{% endif %}
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Headline" %}</span>
+        {{ profile_form.headline }}
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Location" %}</span>
+        {{ profile_form.location }}
+      </label>
+
+      <label class="flex items-start gap-3 rounded-xl border border-line2 bg-paper2 p-3.5 text-sm">
+        {{ profile_form.newsletter }}
+        <span>
+          <span class="font-medium">{% trans "Email newsletter" %}</span>
+          <span class="block text-xs text-ink3">{% trans "Receive occasional email updates and newsletters." %}</span>
+        </span>
+      </label>
+
+      <button type="submit" class="btn btn-primary w-full sm:w-auto sm:self-start">{% trans "Save changes" %}</button>
+    </form>
+  </div>
+
+  <!-- Change password -->
+  <div class="card mt-6 p-6 sm:p-8">
+    <h2 class="mb-1 font-serif text-xl font-semibold">{% trans "Change password" %}</h2>
+    <p class="mb-5 text-sm text-ink3">{% trans "Enter a new password and confirm it." %}</p>
+    <form method="post" action="{% url 'profile' %}" class="flex flex-col gap-4">
+      {% csrf_token %}
+      <input type="hidden" name="action" value="password" />
+
+      {% if password_form.non_field_errors %}
+      <div class="rounded-xl border border-red-300 bg-red-50 px-3.5 py-2.5 text-sm text-red-700">
+        {{ password_form.non_field_errors }}
+      </div>
+      {% endif %}
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "New password" %}</span>
+        <input type="password" name="new_password1" required class="field" autocomplete="new-password" />
+        {% if password_form.new_password1.errors %}<span class="text-xs text-red-600">{{ password_form.new_password1.errors|striptags }}</span>{% endif %}
+        {% if password_form.new_password1.help_text %}<span class="text-xs text-ink3">{{ password_form.new_password1.help_text|safe }}</span>{% endif %}
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Confirm new password" %}</span>
+        <input type="password" name="new_password2" required class="field" autocomplete="new-password" />
+        {% if password_form.new_password2.errors %}<span class="text-xs text-red-600">{{ password_form.new_password2.errors|striptags }}</span>{% endif %}
+      </label>
+
+      <button type="submit" class="btn btn-ghost w-full sm:w-auto sm:self-start">{% trans "Update password" %}</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

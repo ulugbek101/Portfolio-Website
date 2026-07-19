@@ -127,7 +127,6 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = [
     "social_core.backends.google.GoogleOAuth2",
     "social_core.backends.github.GithubOAuth2",
-    "social_core.backends.linkedin.LinkedinOpenIdConnect",
     "django.contrib.auth.backends.ModelBackend",
 ]
 
@@ -141,9 +140,6 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env.str("GOOGLE_SOCIAL_SECRET", "")
 
 SOCIAL_AUTH_GITHUB_KEY = env.str("GITHUB_SOCIAL_KEY", "")
 SOCIAL_AUTH_GITHUB_SECRET = env.str("GITHUB_SOCIAL_SECRET", "")
-
-SOCIAL_AUTH_LINKEDIN_OPENIDCONNECT_KEY = env.str("LINKEDIN_SOCIAL_KEY", "")
-SOCIAL_AUTH_LINKEDIN_OPENIDCONNECT_SECRET = env.str("LINKEDIN_SOCIAL_SECRET", "")
 
 # Send the user back to where they came from after social login.
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
@@ -188,12 +184,14 @@ STATICFILES_DIRS = [BASE_DIR / "assets"]  # project source assets (tailwind css,
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ---------------------------------------------------------------------------
-# Email  (console in dev, SMTP in prod)
+# Email  (SMTP by default; set EMAIL_BACKEND in the env to override)
 # ---------------------------------------------------------------------------
-if DEBUG:
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-else:
-    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# For local development without SMTP credentials, set in your .env:
+#   EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+# Gmail requires an App Password (not your account password) with 2FA enabled.
+EMAIL_BACKEND = env.str(
+    "EMAIL_BACKEND", "django.core.mail.backends.smtp.EmailBackend"
+)
 
 EMAIL_HOST = env.str("EMAIL_HOST", "")
 EMAIL_PORT = env.int("EMAIL_PORT", 587)

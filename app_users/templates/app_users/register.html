@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Create account" %} — thedevu101{% endblock %}
+
+{% block content %}
+<section class="wrap flex justify-center py-16">
+  <div class="w-full max-w-md">
+    <div class="mb-8 text-center">
+      <div class="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-2xl bg-accentSoft text-accent"><svg class="ic text-2xl"><use href="#i-person"/></svg></div>
+      <h1 class="font-serif text-3xl font-semibold tracking-tight">{% trans "Create your account" %}</h1>
+      <p class="mt-1 text-sm text-ink3">{% trans "Sign up to comment and leave reviews." %}</p>
+    </div>
+
+    <form method="post" action="{% url 'register' %}" class="flex flex-col gap-4">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next }}" />
+
+      {% if form.non_field_errors %}
+      <div class="rounded-xl border border-red-300 bg-red-50 px-3.5 py-2.5 text-sm text-red-700">
+        {{ form.non_field_errors }}
+      </div>
+      {% endif %}
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Username" %}</span>
+        {{ form.username }}
+        {% if form.username.errors %}<span class="text-xs text-red-600">{{ form.username.errors|striptags }}</span>{% endif %}
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Email" %}</span>
+        {{ form.email }}
+        {% if form.email.errors %}<span class="text-xs text-red-600">{{ form.email.errors|striptags }}</span>{% endif %}
+      </label>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <label class="flex flex-col gap-1 text-sm">
+          <span class="font-medium">{% trans "First name" %} <span class="font-normal text-ink3">({% trans "optional" %})</span></span>
+          {{ form.first_name }}
+        </label>
+        <label class="flex flex-col gap-1 text-sm">
+          <span class="font-medium">{% trans "Last name" %} <span class="font-normal text-ink3">({% trans "optional" %})</span></span>
+          {{ form.last_name }}
+        </label>
+      </div>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Password" %}</span>
+        {{ form.password1 }}
+        {% if form.password1.errors %}<span class="text-xs text-red-600">{{ form.password1.errors|striptags }}</span>{% endif %}
+        <ul data-password-rules data-password-input="{{ form.password1.id_for_label }}"
+            class="mt-1 flex flex-col gap-1 text-xs text-ink3">
+          {% include 'app_users/_password_rules.html' %}
+        </ul>
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm">
+        <span class="font-medium">{% trans "Confirm password" %}</span>
+        {{ form.password2 }}
+        {% if form.password2.errors %}<span class="text-xs text-red-600">{{ form.password2.errors|striptags }}</span>{% endif %}
+      </label>
+
+      <button type="submit" class="btn btn-primary w-full">{% trans "Create account" %}</button>
+    </form>
+
+    <p class="mt-6 text-center text-sm text-ink3">
+      {% trans "Already have an account?" %}
+      <a href="{% url 'login' %}{% if next %}?next={{ next }}{% endif %}" class="text-accent hover:underline">{% trans "Sign in" %}</a>
+    </p>
+  </div>
+</section>
+{% endblock %}
