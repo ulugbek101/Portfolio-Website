@@ -76,9 +76,9 @@
     <h2 class="mb-8 font-serif text-3xl font-semibold tracking-tight">{% trans "What people say" %}</h2>
 
     {% if reviews %}
-    <div class="grid gap-5 md:grid-cols-2">
+    <div id="reviews-grid" class="grid gap-5 md:grid-cols-2">
       {% for review in reviews %}
-      <figure class="flex flex-col gap-3 rounded-2xl border border-line bg-paper p-6 shadow-soft">
+      <figure data-review-card class="flex flex-col gap-3 rounded-2xl border border-line bg-paper p-6 shadow-soft {% if forloop.counter0 >= 5 %}hidden{% endif %}">
         <div class="flex items-center gap-3">
           {% if review.photo_url %}<img src="{{ review.photo_url }}" alt="{{ review.user.display_name }}" class="h-11 w-11 rounded-full object-cover" />{% else %}<div class="grid h-11 w-11 place-items-center rounded-full bg-accentSoft font-mono text-sm font-bold text-accentInk">{{ review.user.initials }}</div>{% endif %}
           <figcaption>
@@ -91,25 +91,41 @@
       </figure>
       {% endfor %}
     </div>
+    {% if reviews|length > 5 %}
+    <div class="mt-8 text-center">
+      <button type="button" id="reviews-show-more" data-step="5"
+              class="btn btn-ghost inline-flex items-center gap-1.5">
+        {% trans "Show more" %}</button>
+    </div>
+    {% endif %}
     {% else %}
     <p class="rounded-2xl border border-dashed border-line2 py-12 text-center font-mono text-sm text-ink3">{% trans "No reviews yet." %}</p>
     {% endif %}
 
     <!-- Leave a review -->
-    <div class="mt-10 rounded-2xl border border-line bg-paper p-6 shadow-soft">
+    <div class="mt-10 rounded-2xl border border-line bg-paper p-6 shadow-soft md:mx-auto md:w-1/2">
       <h3 class="mb-4 font-serif text-xl font-semibold">{% trans "Leave a review" %}</h3>
       {% if user.is_authenticated %}
-      <form method="post" action="{% url 'create_review' %}" enctype="multipart/form-data" class="grid gap-4 sm:grid-cols-2">
+      <form method="post" action="{% url 'create_review' %}" enctype="multipart/form-data" class="grid gap-4">
         {% csrf_token %}
         <label class="text-sm">{% trans "Your location" %}
           <input type="text" name="address" required placeholder="Ex: Tashkent, UZ" class="field mt-1" /></label>
-        <label class="text-sm">{% trans "Rating" %}
-          <select name="rate" class="field mt-1">{% for i in "54321" %}<option value="{{ i }}">{{ i }} ★</option>{% endfor %}</select></label>
-        <label class="text-sm sm:col-span-2">{% trans "Profile photo (optional)" %}
+        <div class="text-sm">{% trans "Rating" %}
+          <div id="star-rating" class="mt-1 inline-flex items-center gap-1 text-amber" data-rate="5">
+            <input type="hidden" name="rate" value="5" />
+            {% for i in "12345" %}
+            <button type="button" data-value="{{ i }}" aria-label="{{ i }}"
+                    class="star grid h-8 w-8 place-items-center rounded transition-transform hover:scale-110">
+              <svg class="ic text-[22px]"><use href="#i-star"/></svg>
+            </button>
+            {% endfor %}
+          </div>
+        </div>
+        <label class="text-sm">{% trans "Profile photo (optional)" %}
           <input type="file" name="profile_photo" accept="image/*" class="field mt-1" /></label>
-        <label class="text-sm sm:col-span-2">{% trans "Your review" %}
+        <label class="text-sm">{% trans "Your review" %}
           <textarea name="body" rows="3" required placeholder="{% trans 'Share your experience…' %}" class="field mt-1"></textarea></label>
-        <div class="sm:col-span-2"><button type="submit" class="btn btn-primary w-full"><svg class="ic text-base"><use href="#i-send"/></svg>{% trans "Submit review" %}</button></div>
+        <button type="submit" class="btn btn-primary w-full"><svg class="ic text-base"><use href="#i-send"/></svg>{% trans "Submit review" %}</button>
       </form>
       <p class="mt-3 font-mono text-xs text-ink3">{% trans "Reviews appear after approval." %}</p>
       {% else %}
@@ -118,4 +134,56 @@
     </div>
   </div>
 </section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+  // Progressive "Show more" — reveal the next batch of hidden review cards.
+  var moreBtn = document.getElementById("reviews-show-more");
+  if (moreBtn) {
+    var hiddenCards = function () {
+      return document.querySelectorAll("#reviews-grid [data-review-card].hidden");
+    };
+    moreBtn.addEventListener("click", function () {
+      var step = parseInt(moreBtn.dataset.step, 10) || 5;
+      var cards = hiddenCards();
+      for (var i = 0; i < step && i < cards.length; i++) {
+        cards[i].classList.remove("hidden");
+      }
+      if (hiddenCards().length === 0) {
+        moreBtn.remove();
+      }
+    });
+  }
+
+  // Interactive 5-star rating: hover fills 1..N, click locks in the value.
+  var widget = document.getElementById("star-rating");
+  if (widget) {
+    var input = widget.querySelector('input[name="rate"]');
+    var stars = Array.prototype.slice.call(widget.querySelectorAll(".star"));
+    var paint = function (n) {
+      stars.forEach(function (star, idx) {
+        var on = idx < n;
+        star.classList.toggle("text-amber", on);
+        star.classList.toggle("text-ink3", !on);
+      });
+    };
+    stars.forEach(function (star, idx) {
+      star.addEventListener("mouseenter", function () { paint(idx + 1); });
+      star.addEventListener("focus", function () { paint(idx + 1); });
+      star.addEventListener("click", function () {
+        var val = idx + 1;
+        input.value = val;
+        widget.dataset.rate = String(val);
+        paint(val);
+      });
+    });
+    widget.addEventListener("mouseleave", function () {
+      paint(parseInt(widget.dataset.rate, 10) || 0);
+    });
+    paint(parseInt(widget.dataset.rate, 10) || 5);
+  }
+})();
+</script>
 {% endblock %}

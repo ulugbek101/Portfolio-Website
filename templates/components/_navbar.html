@@ -14,6 +14,8 @@
         <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-campaign"/></svg>{% trans "News" %}</a>
       <a href="{% url 'portfolio' %}" class="group inline-flex items-center gap-1.5 hover:text-ink">
         <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-folder"/></svg>{% trans "Projects" %}</a>
+      <a href="{% url 'work_history' %}" class="group inline-flex items-center gap-1.5 hover:text-ink">
+        <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-work"/></svg>{% trans "Work" %}</a>
       <a href="{% url 'index' %}#reviews" class="group inline-flex items-center gap-1.5 hover:text-ink">
         <svg class="ic text-ink3 text-base group-hover:text-accent"><use href="#i-star"/></svg>{% trans "Reviews" %}</a>
     </nav>
@@ -60,6 +62,7 @@
       <a href="{% url 'content:post_list' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Posts" %}</a>
       <a href="{% url 'content:news_list' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "News" %}</a>
       <a href="{% url 'portfolio' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Projects" %}</a>
+      <a href="{% url 'work_history' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Work" %}</a>
       <a href="{% url 'index' %}#reviews" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Reviews" %}</a>
       {% if request.user.is_authenticated %}
       <a href="{% url 'logout' %}" class="rounded-lg px-3 py-2 hover:bg-paper2">{% trans "Logout" %}</a>

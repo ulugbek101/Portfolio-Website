@@ -27,13 +27,18 @@ class Review(models.Model):
     rate = models.IntegerField(_("rating"), choices=RATE_CHOICES, default=5)
     body = models.TextField(_("review"))
     approved = models.BooleanField(_("approved"), default=False)
+    order = models.PositiveIntegerField(
+        _("order"),
+        default=0,
+        help_text=_("Lower numbers appear first. Ties fall back to newest."),
+    )
 
     id = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["-created"]
+        ordering = ["order", "-created"]
         verbose_name = _("review")
         verbose_name_plural = _("reviews")
 
