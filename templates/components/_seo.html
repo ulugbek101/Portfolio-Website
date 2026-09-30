@@ -27,10 +27,10 @@
 {% if og_image_url %}
 <meta property="og:image" content="{{ og_image_url }}" />
 {% else %}
-<meta property="og:image" content="{{ SITE_URL }}{{ MEDIA_PREFIX }}hair-style.jpeg" />
+<meta property="og:image" content="{{ SITE_URL }}{{ MEDIA_PREFIX }}hair-style-og.jpg" />
 <meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1100" />
-<meta property="og:image:height" content="1375" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 {% endif %}
 <meta property="og:image:alt" content="{{ meta_title|default:'thedevu101' }}" />
 
@@ -38,4 +38,4 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ meta_title|default:'Ulugbek Umaraliyev' }}" />
 <meta name="twitter:description" content="{{ meta_description|default:_('Full-Stack developer — posts, news, projects and reviews.') }}" />
-<meta name="twitter:image" content="{% if og_image_url %}{{ og_image_url }}{% else %}{{ SITE_URL }}{{ MEDIA_PREFIX }}hair-style.jpeg{% endif %}" />
+<meta name="twitter:image" content="{% if og_image_url %}{{ og_image_url }}{% else %}{{ SITE_URL }}{{ MEDIA_PREFIX }}hair-style-og.jpg{% endif %}" />
