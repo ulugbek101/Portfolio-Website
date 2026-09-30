@@ -6,7 +6,7 @@ from django.shortcuts import render
 from .challenge_texts import OG, SEO, TEXTS
 
 PATHS = {"ru": "/twelve-day-challenge/", "uz": "/twelve-day-challenge/uz/"}
-IMAGE_PATH = "/media/hair-style.jpeg"
+IMAGE_PATH = "/media/hair-style-og.jpg"
 
 
 def twelve_day_challenge(request, lang="ru"):
