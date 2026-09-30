@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block" rel="stylesheet" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -87,6 +89,21 @@
         linear-gradient(135deg, var(--card-a), var(--card-b));
       aspect-ratio: 1.586 / 1;
     }
+    .material-symbols-rounded {
+      font-family: 'Material Symbols Rounded';
+      font-weight: normal; font-style: normal; line-height: 1;
+      letter-spacing: normal; text-transform: none; white-space: nowrap;
+      display: inline-block; flex-shrink: 0; font-size: 1.25em;
+      -webkit-font-smoothing: antialiased; font-feature-settings: 'liga';
+      user-select: none;
+    }
+    .icon-badge {
+      display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 2.75rem; height: 2.75rem; border-radius: 9999px;
+      background: var(--soft); color: var(--accent); font-size: 1.5rem;
+    }
+    main p[data-i18n] { text-align: justify; text-justify: inter-word; hyphens: auto; -webkit-hyphens: auto; }
+    main .notes p[data-i18n] { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
     .chip { background: linear-gradient(135deg, #E9D9A6, #B89A55); }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
   </style>
@@ -97,7 +114,8 @@
   <header class="max-w-5xl mx-auto px-5 sm:px-8 pt-6 flex items-center justify-between gap-4">
     <span class="font-display text-xl sm:text-2xl tracking-tight">Stylist Challenge</span>
     <div role="group" data-i18n-aria="langLabel" aria-label="Язык"
-         class="inline-flex p-1 rounded-full bg-soft text-sm font-bold">
+         class="inline-flex items-center p-1 rounded-full bg-soft text-sm font-bold">
+      <span class="material-symbols-rounded text-accent pl-2 pr-1" aria-hidden="true">translate</span>
       <button type="button" data-lang="ru" class="lang-btn px-3 py-1.5 rounded-full">РУ</button>
       <button type="button" data-lang="uz" class="lang-btn px-3 py-1.5 rounded-full">UZ</button>
     </div>
@@ -111,15 +129,15 @@
         <h1 data-i18n="heroTitle" class="mt-4 font-display text-[2.2rem] leading-[1.12] sm:text-[3.1rem] sm:leading-[1.07] tracking-tight"></h1>
         <p data-i18n="heroText" class="mt-6 text-lg leading-relaxed text-muted max-w-[34rem]"></p>
         <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-          <a href="#join" data-i18n="heroCta"
-             class="inline-flex items-center rounded-full bg-accent text-accent-ink px-7 py-3.5 font-semibold hover:opacity-90"></a>
-          <a href="#benefits" data-i18n="heroCta2"
-             class="font-semibold text-accent underline underline-offset-4"></a>
+          <a href="#join"
+             class="inline-flex items-center rounded-full bg-accent text-accent-ink px-7 py-3.5 font-semibold hover:opacity-90 gap-2"><span data-i18n="heroCta"></span><span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></a>
+          <a href="#benefits"
+             class="inline-flex items-center font-semibold text-accent underline underline-offset-4 gap-2"><span data-i18n="heroCta2"></span><span class="material-symbols-rounded" aria-hidden="true">expand_more</span></a>
         </div>
         <ul class="mt-8 flex flex-wrap gap-2 text-sm font-semibold">
-          <li data-i18n="chip1" class="rounded-full border border-line bg-surface px-4 py-2"></li>
-          <li data-i18n="chip2" class="rounded-full border border-line bg-surface px-4 py-2"></li>
-          <li data-i18n="chip3" class="rounded-full border border-line bg-surface px-4 py-2"></li>
+          <li class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-accent"><span class="material-symbols-rounded" aria-hidden="true">calendar_month</span><span data-i18n="chip1" class="text-ink"></span></li>
+          <li class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-accent"><span class="material-symbols-rounded" aria-hidden="true">lock</span><span data-i18n="chip2" class="text-ink"></span></li>
+          <li class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2 text-accent"><span class="material-symbols-rounded" aria-hidden="true">content_cut</span><span data-i18n="chip3" class="text-ink"></span></li>
         </ul>
       </div>
 
@@ -138,24 +156,28 @@
       <h2 data-i18n="benefitsTitle" class="font-display text-3xl sm:text-4xl tracking-tight"></h2>
       <div class="mt-10 grid gap-5 sm:grid-cols-2">
         <article class="rounded-[24px] bg-surface border border-line p-6 sm:p-7">
-          <h3 data-i18n="b1Title" class="text-xl font-bold"></h3>
+          <span class="icon-badge"><span class="material-symbols-rounded" aria-hidden="true">event_available</span></span>
+          <h3 data-i18n="b1Title" class="mt-4 text-xl font-bold"></h3>
           <p data-i18n="b1Text" class="mt-3 leading-relaxed text-muted"></p>
         </article>
         <article class="rounded-[24px] bg-surface border border-line p-6 sm:p-7">
-          <h3 data-i18n="b2Title" class="text-xl font-bold"></h3>
+          <span class="icon-badge"><span class="material-symbols-rounded" aria-hidden="true">lightbulb</span></span>
+          <h3 data-i18n="b2Title" class="mt-4 text-xl font-bold"></h3>
           <p data-i18n="b2Text" class="mt-3 leading-relaxed text-muted"></p>
         </article>
         <article class="rounded-[24px] bg-surface border border-line p-6 sm:p-7">
-          <h3 data-i18n="b3Title" class="text-xl font-bold"></h3>
+          <span class="icon-badge"><span class="material-symbols-rounded" aria-hidden="true">groups</span></span>
+          <h3 data-i18n="b3Title" class="mt-4 text-xl font-bold"></h3>
           <p data-i18n="b3Text" class="mt-3 leading-relaxed text-muted"></p>
         </article>
         <article class="rounded-[24px] bg-surface border border-line p-6 sm:p-7">
-          <h3 data-i18n="b4Title" class="text-xl font-bold"></h3>
+          <span class="icon-badge"><span class="material-symbols-rounded" aria-hidden="true">chat</span></span>
+          <h3 data-i18n="b4Title" class="mt-4 text-xl font-bold"></h3>
           <p data-i18n="b4Text" class="mt-3 leading-relaxed text-muted"></p>
         </article>
       </div>
-      <a href="#join" data-i18n="benefitsCta"
-         class="mt-10 inline-flex items-center rounded-full bg-accent text-accent-ink px-7 py-3.5 font-semibold hover:opacity-90"></a>
+      <a href="#join"
+         class="mt-10 inline-flex items-center rounded-full bg-accent text-accent-ink px-7 py-3.5 font-semibold hover:opacity-90 gap-2"><span data-i18n="benefitsCta"></span><span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></a>
     </section>
 
     <!-- How to join: card + steps -->
@@ -163,12 +185,12 @@
       <h2 data-i18n="joinTitle" class="font-display text-3xl sm:text-4xl tracking-tight"></h2>
       <p data-i18n="joinText" class="mt-3 text-lg text-muted max-w-[40rem] leading-relaxed"></p>
 
-      <div class="mt-10 grid md:grid-cols-[minmax(0,22rem)_1fr] gap-10 md:gap-14 items-start">
+      <div class="mt-10 grid md:grid-cols-[minmax(0,28rem)_1fr] gap-10 md:gap-14 items-start">
         <div>
           <div class="pay-card w-full rounded-[20px] p-5 sm:p-6 text-white shadow-[0_24px_60px_-18px_rgba(35,15,45,.55)] flex flex-col justify-between">
             <div class="flex items-start justify-between">
               <div class="chip w-10 h-7 rounded-md"></div>
-              <span class="text-sm font-semibold opacity-90">Uzcard</span>
+              <span class="inline-flex items-center gap-2 text-sm font-semibold opacity-90"><span class="material-symbols-rounded" aria-hidden="true">contactless</span>Uzcard</span>
             </div>
             <div>
               <p class="font-semibold text-[1.2rem] sm:text-[1.3rem] tracking-[0.08em] tabular-nums whitespace-nowrap">5614 6829 1483 9164</p>
@@ -180,11 +202,11 @@
               </div>
             </div>
           </div>
-          <div class="mt-5 flex flex-wrap gap-3">
-            <button id="copyNumber" type="button" data-i18n="copyNumber"
-                    class="flex-1 min-w-[9.5rem] rounded-full border border-line bg-surface px-5 py-3 font-semibold hover:border-accent"></button>
-            <button id="copyName" type="button" data-i18n="copyName"
-                    class="flex-1 min-w-[9.5rem] rounded-full border border-line bg-surface px-5 py-3 font-semibold hover:border-accent"></button>
+          <div class="mt-5 flex flex-nowrap gap-2 sm:gap-3">
+            <button id="copyNumber" type="button"
+                    class="flex-1 min-w-0 whitespace-nowrap inline-flex items-center justify-center rounded-full border border-line bg-surface px-3 sm:px-5 py-3 text-sm sm:text-base font-semibold hover:border-accent gap-1.5 sm:gap-2"><span class="material-symbols-rounded" aria-hidden="true">content_copy</span><span data-i18n="copyNumber"></span></button>
+            <button id="copyName" type="button"
+                    class="flex-1 min-w-0 whitespace-nowrap inline-flex items-center justify-center rounded-full border border-line bg-surface px-3 sm:px-5 py-3 text-sm sm:text-base font-semibold hover:border-accent gap-1.5 sm:gap-2"><span class="material-symbols-rounded" aria-hidden="true">badge</span><span data-i18n="copyName"></span></button>
           </div>
           <p id="copyStatus" class="mt-3 min-h-[1.25rem] text-sm text-accent font-semibold" aria-live="polite"></p>
         </div>
@@ -193,28 +215,28 @@
           <li class="flex gap-5">
             <span class="font-display text-5xl leading-none text-accent shrink-0 w-10">1</span>
             <div>
-              <h3 data-i18n="s1Title" class="text-lg font-bold"></h3>
+              <h3 class="flex items-center gap-2 text-lg font-bold"><span class="text-accent"><span class="material-symbols-rounded" aria-hidden="true">credit_card</span></span><span data-i18n="s1Title"></span></h3>
               <p data-i18n="s1Text" class="mt-2 leading-relaxed text-muted"></p>
             </div>
           </li>
           <li class="flex gap-5">
             <span class="font-display text-5xl leading-none text-accent shrink-0 w-10">2</span>
             <div>
-              <h3 data-i18n="s2Title" class="text-lg font-bold"></h3>
+              <h3 class="flex items-center gap-2 text-lg font-bold"><span class="text-accent"><span class="material-symbols-rounded" aria-hidden="true">add_a_photo</span></span><span data-i18n="s2Title"></span></h3>
               <p data-i18n="s2Text" class="mt-2 leading-relaxed text-muted"></p>
             </div>
           </li>
           <li class="flex gap-5">
             <span class="font-display text-5xl leading-none text-accent shrink-0 w-10">3</span>
             <div>
-              <h3 data-i18n="s3Title" class="text-lg font-bold"></h3>
+              <h3 class="flex items-center gap-2 text-lg font-bold"><span class="text-accent"><span class="material-symbols-rounded" aria-hidden="true">link</span></span><span data-i18n="s3Title"></span></h3>
               <p data-i18n="s3Text" class="mt-2 leading-relaxed text-muted"></p>
             </div>
           </li>
           <li class="flex gap-5">
             <span class="font-display text-5xl leading-none text-accent shrink-0 w-10">4</span>
             <div>
-              <h3 data-i18n="s4Title" class="text-lg font-bold"></h3>
+              <h3 class="flex items-center gap-2 text-lg font-bold"><span class="text-accent"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span></span><span data-i18n="s4Title"></span></h3>
               <p data-i18n="s4Text" class="mt-2 leading-relaxed text-muted"></p>
             </div>
           </li>
@@ -223,12 +245,12 @@
     </section>
 
     <!-- Before you pay -->
-    <section class="rounded-[28px] bg-soft px-6 py-8 sm:px-10 sm:py-10">
+    <section class="notes rounded-[28px] bg-soft px-6 py-8 sm:px-10 sm:py-10">
       <h2 data-i18n="notesTitle" class="font-display text-2xl sm:text-3xl tracking-tight"></h2>
-      <div class="mt-5 grid gap-5 sm:grid-cols-3 text-[0.95rem] leading-relaxed">
-        <p data-i18n="n1"></p>
-        <p data-i18n="n2"></p>
-        <p data-i18n="n3"></p>
+      <div class="mt-5 grid gap-6 sm:grid-cols-[repeat(3,minmax(0,15.5rem))] sm:justify-between text-[0.95rem] leading-relaxed">
+        <div class="flex gap-3"><span class="text-accent mt-0.5"><span class="material-symbols-rounded" aria-hidden="true">verified_user</span></span><p data-i18n="n1"></p></div>
+        <div class="flex gap-3"><span class="text-accent mt-0.5"><span class="material-symbols-rounded" aria-hidden="true">receipt_long</span></span><p data-i18n="n2"></p></div>
+        <div class="flex gap-3"><span class="text-accent mt-0.5"><span class="material-symbols-rounded" aria-hidden="true">hourglass_top</span></span><p data-i18n="n3"></p></div>
       </div>
     </section>
 
@@ -239,10 +261,10 @@
         <p data-i18n="supportText" class="mt-4 text-lg leading-relaxed text-muted max-w-[36rem]"></p>
       </div>
       <div class="rounded-[24px] border border-line bg-surface p-6 sm:p-7">
-        <p data-i18n="supportLabel" class="text-sm text-muted"></p>
+        <p class="flex items-center gap-2 text-sm text-muted"><span class="text-accent"><span class="material-symbols-rounded" aria-hidden="true">support_agent</span></span><span data-i18n="supportLabel"></span></p>
         <p class="mt-1 text-xl font-bold break-all">@Dilya_Dilshodovnaa</p>
-        <a href="https://t.me/Dilya_Dilshodovnaa" target="_blank" rel="noopener" data-i18n="supportBtn"
-           class="mt-5 flex justify-center rounded-full bg-accent text-accent-ink px-6 py-3 font-semibold hover:opacity-90"></a>
+        <a href="https://t.me/Dilya_Dilshodovnaa" target="_blank" rel="noopener"
+           class="mt-5 flex items-center justify-center rounded-full bg-accent text-accent-ink px-6 py-3 font-semibold hover:opacity-90 gap-2"><span data-i18n="supportBtn"></span><span class="material-symbols-rounded" aria-hidden="true">send</span></a>
       </div>
     </section>
   </main>
@@ -250,10 +272,10 @@
   <footer class="max-w-5xl mx-auto px-5 sm:px-8 pb-10 pt-6 border-t border-line flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-sm text-muted">
     <span>© 2026 Stylist Challenge</span>
     <div class="flex flex-wrap gap-x-6 gap-y-2">
-      <a href="https://t.me/stylist_challenge_bot" target="_blank" rel="noopener" data-i18n="footerBot"
-         class="font-semibold text-accent hover:underline underline-offset-4"></a>
-      <a href="https://t.me/Dilya_Dilshodovnaa" target="_blank" rel="noopener" data-i18n="footerSupport"
-         class="font-semibold text-accent hover:underline underline-offset-4"></a>
+      <a href="https://t.me/stylist_challenge_bot" target="_blank" rel="noopener"
+         class="inline-flex items-center font-semibold text-accent hover:underline underline-offset-4 gap-2"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span><span data-i18n="footerBot"></span></a>
+      <a href="https://t.me/Dilya_Dilshodovnaa" target="_blank" rel="noopener"
+         class="inline-flex items-center font-semibold text-accent hover:underline underline-offset-4 gap-2"><span class="material-symbols-rounded" aria-hidden="true">support_agent</span><span data-i18n="footerSupport"></span></a>
     </div>
   </footer>
 
@@ -261,7 +283,7 @@
     const CARD_NUMBER = '5614 6829 1483 9164';
     const HOLDER = 'KALANOVA FERUZA';
     const BOT = '<a href="https://t.me/stylist_challenge_bot" target="_blank" rel="noopener" class="font-semibold text-accent underline underline-offset-4">@stylist_challenge_bot</a>';
-    const NAME = '<span class="font-semibold text-ink">Kalanova Feruza</span>';
+    const NAME = '<mark class="rounded bg-accent text-accent-ink px-1.5 py-0.5 font-bold whitespace-nowrap">Kalanova Feruza</mark>';
     const b = (t) => '<span class="font-bold text-ink">' + t + '</span>';
     const m = (t) => '<span class="text-muted">' + t + '</span>';
 
@@ -306,7 +328,7 @@
         s4Title: 'Начните челлендж',
         s4Text: 'В канале создайте свой первый образ и поделитесь им. Нет идеи? Предложите свою — мы поможем её доработать.',
         notesTitle: 'Перед оплатой',
-        n1: b('Проверьте имя.') + ' ' + m('Получатель должен быть Kalanova Feruza. Если отображается другое имя, не подтверждайте перевод и напишите в поддержку.'),
+        n1: b('Проверьте имя.') + ' ' + m('Получатель должен быть ') + NAME + m('. Если отображается другое имя, не подтверждайте перевод и напишите в поддержку.'),
         n2: b('Сохраните чек.') + ' ' + m('Храните скриншот, пока не вступите в канал.'),
         n3: b('Нет ответа?') + ' ' + m('Подтверждение может занять некоторое время. Если прошло больше суток, напишите в поддержку.'),
         supportTitle: 'Возникли проблемы?',
@@ -356,7 +378,7 @@
         s4Title: 'Chellenjni boshlang',
         s4Text: 'Kanalda birinchi obrazingizni yarating va uni ulashing. G‘oya yo‘qmi? O‘zingiznikini taklif qiling — uni rivojlantirishga yordam beramiz.',
         notesTitle: 'To‘lovdan oldin',
-        n1: b('Ismni tekshiring.') + ' ' + m('Qabul qiluvchi Kalanova Feruza bo‘lishi kerak. Agar boshqa ism chiqsa, o‘tkazmani tasdiqlamang va yordam xizmatiga yozing.'),
+        n1: b('Ismni tekshiring.') + ' ' + m('Qabul qiluvchi ') + NAME + m(' bo‘lishi kerak. Agar boshqa ism chiqsa, o‘tkazmani tasdiqlamang va yordam xizmatiga yozing.'),
         n2: b('Chekni saqlang.') + ' ' + m('Kanalga qo‘shilguningizcha skrinshotni saqlab qo‘ying.'),
         n3: b('Javob kelmadimi?') + ' ' + m('Tasdiqlash biroz vaqt olishi mumkin. Agar bir kundan ko‘p vaqt o‘tgan bo‘lsa, yordam xizmatiga yozing.'),
         supportTitle: 'Muammo yuzaga keldimi?',
