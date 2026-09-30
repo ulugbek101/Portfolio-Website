@@ -39,7 +39,20 @@ class StaticSitemap(Sitemap):
         return reverse(item)
 
 
+class ChallengeSitemap(Sitemap):
+    """Both language versions of the landing page, cross-linked via hreflang."""
+    changefreq = "weekly"
+    priority = 0.9
+
+    def items(self):
+        return ["twelve_day_challenge", "twelve_day_challenge_uz"]
+
+    def location(self, item):
+        return reverse(item)
+
+
 sitemaps = {
+    "challenge": ChallengeSitemap,
     "static": StaticSitemap,
     "posts": PostSitemap,
     "news": NewsSitemap,
