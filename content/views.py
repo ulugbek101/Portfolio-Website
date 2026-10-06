@@ -40,7 +40,14 @@ def _render_list(request, model, kind):
         "query": query,
         "active_tag": active_tag,
         "all_tags": Tag.objects.all(),
-        "meta_title": _("Posts") if kind == "post" else _("News"),
+        "meta_title": (
+            _("Posts — Ulugbek Umaraliyev") if kind == "post" else _("News — Ulugbek Umaraliyev")
+        ),
+        "meta_description": (
+            _("Articles and notes on web development, Django and Telegram bots.")
+            if kind == "post"
+            else _("Latest news and updates from Ulugbek Umaraliyev.")
+        ),
     }
     return render(request, "content/entry_list.html", context)
 

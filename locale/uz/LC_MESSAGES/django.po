@@ -1158,3 +1158,30 @@ msgstr "Yangi sharh"
 #: templates/emails/new_review.html:26
 msgid "Approve in admin"
 msgstr "Admin panelda tasdiqlash"
+
+msgid "Full-Stack developer with 5+ years of experience building web apps and Telegram bots. Projects, posts, news and reviews."
+msgstr "Full-Stack dasturchi, 5+ yillik tajriba: veb-ilovalar va Telegram botlar. Loyihalar, postlar, yangiliklar va sharhlar."
+
+msgid "Projects — Ulugbek Umaraliyev"
+msgstr "Loyihalar — Ulug'bek Umaraliyev"
+
+msgid "Web apps, Telegram bots and other projects built by Ulugbek Umaraliyev."
+msgstr "Ulug'bek Umaraliyev yaratgan veb-ilovalar, Telegram botlar va boshqa loyihalar."
+
+msgid "Work history — Ulugbek Umaraliyev"
+msgstr "Ish tajribasi — Ulug'bek Umaraliyev"
+
+msgid "Work experience and career history of Full-Stack developer Ulugbek Umaraliyev."
+msgstr "Full-Stack dasturchi Ulug'bek Umaraliyevning ish tajribasi va karerasi."
+
+msgid "Posts — Ulugbek Umaraliyev"
+msgstr "Maqolalar — Ulug'bek Umaraliyev"
+
+msgid "News — Ulugbek Umaraliyev"
+msgstr "Yangiliklar — Ulug'bek Umaraliyev"
+
+msgid "Articles and notes on web development, Django and Telegram bots."
+msgstr "Veb-dasturlash, Django va Telegram botlar haqida maqola va qaydlar."
+
+msgid "Latest news and updates from Ulugbek Umaraliyev."
+msgstr "Ulug'bek Umaraliyevdan so'nggi yangiliklar va yangilanishlar."
