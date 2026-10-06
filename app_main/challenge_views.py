@@ -37,7 +37,7 @@ def twelve_day_challenge(request, lang="ru"):
             },
         ],
     }
-    return render(request, "twelve_day_challenge.html", {
+    response = render(request, "twelve_day_challenge.html", {
         "lang": lang,
         "t": t,
         "seo": seo,
@@ -51,3 +51,8 @@ def twelve_day_challenge(request, lang="ru"):
         "json_ld": json.dumps(json_ld, ensure_ascii=False).replace("</", "<\\/"),
         "copy_msgs": {k: t[k] for k in ("copiedNumber", "copiedName", "copyFail")},
     })
+    # Django's default COOP "same-origin" cuts window.opener, which Meta's
+    # Events Setup tool needs to detect the pixel. SecurityMiddleware keeps a
+    # header a view has already set, so this only affects this page.
+    response["Cross-Origin-Opener-Policy"] = "unsafe-none"
+    return response
