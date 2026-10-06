@@ -1,12 +1,13 @@
 {% load i18n static site_extras %}
 {% get_current_language as CURRENT_LANG %}
+{% static 'img/og-default.png' as DEFAULT_OG_PATH %}
 {% comment %}
   SEO / Open Graph tags. Views may set: meta_title, meta_description,
   og_image_url (absolute), og_type ('website'|'article'), and for detail
   pages, alternate_urls / canonical.
 {% endcomment %}
 
-<title>{% block title %}{{ meta_title|default:"Ulug'bek Umaraliyev — Full-Stack Developer" }}{% endblock %}</title>
+<title>{% block title %}{{ meta_title|default:_("Ulugbek Umaraliyev — Full-Stack Developer") }}{% endblock %}</title>
 <meta name="description" content="{{ meta_description|default:_('Full-Stack developer — posts, news, projects and reviews.') }}" />
 
 <link rel="canonical" href="{% canonical_url %}" />
@@ -25,11 +26,16 @@
 <meta property="og:locale" content="{% if CURRENT_LANG == 'uz' %}uz_UZ{% elif CURRENT_LANG == 'ru' %}ru_RU{% else %}en_US{% endif %}" />
 {% if og_image_url %}
 <meta property="og:image" content="{{ og_image_url }}" />
-<meta property="og:image:alt" content="{{ meta_title|default:'thedevu101' }}" />
+{% else %}
+<meta property="og:image" content="{{ SITE_URL }}{{ DEFAULT_OG_PATH }}" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 {% endif %}
+<meta property="og:image:alt" content="{{ meta_title|default:'thedevu101' }}" />
 
 <!-- Twitter -->
-<meta name="twitter:card" content="{% if og_image_url %}summary_large_image{% else %}summary{% endif %}" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ meta_title|default:'Ulugbek Umaraliyev' }}" />
 <meta name="twitter:description" content="{{ meta_description|default:_('Full-Stack developer — posts, news, projects and reviews.') }}" />
-{% if og_image_url %}<meta name="twitter:image" content="{{ og_image_url }}" />{% endif %}
+<meta name="twitter:image" content="{% if og_image_url %}{{ og_image_url }}{% else %}{{ SITE_URL }}{{ DEFAULT_OG_PATH }}{% endif %}" />
