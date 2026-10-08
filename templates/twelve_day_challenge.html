@@ -348,6 +348,16 @@
     document.getElementById('copyName').addEventListener('click',
       () => copy(HOLDER, 'copiedName'));
 
+    // --- Meta Pixel: события конверсии ---
+    function track(event, params) { if (window.fbq) fbq('track', event, params || {}); }
+    document.getElementById('copyNumber').addEventListener('click', () =>
+      track('InitiateCheckout', { content_name: 'Stylist Challenge', currency: 'UZS' }));
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href*="t.me/hair_style_challenge_bot"]');
+      if (a) track('Lead', { content_name: 'Stylist Challenge - bot' });
+    });
+
+
   </script>
 </body>
 </html>
