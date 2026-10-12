@@ -49,7 +49,20 @@ TEXTS = {
         "supportLabel": "Поддержка в Telegram",
         "supportBtn": "Написать в поддержку",
         "footerBot": "Открыть бота в Telegram",
-        "footerSupport": "Поддержка: @Dilya_Dilshodovnaa"
+        "footerSupport": "Поддержка: @Dilya_Dilshodovnaa",
+        "formTitle": "Остались вопросы или сомнения?",
+        "formText": "Оставьте имя и номер телефона — наши администраторы свяжутся с вами и всё подскажут.",
+        "nameLabel": "Имя и фамилия",
+        "namePh": "Ваши имя и фамилия",
+        "phoneLabel": "Номер телефона",
+        "phonePh": "+998 90 123 45 67",
+        "formSubmit": "Отправить заявку",
+        "formNote": "Номер используется только для связи с вами по челленджу.",
+        "formSending": "Отправляем…",
+        "formSuccess": "Спасибо! Заявка отправлена — администраторы скоро свяжутся с вами.",
+        "formInvalid": "Проверьте имя и номер телефона.",
+        "formError": "Не удалось отправить. Попробуйте ещё раз или напишите в поддержку.",
+        "formTooMany": "Слишком много попыток. Попробуйте чуть позже.",
     },
     "uz": {
         "pageTitle": "Stylist Challenge — soch stilistlari uchun 12 kunlik chellenj",
@@ -99,7 +112,20 @@ TEXTS = {
         "supportLabel": "Telegramdagi yordam xizmati",
         "supportBtn": "Yordam xizmatiga yozish",
         "footerBot": "Botni Telegramda ochish",
-        "footerSupport": "Yordam: @Dilya_Dilshodovnaa"
+        "footerSupport": "Yordam: @Dilya_Dilshodovnaa",
+        "formTitle": "Savollar yoki shubhalar bormi?",
+        "formText": "Ism-familiya va telefon raqamingizni qoldiring — administratorlarimiz siz bilan bog‘lanib, hammasini tushuntirib berishadi.",
+        "nameLabel": "Ism va familiya",
+        "namePh": "Ism va familiyangiz",
+        "phoneLabel": "Telefon raqami",
+        "phonePh": "+998 90 123 45 67",
+        "formSubmit": "Ariza yuborish",
+        "formNote": "Raqamingizdan faqat chellenj bo‘yicha siz bilan bog‘lanish uchun foydalaniladi.",
+        "formSending": "Yuborilmoqda…",
+        "formSuccess": "Rahmat! Ariza yuborildi — administratorlar tez orada siz bilan bog‘lanishadi.",
+        "formInvalid": "Ism va telefon raqamini tekshiring.",
+        "formError": "Yuborib bo‘lmadi. Qayta urinib ko‘ring yoki yordam xizmatiga yozing.",
+        "formTooMany": "Urinishlar juda ko‘p. Birozdan so‘ng qayta urinib ko‘ring.",
     }
 }
 

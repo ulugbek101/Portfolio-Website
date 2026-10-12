@@ -204,6 +204,14 @@ DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", "thedevu101 <no-reply@thedevu
 NOTIFY_EMAILS = env.list("NOTIFY_EMAILS", ["thedevu101@gmail.com"])
 
 # ---------------------------------------------------------------------------
+# Challenge page callback requests
+# ---------------------------------------------------------------------------
+# Callback requests are sent through this Telegram bot to every admin id below.
+# Admins must have pressed /start in the bot once, or Telegram refuses delivery.
+FIRA_BOT_TOKEN = env.str("FIRA_BOT_TOKEN", "")
+FIRA_ADMINS_LIST = env.list("FIRA_ADMINS_LIST", [])
+
+# ---------------------------------------------------------------------------
 # CKEditor 5
 # ---------------------------------------------------------------------------
 customColorPalette = [

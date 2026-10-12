@@ -303,6 +303,33 @@
            class="mt-5 flex items-center justify-center rounded-full bg-accent text-accent-ink px-6 py-3 font-semibold hover:opacity-90 gap-2"><span data-i18n="supportBtn">{{ t.supportBtn|safe }}</span><span class="material-symbols-rounded" aria-hidden="true">send</span></a>
       </div>
     </section>
+
+    <!-- Callback request -->
+    <section id="callback" class="border-t border-line pt-14 pb-16">
+      <div class="grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-14 items-start">
+        <div>
+          <h2 class="flex items-center gap-3 font-display text-3xl sm:text-4xl tracking-tight"><span class="text-accent"><span class="material-symbols-rounded" aria-hidden="true">call</span></span><span>{{ t.formTitle }}</span></h2>
+          <p class="mt-4 text-lg leading-relaxed text-muted max-w-[36rem]">{{ t.formText }}</p>
+        </div>
+        <form id="callbackForm" action="{% url 'challenge_callback' %}" method="post" novalidate
+              class="rounded-[24px] border border-line bg-surface p-6 sm:p-7 grid gap-4">
+          {% csrf_token %}
+          <input type="hidden" name="lang" value="{{ lang }}" />
+          <div class="hidden" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+          <label class="grid gap-1.5 text-sm font-bold">{{ t.nameLabel }}
+            <input type="text" name="name" required minlength="2" maxlength="100" autocomplete="name" placeholder="{{ t.namePh }}"
+                   class="w-full rounded-xl border border-line bg-bg px-4 py-3 text-base font-normal text-ink placeholder:text-muted" />
+          </label>
+          <label class="grid gap-1.5 text-sm font-bold">{{ t.phoneLabel }}
+            <input type="tel" name="phone" required inputmode="tel" maxlength="25" autocomplete="tel" placeholder="{{ t.phonePh }}"
+                   class="w-full rounded-xl border border-line bg-bg px-4 py-3 text-base font-normal text-ink placeholder:text-muted" />
+          </label>
+          <button id="callbackSubmit" type="submit"
+                  class="mt-1 inline-flex items-center justify-center rounded-full bg-accent text-accent-ink px-6 py-3.5 font-semibold hover:opacity-90 disabled:opacity-60 gap-2"><span class="material-symbols-rounded" aria-hidden="true">send</span><span id="callbackSubmitLabel">{{ t.formSubmit }}</span></button>
+          <p class="text-xs text-muted">{{ t.formNote }}</p>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="max-w-5xl mx-auto px-5 sm:px-8 pb-10 pt-6 border-t border-line flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-sm text-muted">
@@ -314,6 +341,9 @@
          class="inline-flex items-center font-semibold text-accent hover:underline underline-offset-4 gap-2"><span class="material-symbols-rounded" aria-hidden="true">support_agent</span><span data-i18n="footerSupport">{{ t.footerSupport|safe }}</span></a>
     </div>
   </footer>
+
+  <div id="toast" role="status" aria-live="polite"
+       class="fixed left-1/2 bottom-6 z-50 -translate-x-1/2 translate-y-4 opacity-0 pointer-events-none transition-all duration-300 max-w-[min(92vw,26rem)] rounded-2xl bg-ink text-bg px-5 py-3.5 text-sm font-semibold shadow-lg"></div>
 
   {{ copy_msgs|json_script:"copy-msgs" }}
   <script>
@@ -342,6 +372,55 @@
       clearTimeout(statusTimer);
       statusTimer = setTimeout(() => (statusEl.textContent = ''), 2500);
     }
+
+    const toastEl = document.getElementById('toast');
+    let toastTimer;
+    function toast(text) {
+      toastEl.textContent = text;
+      toastEl.classList.remove('opacity-0', 'translate-y-4');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.add('opacity-0', 'translate-y-4'), 4500);
+    }
+
+    const form = document.getElementById('callbackForm');
+    const submitBtn = document.getElementById('callbackSubmit');
+    const submitLabel = document.getElementById('callbackSubmitLabel');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = form.elements.name.value.trim();
+      const phone = form.elements.phone.value.trim();
+      const digits = phone.replace(/\D/g, '');
+      if (name.length < 2 || digits.length < 7 || digits.length > 15) {
+        toast(T.formInvalid);
+        return;
+      }
+      const idle = submitLabel.textContent;
+      submitBtn.disabled = true;
+      submitLabel.textContent = T.formSending;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'X-Requested-With': 'XMLHttpRequest' },
+          credentials: 'same-origin',
+        });
+        if (res.ok) {
+          form.reset();
+          toast(T.formSuccess);
+        } else if (res.status === 429) {
+          toast(T.formTooMany);
+        } else if (res.status === 400) {
+          toast(T.formInvalid);
+        } else {
+          toast(T.formError);
+        }
+      } catch (err) {
+        toast(T.formError);
+      } finally {
+        submitBtn.disabled = false;
+        submitLabel.textContent = idle;
+      }
+    });
 
     document.getElementById('copyNumber').addEventListener('click',
       () => copy(CARD_NUMBER.replace(/\s/g, ''), 'copiedNumber'));
